@@ -1,6 +1,6 @@
-# Instruções para os Laboratórios da disciplina de Big Data e NoSQL
+# Instruções para os Laboratórios da disciplina de IHC (Interação Humano-Computador)
 
-Olá, aluno(a)! Bem-vindo aos laboratórios da disciplina de Big Data e NoSQL. Aqui, você encontrará um conjunto diversificado de ferramentas que serão utilizadas ao longo do curso. Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
+Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste repositório, você encontrará materiais e recursos voltados para a criação de interfaces dinâmicas e envolventes, com foco em tecnologias como HTML, CSS e Bootstrap. Abordaremos também o back-end utilizando Python Flask, além de explorar ferramentas e métodos para um desenvolvimento ágil, seguro e eficiente. O conteúdo se estenderá ao design de produto, cobrindo conceitos e práticas de UX (Experiência do Usuário) e UI (Interface do Usuário).
 
 ### Configuração do Ambiente: 
 
@@ -33,11 +33,7 @@ A imagem OVA fornecida foi pré-configurada com 'docker', 'docker-compose', 'git
 
 ### Docker:
 
-Em contextos de Big Data, é comum ter diversos serviços interconectados. Por exemplo, você pode ter uma pipeline de processamento de dados que utiliza o Spark para processamento em memória, o Hadoop para armazenamento de dados distribuídos e múltiplos bancos de dados NoSQL como MongoDB (para armazenamento de documentos), Redis (para armazenamento em cache), Cassandra (para dados altamente distribuídos) e Neo4j (para dados baseados em grafo). Configurar manualmente cada um desses serviços para funcionar em harmonia pode ser uma tarefa desafiadora. 
-
-Nesse cenário, o Docker é uma plataforma que facilita esta tarefa, pois permite desenvolver e executar aplicações dentro de contêineres, que é uma unidade padrão de software que empacota o código e todas as suas dependências, de forma que a aplicação possa ser executada de forma confiável de um ambiente de computação para outro. Pense nos contêineres como uma caixa isolada onde sua aplicação e todas as suas dependências estão empacotadas juntas, o que garante que ela funcione de forma consistente em qualquer ambiente que suporte Docker.
-
-Os contêineres Docker são leves e podem aproveitar a mesma infraestrutura de máquinas físicas ou virtuais. Costumam ser inicializados rapidamente e são portáteis, o que significa que você pode criar um contêiner no seu notebook e reaproveitá-lo facilmente para um ambiente de nuvem ou um servidor. 
+No universo do desenvolvimento web, enfrentamos o desafio de gerenciar vários serviços integrados. Configurar cada um deles para operar em sintonia pode ser uma tarefa complexa. Aqui entra o Docker: uma solução que simplifica este processo ao permitir que aplicações sejam desenvolvidas e executadas em contêineres. Estes contêineres são unidades de software que agrupam o código da aplicação e suas dependências, garantindo que ela opere de maneira consistente em diferentes ambientes de computação. Imagine os contêineres como um pacote isolado contendo sua aplicação e tudo o que ela precisa para funcionar, assegurando a performance esperada em qualquer ambiente que tenha suporte ao Docker. Leves e flexíveis, os contêineres Docker iniciam rapidamente e são altamente portáteis. Assim, é viável criar um contêiner no seu computador pessoal e transferi-lo sem problemas para uma plataforma de nuvem ou servidor.
 
 ### Docker Compose:
 
@@ -49,54 +45,31 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 Dentro deste projeto, temos diversos diretórios, cada um representando um ambiente específico:
 
-### Hadoop
-Neste diretório, você encontrará o ambiente para o Hadoop. 
+### Flask, HTML e CSS: 
 
-- **Hadoop**: Framework de código aberto para armazenamento distribuído e processamento de conjuntos de dados grandes, usando o modelo de programação MapReduce.
+- **Flask**: é um micro-framework web escrito em Python. É classificado como micro-framework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
 
-### Jupyter/Spark
-Neste diretório, você encontrará o ambiente com Jupyter Notebook e Spark. 
+- **HTML**: HTML (Hyper Text Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.
 
-- **Jupyter Notebook**: É uma aplicação web que permite criar e compartilhar documentos que contêm código ativo, equações, visualizações e texto. Muito usado para análise de dados.
-  
-- **Spark**: Uma estrutura de processamento de dados rápida, em memória, utilizada para big data analytics.
+- **CSS**: CSS (Cascade Style Sheet) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser exibidos na tela.
 
-### MongoDB
-Neste diretório, você encontrará o ambiente para o MongoDB.
-
-- **MongoDB**: É um banco de dados NoSQL baseado em documentos, onde cada registro é um documento, que é uma estrutura de dados composta por pares de chave e valor.
-
-### Redis
-Neste diretório, você encontrará o ambiente para o Redis.
-
-- **Redis**: Armazenamento de estrutura de dados em memória, usado como banco de dados NoSQL da família chave-valor. É conhecido por sua alta velocidade e flexibilidade em aplicações como cache e corretor de mensagens. 
-
-### Cassandra
-Neste diretório, você encontrará o ambiente para o Cassandra.
-
-- **Cassandra**: Banco de dados NoSQL distribuído, projetado para gerenciar grandes volumes de dados em múltiplos servidores sem nenhum ponto único de falha.
-
-### Neo4j
-Neste diretório, você encontrará o ambiente para o Neo4j.
-
-- **Neo4j**: É um sistema de gerenciamento de banco de dados NoSQL orientado a grafos, que permite modelar relacionamentos complexos por meio de padrões e estruturas de dados que utilizam os conceitos de nós e arestas. 
 
 ## 3. Preparando o Ambiente de Laboratório
 
 Depois de acessar o ambiente virtual:
 
-1. Crie uma pasta e baixe os arquivos do projeto:
+1. Baixe os arquivos do projeto:
 
 ```bash   
    sudo su -
    cd /opt
-   git clone https://github.com/klaytoncastro/idp-bigdata   
+   git clone https://github.com/klaytoncastro/ihceub
 ```
 
-3. Entre na subpasta de cada ambiente, construa e inicie os serviços usando o Docker Compose. Ex (Jupyter-Spark):
+3. Entre na pasta de cada ambiente, construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
-   cd /opt/idp-bigdata/jupyter-spark
+   cd /opt/ihceub
    docker-compose build
    docker-compose up -d
 ```
@@ -122,3 +95,4 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 ### Pronto! 
 
 Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@idp.edu.br](klayton.castro@idp.edu.br). 
+
