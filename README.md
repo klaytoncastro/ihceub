@@ -1,4 +1,4 @@
-# Instruções para os Laboratórios da disciplina de IHC (Interação Humano-Computador)
+# Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)
 
 Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste repositório, você encontrará materiais e recursos voltados para a criação de interfaces dinâmicas e envolventes, com foco em tecnologias como HTML, CSS e Bootstrap. Abordaremos também o back-end utilizando Python Flask, além de explorar ferramentas e métodos para um desenvolvimento ágil, seguro e eficiente. O conteúdo se estenderá ao design de produto, cobrindo conceitos e práticas de UX (Experiência do Usuário) e UI (Interface do Usuário).
 
@@ -45,14 +45,17 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 Dentro deste projeto, temos diversos diretórios, cada um representando um ambiente específico:
 
-### Flask, HTML e CSS: 
+### Flask, HTML, CSS, Javascript e Bootstrap: 
 
 - **Flask**: é um micro-framework web escrito em Python. É classificado como micro-framework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
 
-- **HTML**: HTML (Hyper Text Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.
+- **HTML**: HTML (HyperText Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.
 
-- **CSS**: CSS (Cascade Style Sheet) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser exibidos na tela.
+- **CSS**: CSS (Cascading Style Sheets) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser exibidos na tela.
 
+- **JavaScript**: É uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web. Enquanto o HTML define a estrutura e o CSS estiliza a apresentação, o JavaScript é usado para criar comportamentos dinâmicos em websites, permitindo a manipulação de elementos em tempo real, a realização de operações assíncronas com servidores (como carregamentos de página sem refresh) e a criação de aplicações web ricas. Originariamente desenvolvido pela Netscape como uma forma de melhorar a experiência do usuário no navegador, o JavaScript tornou-se uma das linguagens de programação mais populares e essenciais da web. Com o advento de plataformas como Node.js, também encontrou aplicações fora dos navegadores, sendo usado em servidores, dispositivos IoT, aplicativos móveis e em muitos outros contextos.
+
+- **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (x.com), o Bootstrap fornece uma variedade de componentes HTML, CSS e JavaScript pré-projetados para facilitar o desenvolvimento de sites e aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. Ele simplifica o processo de design e desenvolvimento ao oferecer padrões de interface do usuário, como botões, formulários, navegação e modais, que são facilmente personalizáveis. Além disso, a comunidade em torno do Bootstrap é robusta, oferecendo uma vasta gama de temas e plugins para estender ainda mais suas funcionalidades. 
 
 ## 3. Preparando o Ambiente de Laboratório
 
@@ -94,5 +97,5 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 
 ### Pronto! 
 
-Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@idp.edu.br](klayton.castro@idp.edu.br). 
+Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br). 
 
