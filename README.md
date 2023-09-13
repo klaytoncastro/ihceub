@@ -1,6 +1,6 @@
 # Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)
 
-Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste repositório, você encontrará materiais e recursos voltados para a criação de interfaces dinâmicas e envolventes, com foco em tecnologias como HTML, CSS e Bootstrap. Abordaremos também o back-end utilizando Python Flask, além de explorar ferramentas e métodos para um desenvolvimento ágil, seguro e eficiente. O conteúdo se estenderá ao design de produto, cobrindo conceitos e práticas de UX (Experiência do Usuário) e UI (Interface do Usuário).
+Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Iniciaremos nossa jornada compreendendo os fundamentos do design de produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Estabelecida essa base, avançaremos para o desenvolvimento front-end, utilizando tecnologias web como HTML, CSS e Bootstrap. Em seguida, nos aprofundaremos na comunicação com o back-end através do protocolo HTTP, utilizando o microframework Python Flask e explorando bancos de dados tanto relacionais quanto não relacionais para páginas dinâmicas. Ao longo da disciplina, também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
 ### Configuração do Ambiente: 
 
@@ -10,19 +10,19 @@ Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (V
 
 ## 1. Sobre a Imagem OVA
 
-OVA (Open Virtual Appliance ou Open Virtualization Archive) é um formato de empacotamento de arquivos para máquinas virtuais. Basicamente, é um único arquivo que contém todo o conteúdo de uma máquina virtual, incluindo sua configuração, discos virtuais, entre outros. O formato OVA visa facilitar a portabilidade e o deploy de máquinas virtuais, independentemente do software de virtualização utilizado. Uma vez que você tenha um arquivo OVA, você pode importá-lo em várias plataformas de virtualização para iniciar a máquina virtual.
+Oracle VirtualBox é um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
-Oracle VirtualBox é um software de virtualização de propósito geral de código aberto. Ele permite que os usuários executem múltiplos sistemas operacionais simultaneamente em uma única máquina física. Ao usar o VirtualBox, você pode criar, gerenciar e executar máquinas virtuais, que são representações completas de computadores, contendo seu próprio sistema operacional, drivers, aplicativos e arquivos, tudo dentro de um ambiente virtualizado. O VirtualBox suporta a criação e gerenciamento de máquinas virtuais para vários sistemas operacionais, incluindo Windows, Linux, MacOS e outros. 
+OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais, contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o VirtualBox.
 
-Por meio de um arquivo OVA, você pode importá-lo facilmente para o Oracle VirtualBox para criar uma nova máquina virtual. Essa é uma maneira comum de distribuir ambientes pré-configurados, como laboratórios de teste, ambientes de desenvolvimento ou demonstrações, pois garante que todos os usuários terão exatamente o mesmo ambiente, independentemente de onde eles estejam executando a máquina virtual.
-
-A imagem OVA fornecida foi pré-configurada com 'docker', 'docker-compose', 'git', 'ssh' e outras ferramentas, facilitando a configuração e utilização dos ambientes de laboratório. 
+Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, assegurando que os usuários tenham um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como 'docker', 'docker-compose', 'git' e 'ssh', otimizando a configuração dos ambientes de laboratório.
 
 ### Como Usar:
-1. Baixe a imagem OVA através do [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
-2. Caso não esteja instalado, baixe e instale o Oracle VirtualBox através do [link](https://www.oracle.com/br/virtualization/technologies/vm/downloads/virtualbox-downloads.html). 
-3. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
-4. Selecione o arquivo OVA baixado e siga as instruções na tela.
+1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
+2. Caso não esteja instalado, baixe o Oracle VirtualBox através deste [link](https://www.oracle.com/br/virtualization/technologies/vm/downloads/virtualbox-downloads.html). 
+3. Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.
+4. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
+5. Selecione o arquivo OVA baixado e siga as instruções na tela.
+6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal e inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
 
@@ -43,8 +43,6 @@ Imagine uma aplicação que envolve um servidor web, um banco de dados MongoDB e
 
 Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniência e eficiência, focando no uso das aplicações e eliminando preocupações com instalações e configurações manuais. A imagem OVA padronizada amplia esse benefício, permitindo a evolução e integração do ambiente, aproveitando o poder computacional do laboratório.
 
-Dentro deste projeto, temos diversos diretórios, cada um representando um ambiente específico:
-
 ### Flask, HTML, CSS, Javascript e Bootstrap: 
 
 - **Flask**: é um micro-framework web escrito em Python. É classificado como micro-framework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
@@ -53,7 +51,7 @@ Dentro deste projeto, temos diversos diretórios, cada um representando um ambie
 
 - **CSS**: CSS (Cascading Style Sheets) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser exibidos na tela.
 
-- **JavaScript**: É uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web. Enquanto o HTML define a estrutura e o CSS estiliza a apresentação, o JavaScript é usado para criar comportamentos dinâmicos em websites, permitindo a manipulação de elementos em tempo real, a realização de operações assíncronas com servidores (como carregamentos de página sem refresh) e a criação de aplicações web ricas. Originariamente desenvolvido pela Netscape como uma forma de melhorar a experiência do usuário no navegador, o JavaScript tornou-se uma das linguagens de programação mais populares e essenciais da web. Com o advento de plataformas como Node.js, também encontrou aplicações fora dos navegadores, sendo usado em servidores, dispositivos IoT, aplicativos móveis e em muitos outros contextos.
+- **JavaScript**: É uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web. Enquanto o HTML define a estrutura e o CSS estiliza a apresentação, o JavaScript é usado para criar comportamentos dinâmicos em websites, permitindo a manipulação de elementos em tempo real, a realização de operações assíncronas com servidores (como carregamentos de página sem refresh) e a criação de aplicações web ricas. Originariamente desenvolvido pela Netscape como uma forma de melhorar a experiência do usuário no navegador, o JavaScript tornou-se uma das linguagens de programação mais populares e essenciais da web. Ao longo de sua evolução, também encontrou aplicações fora dos navegadores, sendo usado em servidores, dispositivos IoT (Internet das Coisas), aplicativos móveis e em muitos outros contextos.
 
 - **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (x.com), o Bootstrap fornece uma variedade de componentes HTML, CSS e JavaScript pré-projetados para facilitar o desenvolvimento de sites e aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. Ele simplifica o processo de design e desenvolvimento ao oferecer padrões de interface do usuário, como botões, formulários, navegação e modais, que são facilmente personalizáveis. Além disso, a comunidade em torno do Bootstrap é robusta, oferecendo uma vasta gama de temas e plugins para estender ainda mais suas funcionalidades. 
 
@@ -69,7 +67,7 @@ Depois de acessar o ambiente virtual:
    git clone https://github.com/klaytoncastro/ihceub
 ```
 
-3. Entre na pasta de cada ambiente, construa e inicie os serviços usando o Docker Compose. 
+3. Construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
    cd /opt/ihceub
