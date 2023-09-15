@@ -105,21 +105,21 @@ Agora você está com o ambiente preparado e pronto para começar os laboratóri
 
 ### Etapas:
 
-- ** Definindo o modelo **:
+- **Definindo o modelo**:
 
 1. Crie uma classe chamada Livro que tenha atributos titulo e autor.
 
-- ** Rota para listar livros **:
+- **Rota para listar livros**:
 
 2. Crie uma rota /livros que mostre todos os livros registrados.
 Se não houver livros registrados, a página deve mostrar "Nenhum livro registrado."
 
-- ** Rota para registrar um livro **:
+- **Rota para registrar um livro**:
 
 3. Crie uma rota /adicionar que mostre um formulário permitindo ao usuário adicionar um novo livro (título e autor).
 Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros.
 
-- ** Rota para registrar um livro **:
+- **Rota para registrar um livro**:
 
 4. Crie uma rota /adicionar que mostre um formulário permitindo ao usuário adicionar um novo livro (título e autor).
 Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros.
