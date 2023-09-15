@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Meu Blog - tag1</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Meu Blog</a></h1>
+                <nav><ul>
+                    <li><a href="/category/categoria.html">Categoria</a></li>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/meu-segundo-post.html">Meu Segundo Post</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2023-09-15T00:00:00-03:00">
+                Published: 15 de September de 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/seu-nome.html">Seu Nome</a>
+        </address>
+<p>In <a href="/category/categoria.html">Categoria</a>.</p>
+<p>tags: <a href="/tag/tag1.html">tag1</a> <a href="/tag/tag2.html">tag2</a> </p>
+</footer><!-- /.post-info --><h1>Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)</h1>
+<p>Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Iniciaremos nossa jornada com os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Ao longo da disciplina, também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. Estabelecida essa base, teremos práticas com desenvolvimento de aplicações web, utilizando tecnologias front-end como HTML, CSS e Bootstrap. Em seguida, compreenderemos a comunicação back-end através do protocolo HTTP, utilizando o microframework Python Flask e explorando bancos de dados tanto relacionais quanto não relacionais para construção de aplicações com páginas dinâmicas. Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. </p>
+<h3>Configuração do Ambiente:</h3>
+<p>Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.</p>
+<ul>
+<li><strong>Nota</strong>: Se você tem experiência com Docker e prefere executá-lo diretamente no seu sistema operacional, sinta-se à vontade. A estrutura do repositório suporta este modo de operação. Para os usuários dos hardwares mais recentes da Apple, como o M2 e outros processadores novos, é especialmente relevante considerar esta opção, visto que algumas versões do Oracle Virtual Box podem não ser compatíveis com esses dispositivos. </li>
+</ul>
+<h2>1. Sobre a Imagem OVA</h2>
+<p>Oracle VirtualBox é um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.</p>
+<p>OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais, contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o VirtualBox.</p>
+<p>Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, assegurando que os usuários tenham um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como 'docker', 'docker-compose', 'git' e 'ssh', otimizando a configuração dos ambientes de laboratório.</p>
+<h3>Como Usar:</h3>
+<ol>
+<li>Baixe a imagem OVA através deste <a href="https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3">link</a>.</li>
+<li>Caso não esteja instalado, baixe o Oracle VirtualBox através deste <a href="https://www.oracle.com/br/virtualization/technologies/vm/downloads/virtualbox-downloads.html">link</a>. </li>
+<li>Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.</li>
+<li>Execute o Oracle Virtual Box e clique em <strong>Arquivo</strong> &gt; <strong>Importar Appliance</strong>.</li>
+<li>Selecione o arquivo OVA baixado e siga as instruções na tela.</li>
+<li>Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal e inicie a máquina virtual (VM). </li>
+</ol>
+<h3>Credenciais para acesso à VM:</h3>
+<ul>
+<li><strong>Usuário:</strong> labihc</li>
+<li><strong>Senha:</strong> L@b1hc</li>
+</ul>
+<h2>2. Descrição das Ferramentas Utilizadas</h2>
+<h3>Docker:</h3>
+<p>No universo do desenvolvimento web, enfrentamos o desafio de gerenciar vários serviços integrados. Configurar cada um deles para operar em sintonia pode ser uma tarefa complexa. Aqui entra o Docker: uma solução que simplifica este processo ao permitir que aplicações sejam desenvolvidas e executadas em contêineres. Estes contêineres são unidades de software que agrupam o código da aplicação e suas dependências, garantindo que ela opere de maneira consistente em diferentes ambientes de computação. Imagine os contêineres como um pacote isolado contendo sua aplicação e tudo o que ela precisa para funcionar, assegurando a performance esperada em qualquer ambiente que tenha suporte ao Docker. Leves e flexíveis, os contêineres Docker iniciam rapidamente e são altamente portáteis. Assim, é viável criar um contêiner no seu computador pessoal e transferi-lo sem problemas para uma plataforma de nuvem ou servidor.</p>
+<h3>Docker Compose:</h3>
+<p>O Docker Compose é uma ferramenta dentro do ecossistema Docker que simplifica a definição e gestão de aplicações multicontêiner. Com ele, é possível orquestrar aplicações complexas compostas por vários contêineres interligados, usando um único arquivo: docker-compose.yml. Com um comando simples (docker-compose up -d), todos os contêineres definidos no arquivo são iniciados simultaneamente, garantindo a integração e configuração correta de cada componente.</p>
+<p>Imagine uma aplicação que envolve um servidor web, um banco de dados MongoDB e um cache Redis. Em vez de iniciar e configurar cada contêiner manualmente, com o Docker Compose, é possível definir toda essa configuração em um arquivo e ativá-la de uma vez, assegurando que cada contêiner esteja devidamente configurado e interligado.</p>
+<p>Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniência e eficiência, focando no uso das aplicações e eliminando preocupações com instalações e configurações manuais. A imagem OVA padronizada amplia esse benefício, permitindo a evolução e integração do ambiente, aproveitando o poder computacional do laboratório.</p>
+<h3>Flask, HTML, CSS, Javascript e Bootstrap:</h3>
+<ul>
+<li>
+<p><strong>Flask</strong>: é um micro-framework web escrito em Python. É classificado como micro-framework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.</p>
+</li>
+<li>
+<p><strong>HTML</strong>: HTML (HyperText Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.</p>
+</li>
+<li>
+<p><strong>CSS</strong>: CSS (Cascading Style Sheets) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser exibidos na tela.</p>
+</li>
+<li>
+<p><strong>JavaScript</strong>: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas.</p>
+</li>
+<li>
+<p><strong>Bootstrap</strong>: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript pré-projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. </p>
+</li>
+</ul>
+<h2>3. Preparando o Ambiente de Laboratório</h2>
+<p>Depois de acessar o ambiente virtual:</p>
+<ol>
+<li>Baixe os arquivos do projeto:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>sudo<span class="w"> </span>su<span class="w"> </span>-
+<span class="w">   </span><span class="nb">cd</span><span class="w"> </span>/opt
+<span class="w">   </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/klaytoncastro/ihceub
+</code></pre></div>
+
+<ol>
+<li>Construa e inicie os serviços usando o Docker Compose. </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nb">cd</span><span class="w"> </span>/opt/ihceub
+<span class="w">   </span>docker-compose<span class="w"> </span>build
+<span class="w">   </span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
+<h3>Usando o SSH para para conexão</h3>
+<p>SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de servidores remotos, como nossa VM no Virtual Box. Para gerenciar nossa VM nos laboratórios, recomendamos o uso de conexões SSH em vez da console física. O <a href="https://www.putty.org/">Putty</a> é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. </p>
+<ul>
+<li>
+<p><strong>Nota</strong>: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las em nossos laboratórios. </p>
+</li>
+<li>
+<p>Conveniência e Eficiência</p>
+</li>
+<li>
+<p><strong>Copiar e Colar</strong>: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.</p>
+</li>
+<li>
+<p><strong>Multitarefa</strong>: Com o SSH, é possível abrir várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. </p>
+</li>
+<li>
+<p>Evita limitações da console "física"</p>
+</li>
+<li>
+<p><strong>Resolução e Interface</strong>: A console física do Virtual Box pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.</p>
+</li>
+<li>
+<p><strong>Padrão de Gerenciamento</strong>: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps e SRE e trabalho em cloud. </p>
+</li>
+</ul>
+<h3>Pronto!</h3>
+<p>Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: <a href="klayton.castro@ceub.edu.br">klayton.castro@ceub.edu.br</a>. </p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/meu-terceiro-post.html" rel="bookmark"
+                           title="Permalink to Meu Terceiro Post">Meu Terceiro Post</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2023-09-15T00:00:00-03:00">
+                Published: 15 de September de 2023
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/seu-nome.html">Seu Nome</a>
+        </address>
+<p>In <a href="/category/categoria.html">Categoria</a>.</p>
+<p>tags: <a href="/tag/tag1.html">tag1</a> <a href="/tag/tag2.html">tag2</a> <a href="/tag/tag3.html">tag3</a> </p>
+</footer><!-- /.post-info -->                <h1>Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)</h1>
+<p>Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Iniciaremos nossa jornada com os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Ao longo da disciplina, também discutiremos ferramentas e …</p>
+                <a class="readmore" href="/meu-terceiro-post.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://jinja.palletsprojects.com/">Jinja2</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  pelican-flask:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_APP=serve.py
+      - FLASK_ENV=development
+    volumes:
+      - ./content:/app/content
+      - ./output:/app/output
+
