@@ -2,7 +2,9 @@
 
 ## Exercício 01: Criar uma simples aplicação Flask para registro de livros
 
-- **Objetivo**:  Crie uma aplicação Flask que permita ao usuário registrar um livro e listar todos os livros registrados. A aplicação não precisa usar um banco de dados; você pode armazenar os livros em uma lista. 
+### Objetivo: 
+
+Crie uma aplicação Flask que permita ao usuário registrar um livro e listar todos os livros registrados. A aplicação não precisa usar um banco de dados: você pode armazenar os livros em uma lista. 
 
 ### Etapas:
 
@@ -17,10 +19,9 @@ Se não houver livros registrados, a página deve mostrar "Nenhum livro registra
 
 - **Rota para registrar um livro**:
 
-3. Crie uma rota /adicionar que mostre um formulário permitindo ao usuário adicionar um novo livro (título e autor).
-Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros.
+3. Crie uma rota /adicionar que mostre um formulário permitindo ao usuário adicionar um novo livro (título e autor). Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros.
 
 - **Rota para registrar um livro**:
 
 4. Crie uma rota /adicionar que mostre um formulário permitindo ao usuário adicionar um novo livro (título e autor).
-Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros.
+Quando o formulário for submetido, o novo livro deve ser adicionado à lista de livros e o usuário deve ser redirecionado para a página /livros. 
