@@ -109,7 +109,7 @@ Agora você está com o ambiente preparado e pronto para começar os laboratóri
 
 - **Definindo o modelo**:
 
-1. Crie uma classe chamada Livro que tenha atributos titulo e autor.
+1. Crie uma classe chamada Livro que tenha os atributos 'titulo' e 'autor'.
 
 - **Rota para listar livros**:
 
