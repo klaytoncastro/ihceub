@@ -103,7 +103,7 @@ Agora você está com o ambiente preparado e pronto para começar os laboratóri
 
 ### Exercício: Criar uma simples aplicação Flask para registro de livros
 
-- ** Objetivo **:  Crie uma aplicação Flask que permita ao usuário registrar um livro e listar todos os livros registrados. A aplicação não precisa usar um banco de dados; você pode armazenar os livros em uma lista por simplicidade.
+- **Objetivo**:  Crie uma aplicação Flask que permita ao usuário registrar um livro e listar todos os livros registrados. A aplicação não precisa usar um banco de dados; você pode armazenar os livros em uma lista. 
 
 ### Etapas:
 
