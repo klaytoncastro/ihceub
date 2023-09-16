@@ -22,7 +22,9 @@ Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, 
 3. Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.
 4. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
-6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal e inicie a máquina virtual (VM). 
+6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de Memória RAM, o que é inicialmente suficiente para nossos laboratórios. 
+7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button).  
+8. inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
 
