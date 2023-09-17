@@ -2,7 +2,7 @@
 
 Prezado(a), aluno(a)! Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da nossa jornada veremos os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. 
 
-Estabelecida essa base, aplicaremos tecnologias front-end, como HTML, CSS, Bootstrap e aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, arquitetura e comunicação de aplicações web modernas, com a camada de back-end fazendo uso de microsserviços e do microframework Python Flask. Também utilizaremos bancos de dados, relacionais ou não relacionais para construir aplicações web dinâmicas.
+Estabelecida essa base, aplicaremos tecnologias front-end, como HTML, CSS, Bootstrap e aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, arquitetura e comunicação de aplicações web modernas, com a camada de back-end fazendo uso de microsserviços e do microframework Python Flask. Também utilizaremos bancos de dados, relacionais ou não relacionais, para construir aplicações web dinâmicas.
 
 Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
@@ -96,9 +96,9 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 ### SQLite e MongoDB:
 
-- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento leve e ágil.
+- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil.
 
-- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de estruturas de dados variadas e complexas, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
+- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de estruturas semi-estruturadas de documentos, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
 
 ## 4. Preparando o Ambiente de Laboratório
 
@@ -136,7 +136,7 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 
 - **Resolução e Interface**: A console física do Virtual Box pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
-- **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps e SRE e trabalho em cloud. 
+- **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
 ### Pronto! 
 
