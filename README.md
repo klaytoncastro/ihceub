@@ -37,9 +37,9 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 
 ## 2. Configurando NAT no Oracle VirtualBox
 
-NAT é a implementação do recurso de Network Address Translation. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
+NAT é a implementação do recurso de tradução de endereços de rede (Network Address Translation). No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
 
-Além de fornecer acesso à Internet, o recurso NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que estarão acessíveis diretamente do host ou de outras máquinas na mesma rede. 
+Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser  alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
 
 ## Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
 
