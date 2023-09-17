@@ -47,7 +47,7 @@ NAT é a implementação do recurso de tradução de endereços de rede (Network
 
 Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser  alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
 
-## Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
+### Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
 
 1. **Inicie o Oracle VirtualBox** e selecione a máquina virtual que você deseja configurar.
 2. Clique em **Configurações** (ou Settings).
@@ -57,7 +57,7 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 6. Clique em **Redirecionamento de Portas**.
 7. Na janela de redirecionamento de portas, você pode adicionar regras para encaminhar portas da sua máquina host para a sua máquina virtual.
 
-## Exemplo de Tabela de Configuração de Portas:
+### Exemplo de Tabela de Configuração de Portas:
 
 | Nome da Regra | Protocolo | Endereço IP do Host | Porta do Host | Endereço IP da VM | Porta da VM |
 |---------------|-----------|---------------------|---------------|-------------------|-------------|
