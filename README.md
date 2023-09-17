@@ -55,10 +55,10 @@ Além de fornecer acesso à Internet, o recurso NAT do VirtualBox também permit
 
 | Nome da Regra | Protocolo | Endereço IP do Host | Porta do Host | Endereço IP da VM | Porta da VM |
 |---------------|-----------|---------------------|---------------|-------------------|-------------|
-| FlaskApp1     | TCP       | 127.0.0.1           | 2222          | 10.0.2.15         | 22          |
-| FlaskApp1     | TCP       | 127.0.0.1           | 8500          | 10.0.2.15         | 5000        |
-| FlaskApp2     | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
-| FlaskApp3     | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
+| Acesso SSH    | TCP       | 127.0.0.1           | 2222          | 10.0.2.15         | 22          |
+| FlaskApp 1    | TCP       | 127.0.0.1           | 8500          | 10.0.2.15         | 5000        |
+| FlaskApp 2    | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
+| FlaskApp 3    | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
 
 ## 2. Descrição das Ferramentas Utilizadas
 
