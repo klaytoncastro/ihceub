@@ -1,6 +1,10 @@
 # Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)
 
-Olá, aluno(a)! Bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Iniciaremos nossa jornada com os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Ao longo da disciplina, também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. Estabelecida essa base, teremos práticas com desenvolvimento de aplicações web, utilizando tecnologias front-end como HTML, CSS e Bootstrap. Em seguida, compreenderemos a comunicação back-end através do protocolo HTTP, utilizando o microframework Python Flask e explorando bancos de dados tanto relacionais quanto não relacionais para construção de aplicações com páginas dinâmicas. Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
+Prezado(a), aluno(a)! Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da nossa jornada veremos os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. 
+
+Estabelecida essa base, aplicaremos tecnologias front-end, como HTML, CSS, Bootstrap e aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, arquitetura e comunicação de aplicações web modernas, com a camada de back-end fazendo uso de microsserviços e do microframework Python Flask. Também utilizaremos bancos de dados, relacionais ou não relacionais para construir aplicações web dinâmicas.
+
+Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
 ### Configuração do Ambiente: 
 
@@ -10,11 +14,11 @@ Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (V
 
 ## 1. Sobre a Imagem OVA
 
+OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox.
+
 Oracle VirtualBox é um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
-OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais, contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o VirtualBox.
-
-Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, assegurando que os usuários tenham um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como 'docker', 'docker-compose', 'git' e 'ssh', otimizando a configuração dos ambientes de laboratório.
+Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como 'docker', 'docker-compose', 'git' e 'ssh', otimizando a configuração dos ambientes de laboratório.
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -23,7 +27,7 @@ Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, 
 4. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
 6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de Memória RAM, o que é inicialmente suficiente para nossos laboratórios. 
-7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button).  
+7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), de acordo com as configurações de endereço IP e Porta de publicação das suas aplicações. 
 8. Inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
@@ -31,23 +35,50 @@ Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, 
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
+## Configurando NAT no Oracle VirtualBox
+
+NAT é a implementação do recurso de Network Address Translation. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
+
+Além de fornecer acesso à Internet, o recurso NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que estarão acessíveis diretamente do host ou de outras máquinas na mesma rede. 
+
+## Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
+
+1. **Inicie o Oracle VirtualBox** e selecione a máquina virtual que você deseja configurar.
+2. Clique em **Configurações** (ou Settings).
+3. Na janela de configurações, vá para **Rede**.
+4. Sob a aba **Adaptador 1** (assumindo que está usando o adaptador padrão), certifique-se de que está configurado para **Conectado a: NAT**.
+5. Clique em **Avançado** para expandir as opções.
+6. Clique em **Redirecionamento de Portas**.
+7. Na janela de redirecionamento de portas, você pode adicionar regras para encaminhar portas da sua máquina host para a sua máquina virtual.
+
+## Exemplo de Tabela de Configuração de Portas:
+
+| Nome da Regra | Protocolo | Endereço IP do Host | Porta do Host | Endereço IP da VM | Porta da VM |
+|---------------|-----------|---------------------|---------------|-------------------|-------------|
+| FlaskApp1     | TCP       | 127.0.0.1           | 2222          | 10.0.2.15         | 22          |
+| FlaskApp1     | TCP       | 127.0.0.1           | 8500          | 10.0.2.15         | 5000        |
+| FlaskApp2     | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
+| FlaskApp3     | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
+
 ## 2. Descrição das Ferramentas Utilizadas
 
 ### Docker:
 
-No universo do desenvolvimento web, enfrentamos o desafio de gerenciar vários serviços integrados. Configurar cada um deles para operar em sintonia pode ser uma tarefa complexa. Aqui entra o Docker: uma solução que simplifica este processo ao permitir que aplicações sejam desenvolvidas e executadas em contêineres. Estes contêineres são unidades de software que agrupam o código da aplicação e suas dependências, garantindo que ela opere de maneira consistente em diferentes ambientes de computação. Imagine os contêineres como um pacote isolado contendo sua aplicação e tudo o que ela precisa para funcionar, assegurando a performance esperada em qualquer ambiente que tenha suporte ao Docker. Leves e flexíveis, os contêineres Docker iniciam rapidamente e são altamente portáteis. Assim, é viável criar um contêiner no seu computador pessoal e transferi-lo sem problemas para uma plataforma de nuvem ou servidor.
+No universo do desenvolvimento web, enfrentamos o desafio de gerenciar vários serviços integrados. Configurar cada um deles para operar em sintonia pode ser uma tarefa complexa. Aqui entra o Docker: uma solução que simplifica este processo ao permitir que aplicações sejam desenvolvidas e executadas em contêineres. Estes contêineres são unidades de software que agrupam o código da aplicação e suas dependências, garantindo que ela opere de maneira consistente em diferentes ambientes de computação. 
+
+Imagine os contêineres como um pacote isolado contendo sua aplicação e tudo o que ela precisa para funcionar, assegurando o funcionamento em qualquer ambiente que tenha suporte ao Docker. Leves e flexíveis, os contêineres Docker iniciam rapidamente e são altamente portáteis. Assim, é viável criar um contêiner no seu computador pessoal e transferi-lo sem problemas para uma plataforma de nuvem ou servidor.
 
 ### Docker Compose:
 
-O Docker Compose é uma ferramenta dentro do ecossistema Docker que simplifica a definição e gestão de aplicações multicontêiner. Com ele, é possível orquestrar aplicações complexas compostas por vários contêineres interligados, usando um único arquivo: docker-compose.yml. Com um comando simples (docker-compose up -d), todos os contêineres definidos no arquivo são iniciados simultaneamente, garantindo a integração e configuração correta de cada componente.
+O Docker Compose é uma ferramenta do ecossistema Docker e simplifica a definição e gestão de aplicações multicontêiner. Com ele, é possível orquestrar aplicações complexas compostas por vários contêineres interligados, usando um único arquivo: docker-compose.yml. Com um comando simples (docker-compose up -d), todos os contêineres definidos no arquivo são iniciados simultaneamente, garantindo a integração e configuração correta de cada componente.
 
 Imagine uma aplicação que envolve um servidor web, um banco de dados MongoDB e um cache Redis. Em vez de iniciar e configurar cada contêiner manualmente, com o Docker Compose, é possível definir toda essa configuração em um arquivo e ativá-la de uma vez, assegurando que cada contêiner esteja devidamente configurado e interligado.
 
-Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniência e eficiência, focando no uso das aplicações e eliminando preocupações com instalações e configurações manuais. A imagem OVA padronizada amplia esse benefício, permitindo a evolução e integração do ambiente, aproveitando o poder computacional do laboratório.
+Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniência e eficiência, focando no uso das aplicações e eliminando preocupações com instalações e configurações manuais de sistemas operacionais e bibliotecas. A imagem OVA padronizada amplia esse benefício, permitindo a evolução e integração do ambiente, viabilizando ainda a integração do poder computacional do laboratório para hospedagem de recursos distribuídos. 
 
 ### Flask, HTML, CSS, Javascript e Bootstrap: 
 
-- **Flask**: é um micro-framework web escrito em Python. É classificado como micro-framework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
+- **Flask**: é um microframework web escrito em Python. É classificado como microframework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
 
 - **HTML**: HTML (HyperText Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.
 
@@ -56,6 +87,12 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 - **JavaScript**: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas.
 
 - **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript pré-projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. 
+
+### SQLite e MongoDB:
+
+- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento leve e ágil.
+
+- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de estruturas de dados variadas e complexas, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
 
 ## 3. Preparando o Ambiente de Laboratório
 
