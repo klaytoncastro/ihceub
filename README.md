@@ -35,7 +35,7 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
-### Verifique o endereço IP da VM
+### Verifique o endereço IP da VM:
 
 ```bash
    ifconfig
@@ -98,7 +98,7 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 - **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil.
 
-- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de estruturas semi-estruturadas de documentos, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
+- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de dados semi-estruturados, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
 
 ## 4. Preparando o Ambiente de Laboratório
 
