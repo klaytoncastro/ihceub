@@ -35,7 +35,7 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
-## Configurando NAT no Oracle VirtualBox
+## 2. Configurando NAT no Oracle VirtualBox
 
 NAT é a implementação do recurso de Network Address Translation. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
 
@@ -60,7 +60,7 @@ Além de fornecer acesso à Internet, o recurso NAT do VirtualBox também permit
 | FlaskApp 2    | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
 | FlaskApp 3    | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
 
-## 2. Descrição das Ferramentas Utilizadas
+## 3. Descrição das Ferramentas Utilizadas
 
 ### Docker:
 
@@ -94,7 +94,7 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 - **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de estruturas de dados variadas e complexas, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
 
-## 3. Preparando o Ambiente de Laboratório
+## 4. Preparando o Ambiente de Laboratório
 
 Depois de acessar o ambiente virtual:
 
