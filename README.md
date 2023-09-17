@@ -35,6 +35,12 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
+### Verifique o endereço IP da VM
+
+```bash
+   ifconfig
+```
+
 ## 2. Configurando NAT no Oracle VirtualBox
 
 NAT é a implementação do recurso de tradução de endereços de rede (Network Address Translation). No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
