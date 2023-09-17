@@ -92,7 +92,7 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 - **JavaScript**: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas.
 
-- **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript pré-projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. 
+- **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. 
 
 ### SQLite e MongoDB:
 
@@ -115,10 +115,18 @@ Depois de acessar o ambiente virtual:
 3. Construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
-   cd /opt/ihceub
+   cd /opt/ihceub/<diretorio_da_aplicacao>
    docker-compose build
    docker-compose up -d
 ```
+
+4. Para criar e alterar os arquivos de configuração diretamente, utilize o o editor VIM:
+
+```bash
+   vim
+```
+
+- **Nota**: Para subir o código das suas aplicações e outras configurações necessárias, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos estas alternativas em aula.
 
 ### Usando o SSH para para conexão
 
