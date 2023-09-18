@@ -100,39 +100,39 @@ Nesse cenário, as aplicações web modernas são frequentemente estruturadas em
 
 ## 4. Preparando o Ambiente de Laboratório
 
-### Usando o SSH: Guia Básico
-
 SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável, especialmente útil para sistemas Windows. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
 - **Nota 1**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
-1. Conveniência e Eficiência
+### Conveniência e Eficiência
 
 - **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar _logs_ de erros, colar comandos, _scripts_, código, ou até mesmo movimentar arquivos entre _host_, VM e vice-versa. Essa funcionalidade torna a execução de tarefas muito mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
 
 - **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
-2. Evita as limitações da console "física".
+### Evita as limitações da console "física".
 
 - **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
-3. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
+### Usando o SSH: Guia Básico
 
-4. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
+1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
 
-5. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
+2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
 
-6. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
+3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
 
-- **Nota 2**: No ambiente do laboratório trabalharemos predominantemente com o modo NAT e, em princípio, com apenas uma VM instanciada. A escolha pelo NAT em laboratório é motivada por questões de isolamento e segurança, uma vez que este modo permite que a VM acesse a Internet (através do _host_), mas não torna a VM diretamente acessível de outras máquinas na rede externa.
+4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
 
-- **Nota 3**: A reinicialização da VM não impacta a conexão SSH em função da configuração do modo NAT e redirecionamento de portas. Acessos via navegador seguem a lógica similar, usando a URL `http://localhost:<numero_da_porta_redirecionadora>`.
+- **Nota 1**: No ambiente do laboratório trabalharemos predominantemente com o modo NAT e, em princípio, com apenas uma VM instanciada. A escolha pelo NAT em laboratório é motivada por questões de isolamento e segurança, uma vez que este modo permite que a VM acesse a Internet (através do _host_), mas não torna a VM diretamente acessível de outras máquinas na rede externa.
 
-- **Nota 4**: Em redes domésticas, o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local. Isso implica que, para acessar serviços na VM, como aplicações web, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta_da_vm>`. Para conhecer o IP interno da VM, execute o comando `ifconfig` a partir de sua console física. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta `22`. 
+- **Nota 2**: A reinicialização da VM não impacta a conexão SSH em função da configuração do modo NAT e redirecionamento de portas. Acessos via navegador seguem a lógica similar, usando a URL `http://localhost:<numero_da_porta_redirecionadora>`.
 
-7. Depois de acessar o ambiente virtual, baixe os arquivos do projeto:
+- **Nota 3**: Em redes domésticas, o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local. Isso implica que, para acessar serviços na VM, como aplicações web, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta_da_vm>`. Para conhecer o IP interno da VM, execute o comando `ifconfig` a partir de sua console física. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta `22`. 
+
+5. Depois de acessar o ambiente virtual, baixe os arquivos do projeto:
 
 ```bash   
    sudo su -
@@ -140,7 +140,7 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
    git clone https://github.com/klaytoncastro/ihceub
 ```
 
-8. Construa e inicie os serviços usando o Docker Compose. 
+6. Construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
    cd /opt/ihceub/<diretorio_da_aplicacao>
@@ -148,7 +148,7 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
    docker-compose up -d
 ```
 
-9. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor Vim, opção bastante robusta e versátil para terminais Linux. 
+7. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor Vim, opção bastante robusta e versátil para terminais Linux. 
 
 ### Usando o Vim: Guia Básico
 
@@ -197,7 +197,7 @@ O Vim é uma ferramenta especialmente útil administradores de sistemas e desenv
 
 - Como alternativa ainda mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
 
-- **Nota 5**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
+- **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
 
 ### Usando Docker e Docker Compose: Guia Básico
 
@@ -298,7 +298,7 @@ chmod +x docker-cleanup.sh
 ./docker-cleanup.sh
 ```
 
-- **Nota 6**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Para evitar a remoção inadvertida de recursos importantes, certifique-se de entender o que ele faz antes de executá-lo. Lembre-se que, ao executá-lo, apenas os contêineres em execução serão mantidos no armazenamento da VM. 
+- **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Para evitar a remoção inadvertida de recursos importantes, certifique-se de entender o que ele faz antes de executá-lo. Lembre-se que, ao executá-lo, apenas os contêineres em execução serão mantidos no armazenamento da VM. 
 
 ### Pronto! 
 
