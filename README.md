@@ -1,22 +1,24 @@
 # Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)
 
-Prezado(a), aluno(a)! Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da nossa jornada veremos os fundamentos do Design de Produto, UX (Experiência do Usuário) e UI (Interface do Usuário). Também discutiremos ferramentas e técnicas para promover um desenvolvimento ágil. 
+Prezado(a), aluno(a), 
 
-Estabelecida essa base, aplicaremos tecnologias front-end, como HTML, CSS, Bootstrap e aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, arquitetura e comunicação de aplicações web modernas, com a camada de back-end fazendo uso de microsserviços e do microframework Python Flask. Também utilizaremos bancos de dados, relacionais ou não relacionais, para construir aplicações web dinâmicas.
+Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da disciplina veremos os fundamentos do Design de Produto, UX - User eXperience (Experiência do Usuário), UI - User Interface (Interface do Usuário) e discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil de soluções em IHC. 
+
+Estabelecida essa base, aplicaremos tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap. Também aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, sua arquitetura e comunicação de aplicações web modernas com a camada de back-end, introduzindo o uso de microsserviços e do microframework Python Flask. A seguir, utilizaremos bancos de dados, relacionais ou não relacionais, para demonstrar a construção de aplicações web dinâmicas. 
 
 Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
 ### Configuração do Ambiente: 
 
-Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.
+Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, adotar esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.
 
-- **Nota**: Se você tem experiência com Docker e prefere executá-lo diretamente no seu sistema operacional, sinta-se à vontade. A estrutura do repositório suporta este modo de operação. Para os usuários dos hardwares mais recentes da Apple, como o M2 e outros processadores novos, é especialmente relevante considerar esta opção, visto que algumas versões do Oracle Virtual Box podem não ser compatíveis com esses dispositivos. 
+- **Nota**: Se você tem experiência com Docker e prefere executá-lo diretamente no seu sistema operacional, sinta-se à vontade. A estrutura do repositório suporta este modo de operação. Para os usuários dos hardwares mais recentes da Apple, como o M2 e outros processadores novos, é especialmente relevante considerar esta opção, visto que algumas versões do Oracle Virtual Box podem não ser compatíveis com estes dispositivos. 
 
 ## 1. Sobre a Imagem OVA
 
-OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox.
+OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
 
-Oracle VirtualBox é um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
+Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
 Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como 'docker', 'docker-compose', 'git' e 'ssh', otimizando a configuração dos ambientes de laboratório.
 
@@ -27,7 +29,7 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 4. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
 6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de Memória RAM, o que é inicialmente suficiente para nossos laboratórios. 
-7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), de acordo com as configurações de endereço IP e Porta de publicação das suas aplicações. 
+7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), conforme as configurações de endereço IP e Porta de publicação das suas aplicações. 
 8. Inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
@@ -43,9 +45,9 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 
 ## 2. Configurando NAT no Oracle VirtualBox
 
-NAT é a implementação do recurso de tradução de endereços de rede (Network Address Translation). No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
+NAT (Network Address Translation) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
 
-Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser  alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
+Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
 
 ### Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
 
@@ -84,7 +86,7 @@ Dessa forma, com as ferramentas Docker e Docker Compose, ganhamos em conveniênc
 
 ### Flask, HTML, CSS, Javascript e Bootstrap: 
 
-- **Flask**: é um microframework web escrito em Python. É classificado como microframework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos.
+- **Flask**: é um microframework web escrito em Python. É classificado como microframework porque não exige determinadas ferramentas ou bibliotecas. É flexível e extensível, ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos. 
 
 - **HTML**: HTML (HyperText Markup Language) é a linguagem padrão para criar páginas e aplicações web. Combinada com tecnologias como JavaScript e CSS, permite a construção de sites interativos e visualmente atrativos.
 
@@ -112,7 +114,7 @@ Depois de acessar o ambiente virtual:
    git clone https://github.com/klaytoncastro/ihceub
 ```
 
-3. Construa e inicie os serviços usando o Docker Compose. 
+2. Construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
    cd /opt/ihceub/<diretorio_da_aplicacao>
@@ -120,13 +122,53 @@ Depois de acessar o ambiente virtual:
    docker-compose up -d
 ```
 
-4. Para criar e alterar os arquivos de configuração diretamente, utilize o o editor VIM:
+3. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor VIM, opção bastante robusta e versátil para terminais Linux:
 
-```bash
-   vim
-```
+### Vim: Guia Básico
 
-- **Nota**: Para subir o código das suas aplicações e outras configurações necessárias, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos estas alternativas em aula.
+O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e muitos consideram-no um editor indispensável, especialmente administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos complexos com poucos comandos. Neste guia, focaremos apenas nas operações básicas: abrir, editar e salvar arquivos. Lembre-se de que o Vim é uma ferramenta profunda e poderosa, e há muito a aprender além destes comandos básicos: 
+
+1. **Abrir um arquivo**
+    ```bash
+    vim <nome_do_arquivo.py>
+    ```
+
+2. **Modo de Inserção**
+
+    Após abrir ou criar um arquivo com o Vim, você estará no modo normal. Para inserir ou editar texto, você deve entrar no modo de inserção pressionando `Insert`.
+
+3. **Salvar alterações**
+
+    Para salvar as alterações feitas no arquivo, primeiro pressione `Esc` para retornar ao modo normal, depois digite `:w` e pressione `Enter`.
+
+4. **Sair do Vim**
+
+    - Sem salvar as alterações: Pressione `Esc` (para garantir que você está no modo normal), depois digite `:q!` e pressione `Enter`.
+    - Após salvar as alterações: Digite `:wq` e pressione `Enter` ou apenas `:x`.
+
+5. **Editar texto**
+
+    No modo de inserção (após pressionar `i`), você pode editar o texto como em qualquer outro editor. Quando terminar, pressione `Esc` para voltar ao modo normal.
+
+6. **Exibindo Números de Linha**
+
+    Para exibir os números de linha no Vim, no modo normal, digite:
+    
+    ```bash
+    :set number
+    ```
+    - Isso é útil porque facilita a navegação, a leitura e a referência a partes específicas do arquivo, especialmente em arquivos grandes ou quando se está fazendo depuração de código.
+
+7. **Deletar uma Linha**
+
+    No modo normal, posicione-se na linha que deseja deletar e digite `dd`.
+
+### Dicas
+
+- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua eficiência ao editar arquivos. Recomenda-se explorar mais o Vim conforme você se familiariza com os comandos básicos.
+- Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` várias vezes e então digitar `:q!` o levará de volta ao terminal, descartando todas as alterações.
+
+- **Nota**: Para subir o código das suas aplicações e outras configurações necessárias, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos estas abordagens em sala de aula.
 
 ### Usando o SSH para para conexão
 
@@ -145,6 +187,83 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 - **Resolução e Interface**: A console física do Virtual Box pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
+
+### Docker & Docker Compose: Guia Básico
+
+Docker e Docker Compose são ferramentas essenciais ao desenvolvedor moderno, facilitando a criação e acelerando a distribuição e execução de aplicações em ambientes consistentes, isolados e reproduzíveis. Através de contêineres, o Docker proporciona uma maneira eficaz de encapsular uma aplicação com todas as suas dependências, garantindo que ela funcione de maneira idêntica, independentemente de onde seja executada.
+
+Por outro lado, o Docker Compose é uma ferramenta que facilita a definição e execução de aplicações multi-contêiner com o Docker. Com ele, é possível definir um conjunto de contêineres, suas configurações e dependências em um único arquivo e, em seguida, executar todo o conjunto com um único comando, sendo ideal para desenvolvimento local, teste e integração contínua.
+
+Há uma extensa documentação disponível e uma comunidade bastante ativa. Recomenda-se a leitura da documentação oficial para se aprofundar se desejado, mas este guia básico é suficiente para iniciar a utilizar rapidamente as ferramentas. 
+
+### Docker: Comandos Básicos
+
+1. **Baixar uma imagem do Docker Hub**
+    ```bash
+    docker pull <imagem>:<tag>
+    ```
+
+2. **Listar todas as imagens no seu sistema**
+    ```bash
+    docker images
+    ```
+
+3. **Rodar um contêiner a partir de uma imagem**
+    ```bash
+    docker run <opções> <imagem>
+    ```
+
+4. **Listar contêineres em execução**
+    ```bash
+    docker ps
+    ```
+
+5. **Listar todos os contêineres**
+    ```bash
+    docker ps -a
+    ```
+
+6. **Parar um contêiner**
+    ```bash
+    docker stop <contêiner_id_ou_nome>
+    ```
+
+7. **Visualizar logs de um contêiner**
+    ```bash
+    docker logs <contêiner_id_ou_nome>
+    ```
+
+8. **Remover um contêiner**
+    ```bash
+    docker rm <contêiner_id_ou_nome>
+    ```
+
+### Docker Compose: Comandos Básicos
+
+1. **Iniciar serviços definidos no `docker-compose.yml` em modo interativo**
+    ```bash
+    docker-compose up
+    ```
+
+2. **Iniciar serviços definidos no `docker-compose.yml` em segundo plano**
+    ```bash
+    docker-compose up -d
+    ```
+
+3. **Parar serviços**
+    ```bash
+    docker-compose down
+    ```
+
+4. **Listar os serviços em execução**
+    ```bash
+    docker-compose ps
+    ```
+
+5. **Visulizar logs**
+    ```bash
+    docker-compose logs
+    ```
 
 ### Pronto! 
 
