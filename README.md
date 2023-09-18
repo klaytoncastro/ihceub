@@ -10,19 +10,19 @@ Este repositório foi projetado para auxiliá-lo na configuração e no gerencia
 
 ### Configuração do Ambiente: 
 
-Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Embora o Docker seja compatível com diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos. Isso assegura que todos os alunos tenham um ambiente consistente, minimizando complicações decorrentes de diferenças de hardware e versões de software. 
+Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Embora o Docker seja compatível para rodar diretamente em diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos, assegurando que todos os estudantes tenham acesso a um ambiente consistente e minimizando complicações decorrentes de diferenças de hardware e versões de software. 
 
 ## 1. Sobre a Imagem OVA
 
-OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
+OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, viabilizando uma implantação fácil em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
 
-Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
+O Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
 Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração do laboratório.
 
 Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de _front-end_. 
 
-- **Nota**: O uso da VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
+- **Nota**: O uso de uma VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, ele não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -41,9 +41,9 @@ Além disso, a imagem OVA padronizada otimiza a integração, potencializando a 
 
 ## 2. Compreendendo o modo NAT no VirtualBox
 
-NAT (_Network Address Translation_) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
+NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo IP do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
 
-Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
+Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, que poderão ser alcançados diretamente do _host_ ou a partir de outras máquinas na mesma rede, a exemplo das aplicações web e interfaces de gerenciamento com as quais iremos trabalhar no laboratório. 
 
 ### Como configurar o Redirecionamento de Portas no VirtualBox:
 
@@ -72,17 +72,17 @@ Um _Framework_ é uma estrutura pré-projetada de componentes que fornece aos de
 
 Nesse cenário, as aplicações web modernas são frequentemente estruturadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. Em conjunto, estas camadas proporcionam uma experiência homogênea ao usuário e uma arquitetura de referência para engenheiros de software e plataforma. A seguir, segue diagrama simplificado de nossa arquitetura de referência: 
 
-![Diagrama de Arquitetura da Aplicação](./puml/app-architecture.svg)
+![Arquitetura de Referência](./puml/app-architecture.svg)
 
 ### Front-End:
 
-- **HTML**: HTML (_HyperText Markup Language_) é a linguagem padrão para criar páginas e aplicações web, sendo fundamental para definir a estrutura de uma página web, como cabeçalhos, parágrafos, links, imagens e outros elementos.
+- **HTML**: HTML (_HyperText Markup Language_) é a linguagem padrão para criar páginas e aplicações web, sendo fundamental para definir a estrutura de uma página web, como cabeçalhos, parágrafos, _links_, imagens e outros elementos.
 
 - **CSS**: CSS (_Cascading Style Sheets_) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser customizados e exibidos. CSS é essencial para personalizar a aparência de um _site_, pois permite que os desenvolvedores apliquem estilos, animações e _layouts_ consistentes em diferentes dispositivos e tamanhos de tela.
 
 - **JavaScript**: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas. Com o JavaScript, os desenvolvedores podem criar aplicações web mais atraentes, contendo carrosséis de imagens, formulários interativos, gráficos animados e até mesmo jogos. 
 
-- **Bootstrap**: É um _framework_ front-end gratuito e de código aberto, utilizado para desenvolvimento web e responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. É uma escolha popular entre os desenvolvedores, pois fornece uma base sólida para criar sites responsivos rapidamente. Com sua ampla gama de componentes prontos para uso, podemos acelerar o processo de desenvolvimento e manter a consistência do _design_. 
+- **Bootstrap**: É um _framework_ gratuito e de código aberto, utilizado para desenvolvimento web e responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. É uma escolha popular entre os desenvolvedores, pois fornece uma base sólida para criar sites responsivos rapidamente. Com sua ampla gama de componentes prontos para uso, podemos acelerar o processo de desenvolvimento e manter a consistência do _design_. 
 
 ### Back-End:
 
@@ -102,11 +102,11 @@ Nesse cenário, as aplicações web modernas são frequentemente estruturadas em
 
 ### Usando o SSH: Guia Básico
 
-SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
+SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável, especialmente útil para sistemas Windows. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
-- **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
+- **Nota 1**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
-1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o redirecionamento de portas no VirtualBox para encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
+1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
 
 2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
 
@@ -114,7 +114,11 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
 
-- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas (NAT), você ainda pode se conectar usando o IP `127.0.0.1` do `localhost` e a porta `2222` do redirecionamento, já que essa configuração é feita no _host_ e não depende do IP da VM. O mesmo conceito se aplica para acessar suas aplicações via navegador. Você pode acessar `http:\\localhost:<numero_da_porta>`. 
+- **Nota 2**: A reinicialização da VM não impacta a conexão SSH graças ao modo NAT e redirecionamento de portas. Acessos via navegador seguem a lógica similar, usando a URL `http://localhost:<numero_da_porta>`.
+
+- **Nota 3**: No ambiente do laboratório trabalharemos predominantemente com o modo NAT e, em princípio, com apenas uma VM instanciada. A escolha pelo NAT em laboratório é motivada por questões de isolamento e segurança, uma vez que este modo permite que a VM acesse a Internet (através do _host_), mas não torna a VM diretamente acessível de outras máquinas na rede externa.
+
+- **Nota 4**: Em redes domésticas, o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local. Isso implica que, para acessar serviços na VM, como aplicações web, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta>`. Para conhecer o IP interno da VM, execute o comando `ifconfig` a partir de sua console física. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta 22. 
 
 5. Conveniência e Eficiência
 
