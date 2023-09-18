@@ -20,7 +20,9 @@ OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais (V
 
 Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
-Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração dos ambientes de laboratório.
+Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração do laboratório.
+
+Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de front-end. 
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -94,7 +96,7 @@ Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas
 
 - **Docker**: No desenvolvimento web, gerenciar serviços integrados pode ser desafiador. Docker simplifica essa tarefa, permitindo que aplicações sejam encapsuladas em contêineres. Essas unidades contêm o código e suas dependências, assegurando operação consistente em diferentes ambientes. Imagine contêineres como pacotes isolados com tudo necessário para sua aplicação funcionar, prontos para operar onde o Docker estiver disponível. Esses contêineres são leves, rápidos de iniciar e facilmente transferidos entre seu computador e plataformas em nuvem.
 
-- **Docker Compose**: O Docker Compose, parte do ecossistema Docker, facilita a gestão de aplicações multicontêiner através de um arquivo docker-compose.yml. Com o comando docker-compose up -d, todos os contêineres no arquivo são ativados juntos, assegurando sua correta configuração e integração. Por exemplo, ao invés de configurar manualmente contêineres para um servidor web, MongoDB e Redis, o Docker Compose permite fazer isso centralizadamente em um arquivo. Com isso, eliminamos a complexidade das instalações manuais, aumentando a conveniência e eficiência. Além disso, a imagem OVA padronizada otimiza a integração do ambiente, potencializando a infraestrutura do laboratório para recursos distribuídos.
+- **Docker Compose**: O Docker Compose, parte do ecossistema Docker, facilita a gestão de aplicações multicontêiner através de um arquivo docker-compose.yml. Com o comando docker-compose up -d, todos os contêineres no arquivo são ativados juntos, assegurando sua correta configuração e integração. Por exemplo, ao invés de configurar manualmente contêineres para um servidor web, MongoDB e Redis, o Docker Compose permite fazer isso centralizadamente em um arquivo. Com isso, eliminamos a complexidade das instalações manuais, aumentando a conveniência e eficiência. 
 
 ## 4. Preparando o Ambiente de Laboratório
 
