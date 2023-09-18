@@ -39,12 +39,6 @@ Além disso, a imagem OVA padronizada otimiza a integração, potencializando a 
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
-### Verifique o endereço IP da VM:
-
-```bash
-   ifconfig
-```
-
 ## 2. Entendendo o modo NAT no Oracle VirtualBox
 
 NAT (Network Address Translation) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
@@ -170,17 +164,27 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 ### Usando o SSH para conexão
 
-SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. 
+SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão portable pode ser baixada e usada diretamente em nossos laboratórios. 
 
-- **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las em nossos laboratórios. 
+- **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
-1. Conveniência e Eficiência
+1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos o redirecionamento de portas no VirtualBox para encaminhar a porta 2222 do host para a porta 22 da VM. 
+
+2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
+
+3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
+
+4. Você será solicitado a fornecer um nome de usuário. Digite labihc e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
+
+- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas, você ainda pode se conectar usando 127.0.0.1 e a porta 2222, já que essa configuração é feita no host e não depende do IP da VM. 
+
+5. Conveniência e Eficiência
 
 - **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
 
 - **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
-2. Evita limitações da console "física"
+6. Evita as limitações da console "física"
 
 - **Resolução e Interface**: A console física do Virtual Box pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
@@ -285,7 +289,7 @@ chmod +x docker-cleanup.sh
 ./docker-cleanup.sh
 ```
 
-- **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Certifique-se de revisar o script e entender o que ele faz antes de executá-lo para evitar a remoção inadvertida de recursos importantes. Ao executá-lo, apenas os contêires em execução serão mantidos no armazenamento da VM. 
+- **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Para evitar a remoção inadvertida de recursos importantes, certifique-se de entender o que ele faz antes de executá-lo. Lembre-se que, ao executá-lo, apenas os contêineres em execução serão mantidos no armazenamento da VM. 
 
 ### Pronto! 
 
