@@ -100,6 +100,8 @@ Nesse cenário, as aplicações web modernas são frequentemente estruturadas em
 
 ## 4. Preparando o Ambiente de Laboratório
 
+### Usando o SSH: Guia Básico
+
 SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável, especialmente útil para sistemas Windows. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
 - **Nota 1**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
@@ -110,13 +112,13 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 - **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
-### Evita as limitações da console "física".
+### Evita as limitações da console "física"
 
 - **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
-### Usando o SSH: Guia Básico
+### Como se conectar ao ambiente virtual:
 
 1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
 
