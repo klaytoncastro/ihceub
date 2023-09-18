@@ -100,9 +100,35 @@ Nesse cenário, as aplicações web modernas são frequentemente estruturadas em
 
 ## 4. Preparando o Ambiente de Laboratório
 
-Depois de acessar o ambiente virtual:
+### Usando o SSH: Guia Básico
 
-1. Baixe os arquivos do projeto:
+SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
+
+- **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
+
+1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o redirecionamento de portas no VirtualBox para encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
+
+2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
+
+3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
+
+4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
+
+- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas (NAT), você ainda pode se conectar usando o IP `127.0.0.1` do `localhost` e a porta `2222` do redirecionamento, já que essa configuração é feita no _host_ e não depende do IP da VM. O mesmo conceito se aplica para acessar suas aplicações via navegador. Você pode acessar `http:\\localhost:<numero_da_porta>`. 
+
+5. Conveniência e Eficiência
+
+- **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
+
+- **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
+
+6. Evita as limitações da console "física".
+
+- **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
+
+- **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
+
+7. Depois de acessar o ambiente virtual, baixe os arquivos do projeto:
 
 ```bash   
    sudo su -
@@ -110,7 +136,7 @@ Depois de acessar o ambiente virtual:
    git clone https://github.com/klaytoncastro/ihceub
 ```
 
-2. Construa e inicie os serviços usando o Docker Compose. 
+8. Construa e inicie os serviços usando o Docker Compose. 
 
 ```bash
    cd /opt/ihceub/<diretorio_da_aplicacao>
@@ -118,11 +144,11 @@ Depois de acessar o ambiente virtual:
    docker-compose up -d
 ```
 
-3. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor VIM, opção bastante robusta e versátil para terminais Linux:
+9. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor Vim, opção bastante robusta e versátil para terminais Linux. 
 
 ### Usando o Vim: Guia Básico
 
-O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e muitos consideram-no um editor indispensável, especialmente administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos complexos com poucos comandos. Neste guia, focaremos apenas nas operações básicas: abrir, editar e salvar arquivos. Lembre-se de que o Vim é uma ferramenta profunda e poderosa, e há muito a aprender além destes comandos básicos: 
+O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e muitos consideram-no um editor indispensável, especialmente administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos complexos com poucos comandos. Neste guia, focaremos apenas nas operações básicas: abrir, editar e salvar arquivos. Lembre-se de que o Vim é uma ferramenta poderosa e há muito a aprender além destes comandos básicos. 
 
 1. **Abrir um arquivo**
     ```bash
@@ -161,41 +187,13 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 ### Dicas
 
-- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua eficiência ao editar arquivos. Você pode explorar a ferramenta muito mais, enquanto se familiariza com os comandos básicos, essenciais para configurar um sistema operacional baseado em terminal. Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` e então digite `:q!`. Este comando o levará de volta ao terminal, descartando todas as alterações realizadas.
+- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua produtividade ao editar arquivos. Enquanto se familiariza com os comandos básicos, essenciais para configurar um sistema operacional baseado em terminal, você pode explorar a ferramenta muito mais. Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` e então digite `:q!`. Este comando o levará de volta ao terminal, descartando todas as alterações realizadas.
 
 - Como alternativa ao Putty e Vim, visando uma experiência mais integrada e amigável para trabalhar com o **código das suas aplicações** em casa, recomenda-se instalar um IDE (_Integrated Development Environment_) como o [Visual Code Studio](https://visualstudio.microsoft.com/pt-br/downloads/). Você pode equipá-lo com o _plugin SSH Remote_ ou utilizar uma ferramenta de transferência de arquivos com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php), para movimentar o código entre o _host_ e a VM. 
 
-- Como alternativa mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
+- Como alternativa ainda mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
 
 - **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
-
-### Usando o SSH: Guia Básico
-
-SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
-
-- **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
-
-1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o redirecionamento de portas no VirtualBox para encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
-
-2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
-
-3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
-
-4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
-
-- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas (NAT), você ainda pode se conectar usando o IP `127.0.0.1` do `localhost` e a porta `2222` do redirecionamento, já que essa configuração é feita no _host_ e não depende do IP da VM. O mesmo conceito se aplica para acessar suas aplicações via navegador. Você pode acessar `http:\\localhost:<numero_da_porta>`. 
-
-5. Conveniência e Eficiência
-
-- **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
-
-- **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
-
-6. Evita as limitações da console "física".
-
-- **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
-
-- **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
 ### Usando Docker e Docker Compose: Guia Básico
 
