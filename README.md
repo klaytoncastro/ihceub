@@ -72,7 +72,11 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 ## 3. Descrição das Ferramentas Utilizadas
 
-Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas principais: Front-End, Back-End e Infraestrutura. O Front-End refere-se à interface com a qual o usuário interage diretamente e compreende tudo o que é visível em uma interface, a exemplo do navegador web do desktop ou celular. Já o Back-End é responsável pela lógica, processamento de dados e comunicação com bancos de dados, atuando como a "cozinha" de uma aplicação, onde todos os processos críticos ocorrem. Por fim, a Infraestrutura é a base sobre a qual toda a aplicação é construída e operada, envolvendo soluções de hospedagem, contêineres e outras ferramentas visando a disponibilidade, escalabilidade e segurança da aplicação. Juntas, essas camadas proporcionam uma experiência fluida e coesa para o usuário final e facilitam o desenvolvimento e manutenção para os engenheiros de software e desenvolvedores. 
+Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas principais: Front-End, Back-End e Infraestrutura. O Front-End refere-se à interface com a qual o usuário interage diretamente e compreende tudo o que é visível em uma interface, a exemplo do navegador web do desktop ou celular. Já o Back-End é responsável pela lógica, processamento de dados e comunicação com bancos de dados, atuando como a "cozinha" de uma aplicação, onde todos os processos críticos ocorrem. Por fim, a Infraestrutura é a base sobre a qual toda a aplicação é construída e operada, envolvendo soluções de hospedagem, contêineres e outras ferramentas visando a disponibilidade, escalabilidade e segurança da aplicação. 
+
+![Diagrama de Arquitetura da Aplicação](./puml/app-architecture.svg)
+
+Juntas, essas camadas proporcionam uma experiência fluida e coesa para o usuário final e facilitam o desenvolvimento e manutenção para os engenheiros de software e desenvolvedores. 
 
 ### Front-End:
 
