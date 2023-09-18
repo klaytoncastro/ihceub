@@ -39,7 +39,7 @@ Além disso, a imagem OVA padronizada otimiza a integração, potencializando a 
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
-## 2. Entendendo o modo NAT no VirtualBox
+## 2. Compreendendo o modo NAT no VirtualBox
 
 NAT (_Network Address Translation_) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
 
@@ -66,7 +66,7 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 - **Nota**: Ao configurar o redirecionamento de portas, evite as portas 0-1023, pois são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre certifique-se de que a porta escolhida não esteja em uso. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação. 
 
-## 3. Descrição das Ferramentas Utilizadas
+## 3. Descrição da Arquitetura e Ferramentas Utilizadas
 
 Um _Framework_ é uma estrutura pré-projetada de componentes que fornece aos desenvolvedores uma base robusta para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece um conjunto padrão de funcionalidades, ferramentas e práticas já reconhecidas, permitindo que os desenvolvedores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento e minimizando erros de implementação. Ao se optar por um _framework_, busca-se alinhar-se às melhores práticas estabelecidas pelo mercado. Assim, no contexto da construção de aplicações web modernas e da aplicação prática dos conceitos de IHC, é imperativo explorar os _frameworks_ de destaque na indústria, cada um com suas peculiaridades e benefícios.
 
