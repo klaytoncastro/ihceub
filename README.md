@@ -4,7 +4,7 @@ Prezado(a) aluno(a),
 
 Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário) e UI - _User Interface_ (Interface do Usuário). Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
 
-Com essa base estabelecida, daremos ênfase às tecnologias como HTML, CSS, JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o microframework web Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
+Com essa base estabelecida, daremos ênfase às tecnologias HTML, CSS, JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o microframework web Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
 
 Este documento foi preparado para auxiliar a configuração e gerenciamento dessas ferramentas. Siga atentamente as instruções abaixo para preparar seu ambiente.
 
