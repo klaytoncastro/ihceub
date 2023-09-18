@@ -2,27 +2,27 @@
 
 Prezado(a), aluno(a), 
 
-Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da disciplina veremos os fundamentos do Design de Produto, UX - User eXperience (Experiência do Usuário), UI - User Interface (Interface do Usuário) e discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil de soluções em IHC. 
+Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da disciplina veremos os fundamentos do _Design de Produto_, UX - _User eXperience_ (Experiência do Usuário), UI - _User Interface_ (Interface do Usuário) e discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil de soluções em IHC. 
 
-Estabelecida essa base, aplicaremos tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap. Também aprofundaremos nossa compreensão sobre o uso do protocolo HTTP, sua arquitetura e comunicação de aplicações web modernas com a camada de back-end, introduzindo o uso de microsserviços e do microframework Python Flask. A seguir, utilizaremos bancos de dados, relacionais ou não relacionais, para demonstrar a construção de aplicações web dinâmicas. 
+Estabelecida essa base, aplicaremos tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap. Também aprofundaremos nossa compreensão sobre o uso do protocolo HTTP (_Hypertext Transfer Protocol_), sua arquitetura e comunicação de aplicações web modernas com a camada de back-end, introduzindo o uso de microsserviços e do microframework Python Flask. A seguir, utilizaremos bancos de dados, relacionais ou não relacionais, para demonstrar a construção de aplicações web dinâmicas. 
 
 Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
 ### Configuração do Ambiente: 
 
-Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, adotar esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.
+Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, adotar esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.
 
 - **Nota**: Se você tem experiência com Docker e prefere executá-lo diretamente no seu sistema operacional, sinta-se à vontade. A estrutura do repositório suporta este modo de operação. Para os usuários dos hardwares mais recentes da Apple, como o M2 e outros processadores novos, é especialmente relevante considerar esta opção, visto que algumas versões do Oracle Virtual Box podem não ser compatíveis com estes dispositivos. 
 
 ## 1. Sobre a Imagem OVA
 
-OVA (Open Virtual Appliance) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
+OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
 
 Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
 Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração do laboratório.
 
-Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de front-end. 
+Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de _front-end_. 
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -39,15 +39,15 @@ Além disso, a imagem OVA padronizada otimiza a integração, potencializando a 
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
-## 2. Entendendo o modo NAT no Oracle VirtualBox
+## 2. Entendendo o modo NAT no VirtualBox
 
-NAT (Network Address Translation) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina host (seu desktop de laboratório ou notebook pessoal) age como um gateway e a VM parece estar atrás de uma rede privada.
+NAT (_Network Address Translation_) é a implementação do recurso de tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o IP do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
 
 Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no host para uma porta na VM. Isso é especialmente útil quando você deseja acessar serviços hospedados na VM, como as aplicações web e interfaces de gerenciamento, que poderão ser alcançadas diretamente do host ou mesmo a partir de outras máquinas na mesma rede. 
 
-### Como configurar o Redirecionamento de Portas no Oracle VirtualBox:
+### Como configurar o Redirecionamento de Portas no VirtualBox:
 
-1. **Inicie o Oracle VirtualBox** e selecione a máquina virtual que você deseja configurar.
+1. **Inicie o VirtualBox** e selecione a máquina virtual que você deseja configurar.
 2. Clique em **Configurações** (ou Settings).
 3. Na janela de configurações, vá para **Rede**.
 4. Sob a aba **Adaptador 1** (assumindo que está usando o adaptador padrão), certifique-se de que está configurado para **Conectado a: NAT**.
@@ -64,35 +64,37 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 | FlaskApp 2    | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
 | FlaskApp 3    | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
 
+- **Nota**: Ao configurar o redirecionamento de portas, evite as portas 0-1023, pois são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre certifique-se de que a porta escolhida não esteja em uso. Ferramentas como `netstat` podem ajudar na verificação.
+
 ## 3. Descrição das Ferramentas Utilizadas
 
-Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas principais: Front-End, Back-End e Infraestrutura. O Front-End refere-se à interface com a qual o usuário interage diretamente e compreende tudo o que é visível em uma interface, a exemplo do navegador web do desktop ou celular. Já o Back-End é responsável pela lógica, processamento de dados e comunicação com bancos de dados, atuando como a "cozinha" de uma aplicação, onde todos os processos críticos ocorrem. Por fim, a Infraestrutura é a base sobre a qual toda a aplicação é construída e operada, envolvendo soluções de hospedagem, contêineres e outras ferramentas visando a disponibilidade, escalabilidade e segurança da aplicação. Juntas, essas camadas proporcionam uma experiência fluida e coesa para o usuário final e facilitam a construção e manutenção para os engenheiros de software, plataforma e desenvolvedores: 
+Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas principais: _Front-End_, _Back-End_ e Infraestrutura. O _Front-End_ refere-se à interface com a qual o usuário interage diretamente e compreende tudo o que é visível em uma interface, a exemplo do navegador web do desktop ou celular. Já o _Back-End_ é responsável pela lógica, processamento de dados e comunicação com bancos de dados, atuando como a "cozinha" de uma aplicação, onde todos os processos críticos ocorrem. Por fim, a Infraestrutura é a base sobre a qual toda a aplicação é construída e operada, envolvendo soluções de hospedagem, contêineres e outras ferramentas visando a disponibilidade, escalabilidade e segurança da aplicação. Juntas, essas camadas proporcionam uma experiência fluida e coesa para o usuário final e facilitam a construção e manutenção para os engenheiros de software, plataforma e desenvolvedores: 
 
 ![Diagrama de Arquitetura da Aplicação](./puml/app-architecture.svg)
 
 ### Front-End:
 
-- **HTML**: HTML (HyperText Markup Language) é a linguagem padrão para criar páginas e aplicações web, sendo fundamental para definir a estrutura de uma página web, como cabeçalhos, parágrafos, links, imagens e outros elementos.
+- **HTML**: HTML (_HyperText Markup Language_) é a linguagem padrão para criar páginas e aplicações web, sendo fundamental para definir a estrutura de uma página web, como cabeçalhos, parágrafos, links, imagens e outros elementos.
 
-- **CSS**: CSS (Cascading Style Sheets) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser customizados e exibidos. CSS é essencial para personalizar a aparência de um site, pois permite que os desenvolvedores apliquem estilos, animações e layouts consistentes em diferentes dispositivos e tamanhos de tela.
+- **CSS**: CSS (_Cascading Style Sheets_) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser customizados e exibidos. CSS é essencial para personalizar a aparência de um site, pois permite que os desenvolvedores apliquem estilos, animações e layouts consistentes em diferentes dispositivos e tamanhos de tela.
 
 - **JavaScript**: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas. Com o JavaScript, os desenvolvedores podem criar aplicações web mais atraentes, contendo carrosséis de imagens, formulários interativos, gráficos animados e até mesmo jogos. 
 
-- **Bootstrap**: É um framework front-end gratuito e de código aberto, utilizado para desenvolvimento web e responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. É uma escolha popular entre os desenvolvedores, pois fornece uma base sólida para criar sites responsivos rapidamente. Com sua ampla gama de componentes prontos para uso, podemos acelerar o processo de desenvolvimento e manter a consistência do design. 
+- **Bootstrap**: É um _framework_ front-end gratuito e de código aberto, utilizado para desenvolvimento web e responsivo. Criado pelo Twitter (X.com), fornece uma variedade de componentes HTML, CSS e JavaScript projetados para facilitar o desenvolvimento de aplicações web que se adaptam automaticamente a diferentes tamanhos de tela, desde dispositivos móveis a desktops. É uma escolha popular entre os desenvolvedores, pois fornece uma base sólida para criar sites responsivos rapidamente. Com sua ampla gama de componentes prontos para uso, podemos acelerar o processo de desenvolvimento e manter a consistência do _design_. 
 
 ### Back-End:
 
-- **Flask**: É um microframework web escrito em Python, flexível e extensível, sendo ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos. Ele é classificado como microframework porque não exige determinadas ferramentas ou bibliotecas e por isso é frequentemente escolhido para projetos que necessitam de uma solução mais enxuta e rápida para colocar uma aplicação web ou API (Application Programming Interface) em funcionamento. Sua natureza minimalista permite que os desenvolvedores possam adicionar apenas as extensões que precisam, sem a sobrecarga pré-existente de um framework mais pesado. 
+- **Flask**: É um microframework web escrito em Python, flexível e extensível, sendo ideal para iniciar o desenvolvimento de aplicações web, APIs e até mesmo sistemas mais complexos. Ele é classificado como microframework porque não exige determinadas ferramentas ou bibliotecas e por isso é frequentemente escolhido para projetos que necessitam de uma solução mais enxuta e rápida para colocar uma aplicação web ou API (_Application Programming Interface_) Python em funcionamento. Sua natureza minimalista permite que os desenvolvedores possam adicionar apenas as extensões que precisam, sem a sobrecarga pré-existente de um _framework_ mais pesado. 
 
-- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil. É ideal para soluções que não necessitam de um banco de dados de grande escala e para prototipação rápida em projetos de aplicações web.
+- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil. É ideal para prototipação rápida de aplicações web e projetos de soluções que não necessitam de um banco de dados de grande escala. 
 
-- **MongoDB**: É um banco de dados NoSQL orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de dados semi-estruturados, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
+- **MongoDB**: É um banco de dados NoSQL (Not-only SQL)orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de dados semi-estruturados, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
 
 ### Infraestrutura:
 
 - **Docker**: No desenvolvimento web, gerenciar serviços integrados pode ser desafiador. Docker simplifica essa tarefa, permitindo que aplicações sejam encapsuladas em contêineres. Essas unidades contêm o código e suas dependências, assegurando operação consistente em diferentes ambientes. Imagine contêineres como pacotes isolados com tudo necessário para sua aplicação funcionar, prontos para operar onde o Docker estiver disponível. Esses contêineres são leves, rápidos de iniciar e facilmente transferidos entre seu computador e plataformas em nuvem.
 
-- **Docker Compose**: O Docker Compose, parte do ecossistema Docker, facilita a gestão de aplicações multicontêiner através de um arquivo docker-compose.yml. Com o comando docker-compose up -d, todos os contêineres no arquivo são ativados juntos, assegurando sua correta configuração e integração. Por exemplo, ao invés de configurar manualmente contêineres para um servidor web, MongoDB e Redis, o Docker Compose permite fazer isso centralizadamente em um arquivo. Com isso, eliminamos a complexidade das instalações manuais, aumentando a conveniência e eficiência. 
+- **Docker Compose**: O Docker Compose, parte do ecossistema Docker, facilita a gestão de aplicações multicontêiner através de um arquivo `docker-compose.yml`. Com o comando `docker-compose up -d`, todos os contêineres no arquivo são ativados juntos, assegurando sua correta configuração e integração. Por exemplo, ao invés de configurar manualmente contêineres para um servidor web, MongoDB e Redis, o Docker Compose permite fazer isso centralizadamente em um arquivo. Com isso, eliminamos a complexidade das instalações manuais, aumentando a conveniência e eficiência. 
 
 ## 4. Preparando o Ambiente de Laboratório
 
@@ -116,7 +118,7 @@ Depois de acessar o ambiente virtual:
 
 3. Para criar e alterar os arquivos de configuração diretamente na VM, pode ser utilizado o editor VIM, opção bastante robusta e versátil para terminais Linux:
 
-### Vim: Guia Básico
+### Usando o Vim: Guia Básico
 
 O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e muitos consideram-no um editor indispensável, especialmente administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos complexos com poucos comandos. Neste guia, focaremos apenas nas operações básicas: abrir, editar e salvar arquivos. Lembre-se de que o Vim é uma ferramenta profunda e poderosa, e há muito a aprender além destes comandos básicos: 
 
@@ -162,9 +164,9 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 - **Nota**: Para trabalhar com o código das suas aplicações e outras configurações necessárias em casa, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos a configuração desta abordagem complementar em sala de aula. 
 
-### Usando o SSH para conexão
+### Usando o SSH para conexão: Guia Básico
 
-SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão portable pode ser baixada e usada diretamente em nossos laboratórios. 
+SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
 - **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
