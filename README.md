@@ -6,7 +6,7 @@ Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Com
 
 Com essa base estabelecida, daremos ênfase às tecnologias como HTML, CSS, JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o microframework web Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
 
-Este repositório foi projetado para auxiliá-lo na configuração e no gerenciamento dessas ferramentas. Siga atentamente as instruções abaixo para preparar seu ambiente.
+Este documento foi preparado para auxiliar a configuração e gerenciamento dessas ferramentas. Siga atentamente as instruções abaixo para preparar seu ambiente.
 
 ### Configuração do Ambiente: 
 
