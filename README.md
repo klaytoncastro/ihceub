@@ -2,17 +2,17 @@
 
 Prezado(a), aluno(a), 
 
-Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da disciplina veremos os fundamentos do _Design de Produto_, UX - _User eXperience_ (Experiência do Usuário), UI - _User Interface_ (Interface do Usuário) e discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil de soluções em IHC. 
+Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Ao longo da disciplina veremos os fundamentos do _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário), UI - _User Interface_ (Interface do Usuário) e discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil de soluções em IHC. 
 
-Estabelecida essa base, aplicaremos tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap. Também aprofundaremos nossa compreensão sobre o uso do protocolo HTTP (_Hypertext Transfer Protocol_), sua arquitetura e comunicação de aplicações web modernas com a camada de back-end, introduzindo o uso de microsserviços e do microframework Python Flask. A seguir, utilizaremos bancos de dados, relacionais ou não relacionais, para demonstrar a construção de aplicações web dinâmicas. 
+Estabelecida essa base, daremos ênfase às tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap, e ao protocolo HTTP (_Hypertext Transfer Protocol_), com a introdução à arquitetura de microsserviços e ao microframework Python Flask. Posteriormente, utilizaremos bancos de dados, relacionais ou não relacionais, para demonstrar a construção de aplicações web dinâmicas. 
 
 Este repositório foi projetado para auxiliá-lo a configurar e gerenciar essas ferramentas. Siga atentamente as instruções abaixo para configurar seu ambiente. 
 
 ### Configuração do Ambiente: 
 
-Para garantir uma experiência mais uniforme, fornecemos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada. Essa abordagem garante que todos comecem o curso com o mesmo ambiente e configurações. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, adotar esta padronização simplifica nosso suporte e proporciona soluções mais ágeis e consistentes diante de eventuais desafios técnicos.
+Para as atividades práticas, é essencial ter um ambiente de desenvolvimento bem configurado. Com o objetivo de uniformizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, contendo todas as ferramentas e dependências necessárias. Essa abordagem visa assegurar que os todos os alunos possuam um ambiente padronizado e consistente, reduzindo complicações em função de eventuais diferenças entre os tipos de hardware e versões de software. Embora o Docker possa rodar diretamente em diversos sistemas operacionais, adotar esta estratégia simplifica o processo de suporte em caso de dúvidas, além de proporcionar soluções mais ágeis no caso de desafios técnicos. 
 
-- **Nota**: Se você tem experiência com Docker e prefere executá-lo diretamente no seu sistema operacional, sinta-se à vontade. A estrutura do repositório suporta este modo de operação. Para os usuários dos hardwares mais recentes da Apple, como o M2 e outros processadores novos, é especialmente relevante considerar esta opção, visto que algumas versões do Oracle Virtual Box podem não ser compatíveis com estes dispositivos. 
+- **Nota**: O uso da VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja rodá-lo no seu sistema operacional nativo, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar essa opção, devido a potenciais incompatibilidades com algumas versões do VirtualBox, originalmente desenvolvidas para processadores padrão x86_64. Para aqueles que utilizam Windows e preferem evitar VMs, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
 
 ## 1. Sobre a Imagem OVA
 
@@ -64,7 +64,7 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 | FlaskApp 2    | TCP       | 127.0.0.1           | 8501          | 10.0.2.15         | 5001        |
 | FlaskApp 3    | TCP       | 127.0.0.1           | 8502          | 10.0.2.15         | 5002        |
 
-- **Nota**: Ao configurar o redirecionamento de portas, evite as portas 0-1023, pois são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre certifique-se de que a porta escolhida não esteja em uso. Ferramentas como `netstat` podem ajudar na verificação.
+- **Nota**: Ao configurar o redirecionamento de portas, evite as portas 0-1023, pois são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre certifique-se de que a porta escolhida não esteja em uso. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação. 
 
 ## 3. Descrição das Ferramentas Utilizadas
 
@@ -76,7 +76,7 @@ Em aplicações web modernas, é comum dividirmos a arquitetura em três camadas
 
 - **HTML**: HTML (_HyperText Markup Language_) é a linguagem padrão para criar páginas e aplicações web, sendo fundamental para definir a estrutura de uma página web, como cabeçalhos, parágrafos, links, imagens e outros elementos.
 
-- **CSS**: CSS (_Cascading Style Sheets_) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser customizados e exibidos. CSS é essencial para personalizar a aparência de um site, pois permite que os desenvolvedores apliquem estilos, animações e layouts consistentes em diferentes dispositivos e tamanhos de tela.
+- **CSS**: CSS (_Cascading Style Sheets_) é uma linguagem usada para estilizar documentos escritos em HTML. Ela define como os elementos da página devem ser customizados e exibidos. CSS é essencial para personalizar a aparência de um _site_, pois permite que os desenvolvedores apliquem estilos, animações e _layouts_ consistentes em diferentes dispositivos e tamanhos de tela.
 
 - **JavaScript**: Originalmente desenvolvimento pela Netscape, é uma linguagem de programação de alto nível, interpretada e orientada a objetos, amplamente utilizada para adicionar interatividade a páginas web, permitindo comportamentos dinâmicos e operações assíncronas. Com o JavaScript, os desenvolvedores podem criar aplicações web mais atraentes, contendo carrosséis de imagens, formulários interativos, gráficos animados e até mesmo jogos. 
 
@@ -200,7 +200,7 @@ Por outro lado, o Docker Compose é uma ferramenta que facilita a definição e 
 
 Há uma extensa documentação disponível e uma comunidade bastante ativa. Recomenda-se a leitura da documentação oficial para se aprofundar se desejado, mas este guia básico é suficiente para iniciar a utilizar rapidamente as ferramentas. 
 
-### Docker: Comandos Básicos
+### Comandos do Docker:
 
 1. **Baixar uma imagem do Docker Hub**
     ```bash
@@ -242,7 +242,7 @@ Há uma extensa documentação disponível e uma comunidade bastante ativa. Reco
     docker rm <contêiner_id_ou_nome>
     ```
 
-### Docker Compose: Comandos Básicos
+### Comandos do Docker Compose: 
 
 1. **Iniciar serviços definidos no `docker-compose.yml` em modo interativo**
     ```bash
@@ -269,7 +269,7 @@ Há uma extensa documentação disponível e uma comunidade bastante ativa. Reco
     docker-compose logs
     ```
 
-### Limpeza de Imagens, Contêineres e Volumes com Docker
+### Limpeza de Imagens, Contêineres e Volumes
 
 Na pasta `docker` deste repositório, você encontrará o script `docker-cleanup.sh` que faz a remoção de imagens antigas e desnecessárias. Isso pode ser útil para recuperar espaço no ambiente de desenvolvimento. 
 
