@@ -106,31 +106,31 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 - **Nota 1**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
-1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
+1. Conveniência e Eficiência
 
-2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
-
-3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
-
-4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
-
-- **Nota 2**: A reinicialização da VM não impacta a conexão SSH graças ao modo NAT e redirecionamento de portas. Acessos via navegador seguem a lógica similar, usando a URL `http://localhost:<numero_da_porta>`.
-
-- **Nota 3**: No ambiente do laboratório trabalharemos predominantemente com o modo NAT e, em princípio, com apenas uma VM instanciada. A escolha pelo NAT em laboratório é motivada por questões de isolamento e segurança, uma vez que este modo permite que a VM acesse a Internet (através do _host_), mas não torna a VM diretamente acessível de outras máquinas na rede externa.
-
-- **Nota 4**: Em redes domésticas, o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local. Isso implica que, para acessar serviços na VM, como aplicações web, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta>`. Para conhecer o IP interno da VM, execute o comando `ifconfig` a partir de sua console física. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta 22. 
-
-5. Conveniência e Eficiência
-
-- **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
+- **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar _logs_ de erros, colar comandos, _scripts_, código, ou até mesmo movimentar arquivos entre _host_, VM e vice-versa. Essa funcionalidade torna a execução de tarefas muito mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
 
 - **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
-6. Evita as limitações da console "física".
+2. Evita as limitações da console "física".
 
 - **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
+
+3. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o NAT com redirecionamento de portas no VirtualBox, de modo a encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
+
+4. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
+
+5. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
+
+6. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
+
+- **Nota 2**: No ambiente do laboratório trabalharemos predominantemente com o modo NAT e, em princípio, com apenas uma VM instanciada. A escolha pelo NAT em laboratório é motivada por questões de isolamento e segurança, uma vez que este modo permite que a VM acesse a Internet (através do _host_), mas não torna a VM diretamente acessível de outras máquinas na rede externa.
+
+- **Nota 3**: A reinicialização da VM não impacta a conexão SSH em função da configuração do modo NAT e redirecionamento de portas. Acessos via navegador seguem a lógica similar, usando a URL `http://localhost:<numero_da_porta_redirecionadora>`.
+
+- **Nota 4**: Em redes domésticas, o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local. Isso implica que, para acessar serviços na VM, como aplicações web, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta_da_vm>`. Para conhecer o IP interno da VM, execute o comando `ifconfig` a partir de sua console física. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta `22`. 
 
 7. Depois de acessar o ambiente virtual, baixe os arquivos do projeto:
 
@@ -152,7 +152,7 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 ### Usando o Vim: Guia Básico
 
-O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e muitos consideram-no um editor indispensável, especialmente administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos complexos com poucos comandos. Neste guia, focaremos apenas nas operações básicas: abrir, editar e salvar arquivos. Lembre-se de que o Vim é uma ferramenta poderosa e há muito a aprender além destes comandos básicos. 
+O Vim é uma ferramenta especialmente útil administradores de sistemas e desenvolvedores, permitindo que usuários mais experientes editem arquivos com poucos comandos. Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, editar e salvar arquivos. 
 
 1. **Abrir um arquivo**
     ```bash
@@ -191,13 +191,13 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 ### Dicas
 
-- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua produtividade ao editar arquivos. Enquanto se familiariza com os comandos básicos, essenciais para configurar um sistema operacional baseado em terminal, você pode explorar a ferramenta muito mais. Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` e então digite `:q!`. Este comando o levará de volta ao terminal, descartando todas as alterações realizadas.
+- O Vim é uma ferramenta robusta repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá ainda mais potencialidades desta ferramenta. Caso se sinta perdido ou incerto sobre uma ação, simplesmente pressione `Esc` e digite `:q!`. Este comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
 
-- Como alternativa ao Putty e Vim, visando uma experiência mais integrada e amigável para trabalhar com o **código das suas aplicações** em casa, recomenda-se instalar um IDE (_Integrated Development Environment_) como o [Visual Code Studio](https://visualstudio.microsoft.com/pt-br/downloads/). Você pode equipá-lo com o _plugin SSH Remote_ ou utilizar uma ferramenta de transferência de arquivos com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php), para movimentar o código entre o _host_ e a VM. 
+- Como alternativa ao Vim e Putty, em busca de uma experiência mais integrada e amigável ao trabalhar com o **código das suas aplicações** em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin SSH Remote_, o VS Code torna-se ainda mais poderoso, permitindo conexões diretas via SSH. Além disso, para a transferência de arquivos de código e imagens entre o _host_ e a VM, ferramentas com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php), são recomendadas. 
 
 - Como alternativa ainda mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
 
-- **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
+- **Nota 5**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
 
 ### Usando Docker e Docker Compose: Guia Básico
 
@@ -298,7 +298,7 @@ chmod +x docker-cleanup.sh
 ./docker-cleanup.sh
 ```
 
-- **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Para evitar a remoção inadvertida de recursos importantes, certifique-se de entender o que ele faz antes de executá-lo. Lembre-se que, ao executá-lo, apenas os contêineres em execução serão mantidos no armazenamento da VM. 
+- **Nota 6**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Para evitar a remoção inadvertida de recursos importantes, certifique-se de entender o que ele faz antes de executá-lo. Lembre-se que, ao executá-lo, apenas os contêineres em execução serão mantidos no armazenamento da VM. 
 
 ### Pronto! 
 
