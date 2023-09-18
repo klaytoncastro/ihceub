@@ -4,15 +4,13 @@ Prezado(a), aluno(a),
 
 Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso, exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário) e UI - _User Interface_ (Interface do Usuário). Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
 
-Com essa base estabelecida, daremos ênfase às tecnologias de front-end, como HTML, CSS, JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o microframework web Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
+Com essa base estabelecida, daremos ênfase às tecnologias como HTML, CSS, JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o microframework web Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
 
 Este repositório foi projetado para auxiliá-lo na configuração e no gerenciamento dessas ferramentas. Siga atentamente as instruções abaixo para preparar seu ambiente.
 
 ### Configuração do Ambiente: 
 
-Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Isso assegura que todos os alunos tenham um ambiente consistente, minimizando complicações decorrentes de diferenças de hardware e versões de software. Embora o Docker seja compatível com diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos.
-
-- **Nota**: O uso da VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja rodá-lo no seu sistema operacional nativo, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerá-la devido a possíveis incompatibilidades com versões do VirtualBox para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
+Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Embora o Docker seja compatível com diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos. Isso assegura que todos os alunos tenham um ambiente consistente, minimizando complicações decorrentes de diferenças de hardware e versões de software. 
 
 ## 1. Sobre a Imagem OVA
 
@@ -24,11 +22,13 @@ Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configura
 
 Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de _front-end_. 
 
+- **Nota**: O uso da VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
+
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
 2. Caso não esteja instalado, baixe o Oracle VirtualBox através deste [link](https://www.oracle.com/br/virtualization/technologies/vm/downloads/virtualbox-downloads.html). 
 3. Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.
-4. Execute o Oracle Virtual Box e clique em **Arquivo** > **Importar Appliance**.
+4. Execute o Oracle VirtualBox e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
 6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de Memória RAM, o que é inicialmente suficiente para nossos laboratórios. 
 7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), conforme as configurações de endereço IP e Porta de publicação das suas aplicações. 
@@ -70,7 +70,7 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 Um _Framework_ é uma estrutura pré-projetada de componentes que fornece aos desenvolvedores uma base robusta para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece um conjunto padrão de funcionalidades, ferramentas e práticas já reconhecidas, permitindo que os desenvolvedores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento e minimizando erros de implementação. Ao se optar por um _framework_, busca-se alinhar-se às melhores práticas estabelecidas pelo mercado. Assim, no contexto da construção de aplicações web modernas e da aplicação prática dos conceitos de IHC, é imperativo explorar os _frameworks_ de destaque na indústria, cada um com suas peculiaridades e benefícios.
 
-Nesse cenário, as aplicações web modernas são frequentemente estruturadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. Em conjunto, estas camadas proporcionam uma experiência homogênea ao usuário e uma arquitetura de referência para engenheiros de software e plataforma. 
+Nesse cenário, as aplicações web modernas são frequentemente estruturadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. Em conjunto, estas camadas proporcionam uma experiência homogênea ao usuário e uma arquitetura de referência para engenheiros de software e plataforma. A seguir, segue diagrama simplificado de nossa arquitetura de referência: 
 
 ![Diagrama de Arquitetura da Aplicação](./puml/app-architecture.svg)
 
@@ -161,26 +161,29 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 ### Dicas
 
-- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua eficiência ao editar arquivos. Recomenda-se explorar mais o Vim conforme você se familiariza com os comandos básicos.
-- Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` várias vezes e então digitar `:q!` o levará de volta ao terminal, descartando todas as alterações.
+- O Vim possui muitos comandos e atalhos que podem melhorar significativamente sua eficiência ao editar arquivos. Você pode explorar a ferramenta muito mais, enquanto se familiariza com os comandos básicos, essenciais para configurar um sistema operacional baseado em terminal. Se você se encontrar em uma situação em que não sabe o que fazer, pressionar `Esc` e então digite `:q!`. Este comando o levará de volta ao terminal, descartando todas as alterações realizadas.
 
-- **Nota**: Para trabalhar com o código das suas aplicações e outras configurações necessárias em casa, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos a configuração desta abordagem complementar em sala de aula. 
+- Como alternativa ao Putty e Vim, visando uma experiência mais integrada e amigável para trabalhar com o **código das suas aplicações** em casa, recomenda-se instalar um IDE (_Integrated Development Environment_) como o [Visual Code Studio](https://visualstudio.microsoft.com/pt-br/downloads/). Você pode equipá-lo com o _plugin SSH Remote_ ou utilizar uma ferramenta de transferência de arquivos com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php), para movimentar o código entre o _host_ e a VM. 
+
+- Como alternativa mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
+
+- **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
 
 ### Usando o SSH: Guia Básico
 
-SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
+SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no VirtualBox. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
 - **Nota**: Se você já possui outras ferramentas de SSH ou tem uma preferência particular, sinta-se à vontade para utilizá-las. 
 
-1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos o redirecionamento de portas no VirtualBox para encaminhar a porta 2222 do host para a porta 22 da VM. 
+1. Execute o PuTTY e no campo `Host Name (or IP address)`, digite: `127.0.0.1`. No campo `Port`, digite: `2222`. Isso é possível pois configuramos previamente o redirecionamento de portas no VirtualBox para encaminhar a porta `2222` do _host_ para a porta `22` da VM. 
 
 2. Certifique-se de que a opção `Connection type` esteja definida como `SSH`. Clique no botão "Open" na parte inferior da janela. Uma janela de terminal será aberta. 
 
 3. Na primeira vez que você se conectar, pode ser solicitado que confirme a chave SSH do servidor. Se isso acontecer, clique em `Yes` para aceitar a chave e continuar. 
 
-4. Você será solicitado a fornecer um nome de usuário. Digite labihc e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
+4. Você será solicitado a fornecer um nome de usuário. Digite `labihc` e pressione `Enter`. Em seguida, será solicitada a senha. Digite `L@b1hc` e pressione `Enter`.
 
-- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas, você ainda pode se conectar usando 127.0.0.1 e a porta 2222, já que essa configuração é feita no host e não depende do IP da VM. 
+- **Nota**: Sempre que você reiniciar a VM ou mudar configurações de rede, pode ser que o endereço IP da VM mude. No entanto, com a configuração de redirecionamento de portas (NAT), você ainda pode se conectar usando o IP `127.0.0.1` do `localhost` e a porta `2222` do redirecionamento, já que essa configuração é feita no _host_ e não depende do IP da VM. O mesmo conceito se aplica para acessar suas aplicações via navegador. Você pode acessar `http:\\localhost:<numero_da_porta>`. 
 
 5. Conveniência e Eficiência
 
@@ -188,9 +191,9 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 - **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
-6. Evita as limitações da console "física"
+6. Evita as limitações da console "física".
 
-- **Resolução e Interface**: A console física do Virtual Box pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
+- **Resolução e Interface**: A console física do VirtualBox pode apresentar limitações, como resolução de tela reduzida ou interações de interface de usuário não intuitivas. O SSH fornece uma interface padronizada, independentemente do software de virtualização usado.
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
