@@ -259,7 +259,7 @@ Há uma extensa documentação disponível e uma comunidade bastante ativa. Reco
 
 ### Limpeza de Imagens, Contêineres e Volumes com Docker
 
-Na pasta `docker` deste repositório, você encontrará um script que faz a remoção de imagens antigas e desnecessárias. Isso pode ser útil para recuperar espaço no ambiente de desenvolvimento. 
+Na pasta `docker` deste repositório, você encontrará o script `docker-cleanup.sh` que faz a remoção de imagens antigas e desnecessárias. Isso pode ser útil para recuperar espaço no ambiente de desenvolvimento. 
 
 1. Navegue até a pasta onde o script está localizado: 
 
@@ -270,13 +270,13 @@ cd caminho/para/pasta/docker
 2. Para tornar o script executável, utilize o comando:
 
 ```bash
-chmod +x nome_do_script.sh
+chmod +x docker-cleanup.sh
 ```
 
 3. Execute o script:
 
 ```bash
-./nome_do_script.sh
+./docker-cleanup.sh
 ```
 
 - **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Certifique-se de revisar o script e entender o que ele faz antes de executá-lo para evitar a remoção inadvertida de recursos importantes. Ao executá-lo, apenas os contêires em execução serão mantidos no armazenamento da VM. 
