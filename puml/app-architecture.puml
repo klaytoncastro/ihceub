@@ -1,0 +1,68 @@
+@startuml
+
+skinparam backgroundColor #EEF9E3
+
+skinparam package {
+    BackgroundColor #D3D3D3
+    BorderColor #A9A9A9
+    FontColor #333333
+    Shadowing false
+}
+
+skinparam class {
+    BackgroundColor #F5F5F5
+    BorderColor #A9A9A9
+    FontColor #333333
+    Shadowing false
+}
+
+skinparam note {
+    BackgroundColor #B0C4DE
+    BorderColor #A9A9A9
+    FontColor #333333
+    Shadowing false
+}
+
+package "Front-End" {
+    class "Bootstrap Framework" {
+        + HTML
+        + CSS
+        + JavaScript
+    }
+}
+
+package "Back-End" {
+    class "Flask Framework" {
+        + SQLite
+        + MongoDB
+    }
+}
+
+package "Infraestrutura" {
+    class "Docker Platform" {
+        + Docker Compose
+    }
+}
+
+note right of "Bootstrap Framework"
+    Framework que utiliza:
+    - HTML
+    - CSS
+    - JavaScript
+end note
+
+note right of "Flask Framework"
+    Microframework que pode se
+    conectar a diversos bancos
+    de dados, como:
+    - SQLite
+    - MongoDB
+end note
+
+note right of "Docker Platform"
+    Plataforma de contêineres que
+    pode ser complementada por:
+    - Docker Compose
+end note
+
+@enduml
