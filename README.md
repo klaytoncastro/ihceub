@@ -174,7 +174,7 @@ O Vim é uma ferramenta especialmente útil administradores de sistemas e desenv
 
 5. **Editar texto**
 
-    No modo de inserção (após pressionar `i`), você pode editar o texto como em qualquer outro editor. Quando terminar, pressione `Esc` para voltar ao modo normal.
+    No modo de inserção (após pressionar `Insert`), você pode editar o texto como em qualquer outro editor. Quando terminar, pressione `Esc` para voltar ao modo normal.
 
 6. **Exibindo Números de Linha**
 
@@ -193,9 +193,9 @@ O Vim é uma ferramenta especialmente útil administradores de sistemas e desenv
 
 - O Vim é uma ferramenta robusta repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá ainda mais potencialidades desta ferramenta. Caso se sinta perdido ou incerto sobre uma ação, simplesmente pressione `Esc` e digite `:q!`. Este comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
 
-- Como alternativa ao Vim e Putty, em busca de uma experiência mais integrada e amigável ao trabalhar com o **código das suas aplicações** em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin SSH Remote_, o VS Code torna-se ainda mais poderoso, permitindo conexões diretas via SSH. Além disso, para a transferência de arquivos de código e imagens entre o _host_ e a VM, ferramentas com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php), são recomendadas. 
+- Como alternativa ao Vim e Putty, em busca de uma experiência mais integrada e amigável ao trabalhar com o **código das suas aplicações**, em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin SSH Remote_, o VS Code permite conexões diretas via SSH. Além disso, para a transferência de arquivos, como código e imagens entre o _host_ e a VM, recomendamos o uso de ferramentas com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php). 
 
-- Como alternativa ainda mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código, colaborar com outros desenvolvedores e até mesmo integrar-se diretamente a várias IDEs e ambientes de desenvolvimento, facilitando o fluxo de trabalho e a integração contínua. 
+- Como alternativa ainda mais moderna e colaborativa, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores, facilitando o fluxo de trabalho e a integração contínua. 
 
 - **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada abordagem em sala de aula. 
 
