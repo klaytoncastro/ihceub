@@ -170,7 +170,7 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 - **Nota**: Para subir o código das suas aplicações e outras configurações necessárias, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos estas abordagens em sala de aula.
 
-### Usando o SSH para para conexão
+### Usando o SSH para conexão
 
 SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. 
 
@@ -180,7 +180,7 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 
 - **Copiar e Colar**: Ao utilizar SSH, fica muito mais fácil copiar e colar comandos, scripts ou até mesmo arquivos entre o host e a VM. Essa funcionalidade torna a execução de tarefas mais rápida e evita erros humanos que podem ocorrer ao digitar manualmente.
 
-- **Multitarefa**: Com o SSH, é possível abrir várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
+- **Multitarefa**: Com o SSH, é possível estabelecer várias sessões em paralelo, permitindo que você execute várias tarefas simultaneamente. 
 
 2. Evita limitações da console "física"
 
@@ -190,7 +190,7 @@ SSH (Secure Shell) é um protocolo que possibilita a conexão e controle de serv
 
 ### Docker & Docker Compose: Guia Básico
 
-Docker e Docker Compose são ferramentas essenciais ao desenvolvedor moderno, facilitando a criação e acelerando a distribuição e execução de aplicações em ambientes consistentes, isolados e reproduzíveis. Através de contêineres, o Docker proporciona uma maneira eficaz de encapsular uma aplicação com todas as suas dependências, garantindo que ela funcione de maneira idêntica, independentemente de onde seja executada.
+Docker e Docker Compose são ferramentas essenciais ao desenvolvedor moderno, facilitando a criação e acelerando a distribuição e execução de aplicações em ambientes consistentes, isolados e reproduzíveis. Através de contêineres, ele proporciona um modo eficaz de encapsular uma aplicação com todas as suas dependências, garantindo que ela funcione de maneira idêntica, independentemente de onde seja executada.
 
 Por outro lado, o Docker Compose é uma ferramenta que facilita a definição e execução de aplicações multi-contêiner com o Docker. Com ele, é possível definir um conjunto de contêineres, suas configurações e dependências em um único arquivo e, em seguida, executar todo o conjunto com um único comando, sendo ideal para desenvolvimento local, teste e integração contínua.
 
@@ -260,10 +260,34 @@ Há uma extensa documentação disponível e uma comunidade bastante ativa. Reco
     docker-compose ps
     ```
 
-5. **Visulizar logs**
+5. **Visualizar logs**
     ```bash
     docker-compose logs
     ```
+
+### Limpeza de Imagens, Contêineres e Volumes com Docker
+
+Na pasta `docker` deste repositório, você encontrará um script que faz a remoção de imagens antigas e desnecessárias. Isso pode ser útil para recuperar espaço no ambiente de desenvolvimento. 
+
+1. Navegue até a pasta onde o script está localizado: 
+
+```bash
+cd caminho/para/pasta/docker
+```
+
+2. Para tornar o script executável, utilize o comando:
+
+```bash
+chmod +x nome_do_script.sh
+```
+
+3. Execute o script:
+
+```bash
+./nome_do_script.sh
+```
+
+- **Nota**: Este script remove recursos não utilizados e imagens antigas para recuperar espaço. Certifique-se de revisar o script e entender o que ele faz antes de executá-lo para evitar a remoção inadvertida de recursos importantes. Ao executá-lo, apenas os contêires em execução serão mantidos no armazenamento da VM. 
 
 ### Pronto! 
 
