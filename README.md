@@ -1,6 +1,6 @@
 # Instruções para os Laboratórios da Disciplina de IHC (Interação Humano-Computador)
 
-Prezado(a), aluno(a), 
+Prezado(a) aluno(a), 
 
 Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso, exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário) e UI - _User Interface_ (Interface do Usuário). Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
 
