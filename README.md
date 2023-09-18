@@ -86,11 +86,11 @@ Nesse cenário, as aplicações web modernas são frequentemente estruturadas em
 
 ### Back-End:
 
-- **Flask**: É um microframework web escrito em Python, flexível e extensível, sendo ideal para iniciar o desenvolvimento de aplicações web, APIs (_Application Programming Interfaces_) e até mesmo sistemas mais complexos. Ele é classificado como microframework porque não carrega previsamente um conjunto de ferramentas ou bibliotecas que nem sempre serão utilizadas em seu projeto. Por isso, é frequentemente escolhido para projetos que necessitam de uma solução mais enxuta e rápida para colocar uma aplicação web ou API em funcionamento. Sua natureza minimalista permite que os desenvolvedores possam adicionar apenas as extensões que precisam, sem a sobrecarga pré-existente de um _framework_ mais pesado. 
+- **Flask**:  Trata-se de um _microframework_ para desenvolvimento em Python na web. É reconhecido por sua flexibilidade, extensibilidade e sua natureza minimalista, características que o tornam perfeito para iniciar o desenvolvimento de aplicações web, APIs (_Application Programming Interfaces_) e até mesmo sistemas de maior complexidade. Ele é denominado _microframework_ porque, diferentemente de outras soluções, não vem pré-carregado com uma vasta gama de ferramentas ou bibliotecas que nem sempre serão utilizadas em seu projeto. Isso o torna uma escolha popular para projetos que buscam um começo ágil, permitindo aos desenvolvedores implementar apenas as extensões necessárias, sem a sobrecarga inerente a um _framework_ mais abrangente.
 
-- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional leve, que não adota o modelo cliente-servidor. Ao invés disso, todo o banco de dados é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil. É ideal para prototipação rápida de aplicações web e projetos de soluções que não necessitam de um banco de dados de grande escala. 
+- **SQLite**: É um sistema de gerenciamento de banco de dados (SGDB) relacional, leve e autônomo, com suporte à SQL (_Structured Query Language_). Todo o banco de dados SQLite é armazenado em um único arquivo, tornando-o altamente portátil e eficiente para aplicações que requerem um armazenamento estruturado e ágil. É ideal para prototipação rápida de aplicações web e projetos de soluções que não necessitam de um banco de dados de grande escala. Para aplicações em produção com uma quantidade significativa de tráfego ou necessidades complexas de banco de dados, você pode considerar opções como MySQL e PostgreSQL. 
 
-- **MongoDB**: É um banco de dados NoSQL (Not-only SQL) orientado a documentos. Ao contrário dos SGBDs relacionais, que tradicionalmente usam tabelas, colunas e registros que dependem de relacionamentos estritos, o MongoDB opera com uma arquitetura baseada em coleções e documentos. Sua natureza de esquema dinâmico permite o armazenamento de dados semi-estruturados, proporcionando alta escalabilidade e flexibilidade para o desenvolvimento de aplicações modernas.
+- **MongoDB**: Trata-se de um banco de dados NoSQL (Not-only SQL) orientado a documentos. Diferentemente dos SGBDs relacionais, que utilizam tabelas, colunas, registros, são estritamente baseados em esquemas tipados e estruturados em relacionamentos, o MongoDB emprega uma arquitetura voltada a coleções e documentos. Esta abordagem de esquema dinâmico facilita o armazenamento de dados semi-estruturados, oferecendo escalabilidade e flexibilidade notáveis, tornando-o uma escolha preferencial para muitas aplicações modernas.
 
 ### Infraestrutura:
 
@@ -166,7 +166,7 @@ O Vim é mais do que um simples editor de texto, é uma ferramenta poderosa e mu
 
 - **Nota**: Para trabalhar com o código das suas aplicações e outras configurações necessárias em casa, recomenda-se instalar a IDE Visual Code Studio com o plugin SSH Remote ou uma ferramenta de transferência de arquivos com suporte a SFTP, como o Filezilla. Discutiremos a configuração desta abordagem complementar em sala de aula. 
 
-### Usando o SSH para conexão: Guia Básico
+### Usando o SSH: Guia Básico
 
 SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de servidores remotos, como a VM instanciada no Virtual Box. Para gerenciar nossa VM, recomendamos o uso de conexões SSH em vez da console física. O [Putty](https://www.putty.org/) é uma opção popular e confiável como cliente SSH, especialmente útil para sistemas Windows, embora esteja disponível para outras plataformas. Sua interface intuitiva e funcionalidades robustas o estabeleceram como preferência entre muitos administradores de sistemas e desenvolvedores ao longo dos anos. A versão _portable_ pode ser baixada e usada diretamente em nossos laboratórios. 
 
@@ -194,7 +194,7 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 - **Padrão de Gerenciamento**: Ao se familiarizar com o SSH, você estará equipando-se com uma habilidade crucial, não apenas para este ambiente de laboratório, mas para o desenvolvimento de soluções profissionais e situações futuras que envolvam a administração de sistemas, times de infraestrutura, DevOps, SRE e Cloud. 
 
-### Docker & Docker Compose: Guia Básico
+### Usando Docker e Docker Compose: Guia Básico
 
 Docker e Docker Compose são ferramentas essenciais ao desenvolvedor moderno, facilitando a criação e acelerando a distribuição e execução de aplicações em ambientes consistentes, isolados e reproduzíveis. Através de contêineres, ele proporciona um modo eficaz de encapsular uma aplicação com todas as suas dependências, garantindo que ela funcione de maneira idêntica, independentemente de onde seja executada.
 
@@ -271,7 +271,7 @@ Há uma extensa documentação disponível e uma comunidade bastante ativa. Reco
     docker-compose logs
     ```
 
-### Limpeza de Imagens, Contêineres e Volumes
+### Limpeza de Imagens, Contêineres e Volumes: 
 
 Na pasta `docker` deste repositório, você encontrará o script `docker-cleanup.sh` que faz a remoção de imagens antigas e desnecessárias. Isso pode ser útil para recuperar espaço no ambiente de desenvolvimento. 
 
