@@ -12,7 +12,7 @@ Este documento foi preparado para auxiliar a configuração e gerenciamento dess
 
 Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Embora o Docker seja compatível para rodar diretamente em diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos, assegurando que todos os estudantes tenham acesso a um ambiente consistente e minimizando complicações decorrentes de diferenças de hardware e versões de software. 
 
-## 1. Sobre a Imagem OVA
+## 1. Sobre o Oracle VirtualBox e a Imagem OVA
 
 OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração de sistema operacional e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, viabilizando uma importação fácil de imagens padronizadas em softwares de virtualização como o Oracle VirtualBox, dentre outros. 
 
@@ -137,7 +137,7 @@ SSH (_Secure Shell_) é um protocolo que possibilita a conexão e controle de se
 
 - **Nota 2**: Em redes domésticas, utilizar o modo _Bridge_ pode ser uma alternativa interessante, pois ele integra a VM diretamente à rede local e dispensa as configurações de redirecionamento de portas, especialmente útil quando se trabalha com mais de uma VM instanciada. Isso implica que, para acessar serviços na VM, você usará o endereço IP da VM, por exemplo: `http://<ip_da_vm>:<numero_da_porta_da_vm>`. Este endereço IP também será necessário para futuras conexões SSH diretamente na porta `22`. Para conhecer o IP da VM, execute o comando `ifconfig` a partir de sua console física. 
 
-### Como baixar e iniciar as aplicações básicas: 
+### Como baixar e iniciar as aplicações: 
 
 1. Depois de acessar o ambiente virtual, baixe os arquivos do projeto:
 
