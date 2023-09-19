@@ -202,7 +202,7 @@ Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, 
 
 - Em busca de uma experiência mais amigável ao trabalhar com o **código das suas aplicações**, em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin SSH Remote_, o VS Code permite conexões diretas via SSH. Além disso, para a transferência de arquivos, como código e imagens entre o _host_ e a VM, recomendamos o uso de uma ferramenta com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php). 
 
-- Como alternativa mais colaborativa e orientada à produtividade, podemos considerar o uso de plataformas de controle de versão, como o GitHub. Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores, facilitando o fluxo de trabalho e a integração contínua. 
+- Como alternativa mais colaborativa e orientada à produtividade, podemos considerar o uso de plataformas de controle de versão, como o [GitHub](https://github.com). Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores, facilitando o fluxo de trabalho e a integração contínua. 
 
 - **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada uma destas abordagens em sala de aula. 
 
