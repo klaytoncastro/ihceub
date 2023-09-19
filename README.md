@@ -14,15 +14,15 @@ Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento 
 
 ## 1. Sobre a Imagem OVA
 
-OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, viabilizando uma implantação fácil em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
+OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração de sistema operacional e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, viabilizando uma importação fácil de imagens padronizadas em plataformas como o Oracle VirtualBox e outros softwares de virtualização. 
 
 O Oracle VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
-Assim, utilizando um arquivo OVA, é possível distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localização de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração do laboratório.
+Assim, utilizando um arquivo OVA, é possível preparar e distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localidade de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração do laboratório.
 
-Além disso, a imagem OVA padronizada otimiza a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode ficar responsável pelo banco de dados e outra pela parte de _front-end_. 
+Além disso, a imagem OVA padronizada facilita a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos. Por exemplo, uma estação pode trnaquilamente ficar responsável pelo banco de dados e outra pela parte de _front-end_. 
 
-- **Nota**: O uso de uma VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece um ambiente Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
+- **Nota**: O uso de uma VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece todas as vantagens de um sistema Linux plenamente integrado e apresenta nuances entre suas versões (WSL e WSL 2). 
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -30,9 +30,10 @@ Além disso, a imagem OVA padronizada otimiza a integração, potencializando a 
 3. Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.
 4. Execute o Oracle VirtualBox e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
-6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de Memória RAM, o que é inicialmente suficiente para nossos laboratórios. 
-7. Em configurações da VM, altere a porta USB para suporte à versão 1.1 ao invés da 2.0 e configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), conforme as configurações de endereço IP e Porta de publicação das suas aplicações. 
-8. Inicie a máquina virtual (VM). 
+6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de RAM, o que é inicialmente suficiente para prosseguir com nossos laboratórios. 
+7. Em configurações da VM, pode ser necessário alterar a porta USB para suporte à versão 1.1 ao invés da 2.0.
+8.  Configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), conforme as configurações de endereço IP e Porta de publicação das suas aplicações. 
+9. Inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
 
@@ -47,7 +48,7 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 ### Como configurar o Redirecionamento de Portas no VirtualBox:
 
-1. **Inicie o VirtualBox** e selecione a máquina virtual que você deseja configurar.
+1. **Abra o VirtualBox** e selecione a máquina virtual que você deseja configurar.
 2. Clique em **Configurações** (ou Settings).
 3. Na janela de configurações, vá para **Rede**.
 4. Sob a aba **Adaptador 1** (assumindo que está usando o adaptador padrão), certifique-se de que está configurado para **Conectado a: NAT**.
@@ -68,9 +69,17 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 ## 3. Descrição da Arquitetura e Ferramentas Utilizadas
 
-Um _Framework_ é uma estrutura pré-projetada de componentes que fornece aos desenvolvedores uma base robusta para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece um conjunto padrão de funcionalidades, ferramentas e práticas já reconhecidas, permitindo que os desenvolvedores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento e minimizando erros de implementação. Ao se optar por um _framework_, busca-se alinhar-se às melhores práticas estabelecidas pelo mercado. Assim, no contexto da construção de aplicações web modernas e da aplicação prática dos conceitos de IHC, é imperativo explorar os _frameworks_ de destaque na indústria, cada um com suas peculiaridades e benefícios.
+Um _Framework_ é uma estrutura pré-projetada que fornece aos desenvolvedores uma base robusta de componentes para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece um conjunto padrão de funcionalidades, ferramentas e práticas reconhecidas na indústria de software, permitindo que os desenvolvedores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento e minimizando erros de implementação. Ao se optar por um _framework_, busca-se alinhar-se às melhores práticas estabelecidas pelo mercado. 
 
-Nesse cenário, as aplicações web modernas são frequentemente estruturadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. Em conjunto, estas camadas proporcionam uma experiência homogênea ao usuário e uma arquitetura de referência para engenheiros de software e plataforma. A seguir, temos o diagrama simplificado de nossa arquitetura de referência: 
+Assim, no contexto da construção de aplicações web modernas e prática dos conceitos de IHC, é imperativo explorar os _frameworks_ de destaque no mercado, cada um com suas peculiaridades e benefícios. 
+
+As aplicações web modernas são frequentemente baseadas no uso de  _frameworks_ e organizadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. 
+
+Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. 
+
+A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. 
+
+Em conjunto, estas camadas proporcionam uma experiência homogênea ao usuário e uma arquitetura de referência para engenheiros de software e plataforma. A seguir, temos o diagrama simplificado de nossa arquitetura de referência: 
 
 ![Arquitetura de Referência](./puml/app-architecture.svg)
 
