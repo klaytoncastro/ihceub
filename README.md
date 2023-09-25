@@ -4,7 +4,7 @@ Prezado(a) aluno(a),
 
 Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário) e UI - _User Interface_ (Interface do Usuário). Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
 
-Com essa base estabelecida, daremos ênfase às tecnologias HTML (_HyperText Markup Language_), CSS  (_Cascading Style Sheets_), JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o _microframework_ Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
+Com essa base estabelecida, daremos ênfase às tecnologias HTML (_HyperText Markup Language_), CSS (_Cascading Style Sheets_), JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o _microframework_ Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
 
 Este documento foi preparado para auxiliar a configuração e gerenciamento dessas ferramentas. Siga atentamente as instruções abaixo para preparar seu ambiente.
 
@@ -32,7 +32,7 @@ Além disso, a imagem OVA padronizada facilita a integração, potencializando a
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
 6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de RAM, o que é inicialmente suficiente para prosseguir com nossos laboratórios. 
 7. Em configurações da VM, pode ser necessário alterar a porta USB para suporte à versão 1.1 ao invés da 2.0.
-8. Configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button).
+8. Configure a placa de rede em modo NAT. 
 9. Inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
@@ -42,7 +42,7 @@ Além disso, a imagem OVA padronizada facilita a integração, potencializando a
 
 ## 2. Compreendendo o modo NAT
 
-NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
+NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button), você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
 
 Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no _host_ para uma porta na VM. Isso é bastante útil quando você deseja acessar serviços hospedados na VM, que poderão ser alcançados diretamente do _host_ ou a partir de outras máquinas na mesma rede, a exemplo das aplicações web e interfaces de gerenciamento com as quais iremos trabalhar no laboratório. 
 
@@ -65,15 +65,15 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 | FlaskApp 2    |    TCP    |      127.0.0.1      |      8501     |     10.0.2.15     |     5001    |
 | FlaskApp 3    |    TCP    |      127.0.0.1      |      8502     |     10.0.2.15     |     5002    |
 
-- **Nota**: Ao configurar o redirecionamento de portas, evite utilizar as portas 0-1023 (exceto 80 e 443, para aplicações web), pois elas são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre certifique-se de que a porta escolhida **não esteja em uso**. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação. 
+- **Nota**: Ao configurar o redirecionamento de portas, evite utilizar as portas 0-1023 (exceto 80 e 443, para aplicações web), pois elas são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Uma boa prática para servidores de aplicação é começar com a porta 8500. Sempre se certifique de que a porta escolhida **não esteja em uso**. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação. 
 
 ## 3. Descrição da Arquitetura e Ferramentas Utilizadas
 
-Um _Framework_ é uma estrutura pré-projetada que fornece aos desenvolvedores um conjunto de componentes que serve de base para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece uma série de funcionalidades, ferramentas padrão e práticas reconhecidas na indústria de software, permitindo que os desenvolvedores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento e minimizando erros de implementação. Ao se optar por determinado _framework_, busca-se alinhar-se às melhores práticas estabelecidas pelo mercado. No contexto da construção de aplicações web modernas e prática dos conceitos de IHC, é imperativo explorar os _frameworks_ de destaque no mercado, cada um com suas peculiaridades e benefícios. 
+Um _Framework_ é uma estrutura pré-projetada que fornece aos desenvolvedores um conjunto de componentes base para a criação de aplicações, eliminando a necessidade de começar do zero. Essa abordagem oferece uma série de funcionalidades, ferramentas e práticas reconhecidas pelo mercado, permitindo que os engenheiros de software e programadores se concentrem na lógica específica da aplicação, otimizando o processo de desenvolvimento. Assim, ao se optar por determinado _framework_, busca-se alinhar-se às melhores práticas da indústria de software. No contexto da construção de aplicações web modernas e prática dos conceitos de IHC, é fundamental explorar os _frameworks_ de destaque, entendendo suas peculiaridades e benefícios. 
 
-As aplicações web modernas são frequentemente baseadas no uso de _frameworks_ e organizadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface visível ao usuário, os componentes com os quais ele interage diretamente, exemplificado pelos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. 
+Além do uso de _frameworks_ reconhecidos, as aplicações web modernas são organizadas em três camadas fundamentais: _Front-End, Back-End_ e Infraestrutura. O _Front-End_ representa a interface com o usuário, ou seja, os componentes com os quais ele interage diretamente, a exemplo dos navegadores web em _desktops_ e dispositivos móveis. Em contraste, o _Back-End_ gerencia a lógica, o processamento e comunicação com os bancos de dados, estabelecendo o cerne da aplicação, onde os processos vitais são executados. A Infraestrutura, por sua vez, é a base técnica onde a aplicação opera, incluindo a hospedagem e soluções focadas na estabilidade, escalabilidade, disponibilidade e segurança. 
 
-Em conjunto, a atuação harmônica e coordenada destas camadas proporcionam uma experiência homogênea ao usuário e constituem uma arquitetura de referência para engenheiros de software e plataforma. A seguir, temos o diagrama simplificado contendo as ferramentas utilizadas em nossa arquitetura de referência: 
+Em conjunto, a atuação harmônica e coordenada destas camadas proporcionam uma experiência homogênea ao usuário e constituem uma arquitetura de referência para engenheiros de software e plataforma. A seguir, temos o diagrama simplificado das soluções que estudaremos ao longo do curso: 
 
 ![Arquitetura de Referência](./puml/app-architecture.svg)
 
