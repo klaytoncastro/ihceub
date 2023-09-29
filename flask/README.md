@@ -46,7 +46,7 @@ Agora, acesse `http://127.0.0.1:8500/` em seu navegador e você verá "Olá, mun
 
 ## 3. Roteamento e visualizações
 
-Vamos adicionar mais algumas rotas ao nosso aplicativo: 
+Vamos adicionar mais algumas rotas ao nosso aplicativo. Vá até o diretório `/opt/ihceub/flask`, edite o arquivo `app.py` e acrecente: 
 
 ```python
 @app.route('/sobre')
@@ -58,7 +58,20 @@ def contato():
     return "Página de contato."
 ```
 
-Dessa forma, você poderá acessar os *end-points* `/sobre` ou `/contato` para ver as respectivas páginas.
+Agora reinicialize o contêiner: 
+
+```bash
+docker-compose down && docker-compose up -d
+```
+
+Verifique se o contêiner está ativo e sem erros de implantação. 
+
+```bash
+docker-compose logs
+docker-compose ps
+```
+
+Dessa forma, você poderá acessar os *end-points* `http://127.0.0.1:8500/sobre` ou `http://127.0.0.1:8500/contato`, e verá as respectivas páginas em seu navegador. 
 
 ## 4. Rotas Dinâmicas
 
@@ -69,7 +82,21 @@ Vamos permitir que os usuários interajam com o aplicativo por meio de rotas din
 def saudacao(nome):
     return f"Olá, {nome}!"
 ```
-Agora, se você acessar `/usuario/Jose`, verá "Olá, Jose!".
+
+Agora reinicialize o contêiner: 
+
+```bash
+docker-compose down && docker-compose up -d
+```
+
+Verifique se o contêiner está ativo e sem erros de implantação: 
+
+```bash
+docker-compose logs
+docker-compose ps
+```
+
+Pronto, se você acessar `http://127.0.0.1:8500/usuario/Jose`, verá "Olá, Jose!" em seu navegador. 
 
 ## 5. Depurando seu aplicativo
 
