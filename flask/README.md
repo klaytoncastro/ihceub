@@ -109,7 +109,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=false)
 ``` 
 
-
 ## Conclusão
 
 Vamos entender o código parte por parte: 
@@ -118,10 +117,13 @@ Vamos entender o código parte por parte:
 #Aqui, estamos importando a classe Flask da biblioteca flask.
 from flask import Flask
 
-#Aqui estamos criando uma instância da classe Flask e atribuindo-a à variável app. O argumento __name__ é uma variável especial que retorna o nome do módulo atual. Em scripts executados diretamente, __name__ é igual a __main__. Isso indica ao Flask onde começar a procurar por coisas como templates e arquivos estáticos.
+#Aqui estamos criando uma instância da classe Flask e atribuindo-a à variável app. O argumento __name__ é uma variável especial
+#que retorna o nome do módulo atual. Em scripts executados diretamente, __name__ é igual a __main__. Isso indica ao Flask onde
+#começar a procurar por coisas como templates e arquivos estáticos.
 app = Flask(__name__)
 
-#Estamos definindo uma rota para o endereço base ('/') da nossa aplicação. Quando o usuário acessar o endereço base, a função hello() será chamada e retornará a string "Olá, mundo!".
+#Estamos definindo uma rota para o endereço base ('/') da nossa aplicação. Quando o usuário acessar o endereço base, a função
+#hello() será chamada e retornará a string "Olá, mundo!".
 @app.route('/')
 def hello():
     return "Olá, mundo!"
@@ -136,12 +138,15 @@ def sobre():
 def contato():
     return "Página de contato."
 
-#Esta rota é um pouco mais avançada. Ela espera um valor dinâmico na URL. Por exemplo, se você acessar '/usuario/Joao', a palavra 'Joao' será capturada e passada como argumento para a função saudacao(). O resultado será "Olá, Joao!".
+#Esta rota é um pouco mais avançada. Ela espera um valor dinâmico na URL. Por exemplo, se você acessar '/usuario/Joao', 
+#a palavra 'Joao' será capturada e passada como argumento para a função saudacao(). O resultado será "Olá, Joao!".
 @app.route('/usuario/<nome>')
 def saudacao(nome):
     return f"Olá, {nome}!"
 
-#Essa é a parte do código que executa a aplicação. O código dentro do bloco if só será executado se o script for rodado diretamente (e não importado em outro script). No caso, estamos fazendo a chamada do script com Docker, conforme definido em nosso Dockerfile e docker-compose.yml
+#Essa é a parte do código que executa a aplicação. O código dentro do bloco if só será executado se o script for rodado
+#diretamente (e não importado em outro script). No caso, estamos fazendo a chamada do script com Docker, conforme definido
+#em nosso Dockerfile e docker-compose.yml
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
