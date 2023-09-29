@@ -41,3 +41,46 @@ Verifique se o contêiner está ativo e sem erros de implantação.
 docker-compose logs
 docker-compose ps
 ```
+
+Agora, acesse `http://127.0.0.1:8500/` em seu navegador e você verá "Olá, mundo!".
+
+## 3. Roteamento e visualizações
+
+Vamos adicionar mais algumas rotas ao nosso aplicativo: 
+
+```python
+@app.route('/sobre')
+def sobre():
+    return "Sobre o aplicativo..."
+
+@app.route('/contato')
+def contato():
+    return "Página de contato."
+```
+
+Dessa forma, você poderá acessar os *end-points* `/sobre` ou `/contato` para ver as respectivas páginas.
+
+## 4. Rotas Dinâmicas
+
+Vamos permitir que os usuários interajam com o aplicativo por meio de rotas dinâmicas:
+
+```python
+@app.route('/usuario/<nome>')
+def saudacao(nome):
+    return f"Olá, {nome}!"
+```
+Agora, se você acessar `/usuario/Jose`, verá "Olá, Jose!".
+
+## 5. Depurando seu aplicativo
+
+O Flask possui um depurador embutido. Se ocorrer um erro, uma página de erro detalhada será exibida, ajudando a identificar o problema. Como já ativamos o ambiente de desenvolvimento, o depurador está habilitado por padrão. Em ambientes de produção, você pode utilizar um web server mais robusto como o Gunicorn e uWSGI. Nesse caso, para desativar o modo de depuração, acrescente a diretiva `debug=false` ao aplicativo. 
+
+```python
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=false)
+``` 
+
+## Conclusão
+
+Você criou um pequeno aplicativo web com o Flask, adicionou rotas estáticas e dinâmicas e aprendeu a usar o depurador. A partir daqui, você pode expandir seu aplicativo, integrando-o com bancos de dados, formulários e aprimorando seu visual com CSS e HTML. Nos próximos laboratórios veremos como aplicar estes recursos em maiores detalhes. 
+
