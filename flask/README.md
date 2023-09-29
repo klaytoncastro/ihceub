@@ -1,4 +1,4 @@
-### Como criar seu primeiro aplicativo Web usando Flask e Python 3
+# Como criar seu primeiro aplicativo Web usando Flask e Python 3
 
 ## 1. Introdução
 
@@ -15,7 +15,6 @@ Siga as instruções contidas no repositório [IHCEUB](https://github.com/klayto
 Vá até o diretório `/opt/ihceub/flask` e edite o arquivo `app.py`. Insira o código para o seu primeiro aplicativo, com o clássico "Hello World!". 
 
 ```python
-
 from flask import Flask
 app = Flask(__name__)
 
@@ -23,4 +22,22 @@ app = Flask(__name__)
 def hello():
     return "Olá, mundo!"
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
 ``` 
+
+### Executando o aplicativo 
+
+Vá até o diretório `/opt/ihceub/flask` e suba o contêiner do Flask. 
+
+```bash
+docker-compose build
+docker-compose up -d
+```
+
+Verifique se o contêiner está ativo e sem erros de implantação. 
+
+```bash
+docker-compose logs
+docker-compose ps
+```
