@@ -12,7 +12,7 @@ Siga as instruções contidas no repositório [IHCEUB](https://github.com/klayto
 
 ### Criando o aplicativo
 
-Vá até o diretório `/opt/ihceub/flask` e edite o arquivo `app.py`. Insira o código para o seu primeiro aplicativo, com o clássico "Hello World!". 
+Vá até o diretório `/opt/ihceub/flask` e crie o arquivo `app.py`. Insira o código para o seu primeiro aplicativo com a implementação do "Hello World!": 
 
 ```python
 from flask import Flask
@@ -25,6 +25,8 @@ def hello():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ``` 
+
+Salve o arquivo. 
 
 ### Executando o aplicativo 
 
@@ -107,7 +109,49 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=false)
 ``` 
 
+
 ## Conclusão
 
-Você criou um pequeno aplicativo web com o Flask, adicionou rotas estáticas e dinâmicas e aprendeu a usar o depurador. A partir daqui, você pode expandir seu aplicativo, integrando-o com bancos de dados, formulários e aprimorando seu visual com CSS e HTML. Nos próximos laboratórios veremos como aplicar estes recursos em maiores detalhes. 
+Vamos entender o código parte por parte: 
 
+```python
+#Aqui, estamos importando a classe Flask da biblioteca flask.
+from flask import Flask
+
+#Aqui estamos criando uma instância da classe Flask e atribuindo-a à variável app. O argumento __name__ é uma variável especial que retorna o nome do módulo atual. Em scripts executados diretamente, __name__ é igual a __main__. Isso indica ao Flask onde começar a procurar por coisas como templates e arquivos estáticos.
+app = Flask(__name__)
+
+#Estamos definindo uma rota para o endereço base ('/') da nossa aplicação. Quando o usuário acessar o endereço base, a função hello() será chamada e retornará a string "Olá, mundo!".
+@app.route('/')
+def hello():
+    return "Olá, mundo!"
+
+#Aqui, definimos outra rota ('/sobre'). Quando o usuário acessar essa rota, ele verá a mensagem "Sobre o aplicativo...".
+@app.route('/sobre')
+def sobre():
+    return "Sobre o aplicativo..."
+
+#Similar ao anterior, essa rota direciona o usuário para a página de contato, retornando a mensagem "Página de contato.".
+@app.route('/contato')
+def contato():
+    return "Página de contato."
+
+#Esta rota é um pouco mais avançada. Ela espera um valor dinâmico na URL. Por exemplo, se você acessar '/usuario/Joao', a palavra 'Joao' será capturada e passada como argumento para a função saudacao(). O resultado será "Olá, Joao!".
+@app.route('/usuario/<nome>')
+def saudacao(nome):
+    return f"Olá, {nome}!"
+
+#Essa é a parte do código que executa a aplicação. O código dentro do bloco if só será executado se o script for rodado diretamente (e não importado em outro script). No caso, estamos fazendo a chamada do script com Docker, conforme definido em nosso Dockerfile e docker-compose.yml
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+**Nota 1:** O trecho `host='0.0.0.0'` indica que o servidor ficará acessível para qualquer IP que tenha conectividade ao servidor Flask. 
+
+**Nota 2:** O trecho `port=5000` define a porta onde o servidor estará rodando. O padrão do Flask é 5000. Mas em nossa VM de laboratório, exploramos o conceito de NAT e estamos utilizando a porta 8500. 
+
+Então, ao executar esse script e acessar `http://127.0.0.1:8500` no seu navegador, você verá a mensagem "Olá, mundo!". Ao acessar `http://127.0.0.1:8500/sobre`, você verá "Sobre o aplicativo...", e assim por diante.
+
+### Pronto! 
+
+Você criou um pequeno aplicativo web com o Flask, adicionou rotas estáticas e dinâmicas e aprendeu a usar o depurador. A partir daqui, você pode expandir seu aplicativo, integrando-o com bancos de dados, formulários e aprimorando seu visual com CSS e HTML. Nos próximos laboratórios veremos como aplicar estes recursos em maiores detalhes. 
