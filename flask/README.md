@@ -119,7 +119,7 @@ def saudacao(nome):
     return f"Olá, {nome}!"
 ```
 
-Salve o script `app.py`` e reinicialize o contêiner: 
+Salve o script `app.py` e reinicialize o contêiner: 
 
 ```bash
 docker-compose down && docker-compose up -d
