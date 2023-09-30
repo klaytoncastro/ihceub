@@ -1,18 +1,18 @@
-# Como criar seu primeiro aplicativo Web usando Flask e Python 3
+# Como criar seu primeiro aplicativo Web usando Flask e Python
 
 ## 1. Introdução
 
-O Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes quanto para desenvolvedores experientes. Ele é bastante leve, ao passo que é flexível e permite expandir facilmente seu aplicativo para operar com bibliotecas avançadas em Python. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento, interação através de rotas dinâmicas e utilizará o depurador para corrigir erros.
+O Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes e quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
 
 ## 2. Implantação do Ambiente
 
 ### Pré-Requisitos
 
-Siga as instruções contidas no repositório [IHCEUB](https://github.com/klaytoncastro/ihceub/) para implantação da VM com Docker. 
+Siga as instruções inicias contidas no repositório [IHCEUB](https://github.com/klaytoncastro/ihceub/) para implantação do ambiente de laboratório, certificando-se de ter compreendido a implantação da VM com Docker que atuará como servidor web, além das ferramentas de gerenciamento, incluindo acesso remoto via SSH e editor de textos Vim. 
 
 ### Criando o aplicativo
 
-Vá até o diretório `/opt/ihceub/flask` e crie o arquivo `app.py`. Insira o código para o seu primeiro aplicativo com a implementação do "Hello World!": 
+Acesse o ambiente via SSH e vá até o diretório `/opt/ihceub/flask`. Crie o arquivo `app.py` com o Vim (use o comando `vim app.py`) ou editor de sua preferência. Insira o código abaixo para o seu primeiro aplicativo Flask com a implementação do "Hello World!": 
 
 ```python
 from flask import Flask
@@ -25,8 +25,7 @@ def hello():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ``` 
-
-Salve o arquivo. 
+Salve o arquivo. Se estiver no Vim, lembre-se de usar o comando `:wq!`.
 
 ### Executando o aplicativo 
 
@@ -40,15 +39,22 @@ docker-compose up -d
 Verifique se o contêiner está ativo e sem erros de implantação. 
 
 ```bash
-docker-compose logs
 docker-compose ps
+docker-compose logs
 ```
 
 Agora, acesse `http://127.0.0.1:8500/` em seu navegador e você verá "Olá, mundo!".
 
 ## 3. Roteamento e visualizações
 
-Vamos adicionar mais algumas rotas ao nosso aplicativo. Vá até o diretório `/opt/ihceub/flask`, edite o arquivo `app.py` e acrecente: 
+Roteamento refere-se ao mapeamento de URLs específicas para funções em um aplicativo web. Em outras palavras, quando você acessa um determinado endereço em um navegador web (ou através de uma chamada API), o aplicativo precisa saber qual função deve ser executada e o que deve ser retornado para o usuário. No Flask, isso é feito através do uso de decoradores, como `@app.route()`, para associar funções específicas a URLs. Por exemplo:
+
+```python
+@app.route('/inicio')
+def inicio():
+    return "Página Inicial"
+```
+Dito isso, vamos adicionar mais algumas rotas ao nosso aplicativo. Vá até o diretório `/opt/ihceub/flask`, edite o arquivo `app.py` e acrecente: 
 
 ```python
 @app.route('/sobre')
@@ -69,15 +75,44 @@ docker-compose down && docker-compose up -d
 Verifique se o contêiner está ativo e sem erros de implantação. 
 
 ```bash
-docker-compose logs
 docker-compose ps
+docker-compose logs
 ```
 
 Dessa forma, você poderá acessar os *end-points* `http://127.0.0.1:8500/sobre` ou `http://127.0.0.1:8500/contato`, e verá as respectivas páginas em seu navegador. 
 
+**Nota 1:** A identação do código é fundamental em Python pois, ao contrário de outras linguagens de programação que usam `{}` ou palavras-chave específicas para delimitar blocos de instruções, Python utiliza a identação para este propósito. Assim, a identação passa a determinar como os comandos são agrupados e, consequentemente, a estrutura e a lógica do seu programa. Por exemplo, vamos considerar um simples código com uma estrutura condicional: 
+
+```python
+#Código Correto (com identação apropriada):
+if 5 > 3:
+    print("5 é maior que 3")
+else:
+    print("5 não é maior que 3")
+```
+
+No caso acima, "5 é maior que 3" será impresso porque a expressão é verdadeira. Assim, a instrução print dentro do bloco if será executada. 
+
+```python
+#Código incorreto (sem identação apropriada):
+if 5 > 3:
+print("5 é maior que 3")
+else:
+print("5 não é maior que 3")
+```
+
+Já o código acima produzirá um erro de sintaxe porque Python espera que o bloco sob o if esteja identado. A identação não é apenas estética. Ela define a estrutura do código e determina quais instruções pertencem a qual bloco. Se duas instruções estiverem identadas no mesmo nível, elas pertencem ao mesmo bloco.
+
+**Nota 2:** Lembre-se que o trecho de código indicado abaixo deve ser mantido por último, pois é a parte do programa responsável por executar o Flask quando o Python invocar o script `app.py` por meio do Docker. 
+
+```python
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
 ## 4. Rotas Dinâmicas
 
-Vamos permitir que os usuários interajam com o aplicativo por meio de rotas dinâmicas:
+Vamos permitir que os usuários interajam com o aplicativo por meio de rotas dinâmicas. Adicione o seguinte trecho ao seu código:
 
 ```python
 @app.route('/usuario/<nome>')
@@ -85,7 +120,7 @@ def saudacao(nome):
     return f"Olá, {nome}!"
 ```
 
-Agora reinicialize o contêiner: 
+Salve o script `app.py`` e reinicialize o contêiner: 
 
 ```bash
 docker-compose down && docker-compose up -d
@@ -94,19 +129,19 @@ docker-compose down && docker-compose up -d
 Verifique se o contêiner está ativo e sem erros de implantação: 
 
 ```bash
-docker-compose logs
 docker-compose ps
+docker-compose logs
 ```
 
 Pronto, se você acessar `http://127.0.0.1:8500/usuario/Jose`, verá "Olá, Jose!" em seu navegador. 
 
 ## 5. Depurando seu aplicativo
 
-O Flask possui um depurador embutido. Se ocorrer um erro, uma página de erro detalhada será exibida, ajudando a identificar o problema. Como já ativamos o ambiente de desenvolvimento, o depurador está habilitado por padrão. Em ambientes de produção, você pode utilizar um web server mais robusto como o Gunicorn e uWSGI. Nesse caso, para desativar o modo de depuração, acrescente a diretiva `debug=false` ao aplicativo. 
+O Flask possui um depurador embutido. No nosso ambiente, quando você executa o comando `docker-compose logs`, poderá verificar quais são os eventuais erros de maneira mais detalhada e assim corrigir o código de seu aplicativo. Ou seja: se ocorrer um erro, uma página de erro detalhada será exibida nos logs, ajudando a identificar o problema. Como já ativamos o ambiente de desenvolvimento, o depurador está habilitado por padrão. Em ambientes de produção, você pode utilizar um web server mais robusto como o Gunicorn e uWSGI (veremos isso nas próximas aulas). Neste caso, para ativar o modo de depuração, você poderia acrescentar a diretiva `debug=true` ao aplicativo. 
 
 ```python
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=false)
+    app.run(host='0.0.0.0', port=5000, debug=true)
 ``` 
 
 ## Conclusão
