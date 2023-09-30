@@ -2,13 +2,13 @@
 
 ## 1. Introdução
 
-O Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes e quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
+O Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
 
 ## 2. Implantação do Ambiente
 
 ### Pré-Requisitos
 
-Siga as instruções inicias contidas no repositório [IHCEUB](https://github.com/klaytoncastro/ihceub/) para implantação do ambiente de laboratório, certificando-se de ter compreendido a implantação da VM com Docker que atuará como servidor web, além das ferramentas de gerenciamento, incluindo acesso remoto via SSH e editor de textos Vim. 
+Siga as instruções inicias contidas no repositório [IHCEUB](https://github.com/klaytoncastro/ihceub/) para implantação do ambiente de laboratório, certificando-se de ter compreendido a implantação da VM com Docker que atuará como servidor web, além das ferramentas de gerenciamento, incluindo acesso remoto via SSH e editor de textos Vim, cujos fundamentos e comandos essenciais foram trabalhados em sala de aula. 
 
 ### Criando o aplicativo
 
@@ -42,7 +42,6 @@ Verifique se o contêiner está ativo e sem erros de implantação.
 docker-compose ps
 docker-compose logs
 ```
-
 Agora, acesse `http://127.0.0.1:8500/` em seu navegador e você verá "Olá, mundo!".
 
 ## 3. Roteamento e visualizações
@@ -137,7 +136,23 @@ Pronto, se você acessar `http://127.0.0.1:8500/usuario/Jose`, verá "Olá, Jose
 
 ## 5. Depurando seu aplicativo
 
-O Flask possui um depurador embutido. No nosso ambiente, quando você executa o comando `docker-compose logs`, poderá verificar quais são os eventuais erros de maneira mais detalhada e assim corrigir o código de seu aplicativo. Ou seja: se ocorrer um erro, uma página de erro detalhada será exibida nos logs, ajudando a identificar o problema. Como já ativamos o ambiente de desenvolvimento, o depurador está habilitado por padrão. Em ambientes de produção, você pode utilizar um web server mais robusto como o Gunicorn e uWSGI (veremos isso nas próximas aulas). Neste caso, para ativar o modo de depuração, você poderia acrescentar a diretiva `debug=true` ao aplicativo. 
+O Flask possui um depurador embutido. No nosso ambiente, quando você executa o comando `docker-compose logs`, poderá verificar quais são os eventuais erros e assim corrigir o código de seu aplicativo. Vamos imaginar que você tenha o seguinte erro de sintaxe em seu código Python: 
+
+```python
+#Aqui, você esqueceu de fechar o parêntese em uma chamada de função: 
+print("Olá, mundo!"
+```
+Se você tentar executar este código a partir de um contêiner, a saída do comando `docker-compose logs` deverá retornar um erro com este padrão: 
+
+```bash
+web_1  | Traceback (most recent call last):
+web_1  |   File "app.py", line 1, in <module>
+web_1  |     print("Olá, mundo!"
+web_1  |                      ^
+web_1  | SyntaxError: unexpected EOF while parsing
+```
+
+Ou seja, uma página de erro detalhada será exibida nos logs, ajudando a identificar o problema. Como já ativamos o ambiente de desenvolvimento, o depurador está habilitado por padrão. Em ambientes de produção, você pode utilizar um web server mais robusto como o Gunicorn e uWSGI (veremos isso nas próximas aulas). Neste caso, para ativar o modo de depuração, você poderia acrescentar a diretiva `debug=true` ao aplicativo. 
 
 ```python
 if __name__ == '__main__':
@@ -186,11 +201,9 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
 
-**Nota 1:** O trecho `host='0.0.0.0'` indica que o servidor ficará acessível para qualquer IP que tenha conectividade ao servidor Flask. 
+**Nota 1:** O trecho `host='0.0.0.0'` indica que o servidor ficará acessível para qualquer IP que tenha conectividade ao servidor Flask. Usar `0.0.0.0` em ambientes de produção pode expor o aplicativo a riscos desnecessários. Dessa forma, em produção, costumamos indicar explicitamente o endereço IP autorizado a invocar o aplicativo, geralmente um proxy reverso. Detalharemos esta arquitetura em nossas próximas aulas. 
 
-**Nota 2:** O trecho `port=5000` define a porta onde o servidor estará rodando. O padrão do Flask é 5000. Mas em nossa VM de laboratório, exploramos o conceito de NAT e estamos utilizando a porta 8500. 
-
-Então, ao executar esse script e acessar `http://127.0.0.1:8500` no seu navegador, você verá a mensagem "Olá, mundo!". Ao acessar `http://127.0.0.1:8500/sobre`, você verá "Sobre o aplicativo...", e assim por diante.
+**Nota 2:** O trecho `port=5000` define a porta onde o servidor estará rodando. O padrão do Flask é 5000. Mas em nossa VM de laboratório, exploramos o conceito de NAT e estamos utilizando a porta 8500. Então, ao executar esse script e acessar `http://127.0.0.1:8500` no seu navegador, você verá a mensagem "Olá, mundo!". Ao acessar `http://127.0.0.1:8500/sobre`, você verá "Sobre o aplicativo...", e assim por diante.
 
 ### Pronto! 
 
