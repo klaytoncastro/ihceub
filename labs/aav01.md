@@ -2,7 +2,7 @@
 
 ### Retrospectiva
 
-Ao longo do curso, exploramos a relação entre pessoas e tecnologia. Entendemos o que é a Interação Humano-Computador (IHC) e como o User Centered Design (UCD) prioriza o usuário no processo de criação de produtos. Aprendemos sobre Experiência do Usuário (UX) e como ela se diferencia da Interface do Usuário (UI). Com o usuário no coração do processo de design, introduzimos o Design Thinking, uma metodologia que busca solucionar problemas de forma ágil, inovadora, iterativa, colaborativa e multidisciplinar. Utilizando estes conceitos e os conhecimentos discutidos em sala de aula, responda as questões a seguir. 
+Ao longo do curso, exploramos a relação entre pessoas e tecnologia. Entendemos o que é a Interação Humano-Computador (IHC) e como o User Centered Design (UCD) prioriza o usuário no processo de criação de produtos. Aprendemos sobre Experiência do Usuário (UX) e como ela se diferencia da Interface do Usuário (UI). Com o usuário no coração do processo de design, introduzimos o Design Thinking, uma metodologia que busca solucionar problemas de forma ágil, inovadora, iterativa, colaborativa e multidisciplinar. Com base nestes conceitos e nos conhecimentos discutidos em sala de aula, responda as questões a seguir. 
 
 ### Fundamentos: IHC, UCD, UX e UI no Design de Produtos (Total: 1,4 pontos) 
 
@@ -16,7 +16,7 @@ Ao longo do curso, exploramos a relação entre pessoas e tecnologia. Entendemos
 
 ### Prática: Configuração do Ambiente de Laboratório e Execução do Flask (Total: 1,6 pontos)
 
-Durante os encontros desta disciplina, introduzimos a prática de desenvolvimento web usando o microframework Flask. Enfatizamos a importância de uma infraestrutura portátil, baseada em contêineres, para garantir um ambiente de desenvolvimento isolado e replicável. Assim, utilizamos Docker e Docker Compose, nossas ferramentas  essenciais para criar e orquestrar as aplicações. O foco da avaliação estará em sua capacidade de executar um contêiner Flask corretamente, pois isso é pré-requisito para as atividades práticas mais avançadas relacionadas à IHC no contexto de desenvolvimento de produtos web que abordaremos posteriormente no curso. 
+Durante os encontros desta disciplina, introduzimos a prática de desenvolvimento web usando o microframework Flask. Enfatizamos a importância de uma infraestrutura portátil, baseada em contêineres, para garantir um ambiente de desenvolvimento isolado e replicável. Utilizamos Docker e Docker Compose como ferramentas essenciais para criar e orquestrar as aplicações. O foco da avaliação estará em sua capacidade de executar um contêiner Flask corretamente, um pré-requisito para realizar as atividades práticas mais avançadas no contexto de desenvolvimento de produtos web que abordaremos posteriormente no curso. 
 
 **Questão 5:** 
 
