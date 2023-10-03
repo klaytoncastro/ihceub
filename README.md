@@ -201,9 +201,11 @@ Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, 
 
 - O Vim é uma ferramenta robusta, repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá as potencialidades desta ferramenta. Para quem ainda não está habituado com ambientes de terminal, caso se sinta perdido ou incerto sobre uma ação, simplesmente pressione `Esc` e digite `:q!`. Este comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
 
-- Em busca de uma experiência mais amigável ao trabalhar com o **código das suas aplicações**, em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin SSH Remote_, o VS Code permite conexões diretas via SSH. Além disso, para a transferência de arquivos, como código e imagens entre o _host_ e a VM, recomendamos o uso de uma ferramenta com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php). 
+- Em busca de uma experiência mais amigável ao trabalhar com o **código das suas aplicações**, em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin_ [SSH Remote](vscode:extension/ms-vscode-remote.remote-ssh), o [VS Code](https://code.visualstudio.com/docs/remote/ssh) permite conexões diretas via SSH. 
 
 - Como alternativa mais colaborativa e orientada à produtividade, podemos considerar o uso de plataformas de controle de versão, como o [GitHub](https://github.com). Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores, facilitando o fluxo de trabalho e a integração contínua. 
+
+- Além disso, para a transferência de arquivos, como código e imagens entre o _host_ e a VM, o uso de uma ferramenta com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php) pode ser útil para obter e enviar arquivos. 
 
 - **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada uma destas abordagens em sala de aula. 
 
