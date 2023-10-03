@@ -197,15 +197,15 @@ Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, 
 
     No modo normal, posicione-se na linha que deseja deletar e digite `dd`.
 
-### Dicas
+### Dicas 
 
-- O Vim é uma ferramenta robusta, repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá as potencialidades desta ferramenta. Para quem ainda não está habituado com ambientes de terminal, caso se sinta perdido ou incerto sobre uma ação, simplesmente pressione `Esc` e digite `:q!`. Este comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
+- O Vim é uma ferramenta robusta, repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá as potencialidades desta ferramenta. Se não estiver familiarizado com ambientes de terminal, lembre-se de que pode sair do Vim pressionando `Esc` e digitando `:q!`. Esse comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
 
-- Em busca de uma experiência mais amigável ao trabalhar com o **código das suas aplicações**, em casa, uma ótima opção é o [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/). Com o _plugin_ [SSH Remote](vscode:extension/ms-vscode-remote.remote-ssh), o [VS Code](https://code.visualstudio.com/docs/remote/ssh) permite conexões diretas via SSH. 
+- Se você está **fora do laboratório**, em casa ou no escritório, pode preferir uma interface gráfica mais amigável. Neste caso, considere o uso do [Visual Studio Code (VS Code)](https://code.visualstudio.com/) com a extensão [SSH Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh), que permite estabelecer uma sessão [SSH](https://code.visualstudio.com/docs/remote/ssh) diretamente na IDE (Integrated Development Environment). Esta alternativa pode ser mais intuitiva para edição de arquivos, unificando sua experiência de desenvolvimento e administração.
 
-- Como alternativa mais colaborativa e orientada à produtividade, podemos considerar o uso de plataformas de controle de versão, como o [GitHub](https://github.com). Com o GitHub, você pode gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores, facilitando o fluxo de trabalho e a integração contínua. 
+- Considere o uso de plataformas de controle de versão, como o [GitHub](https://github.com), para gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores. Isso facilita o fluxo de trabalho e a integração contínua.
 
-- Além disso, para a transferência de arquivos, como código e imagens entre o _host_ e a VM, o uso de uma ferramenta com suporte a SFTP (_Secure File Transfer Protocol_), como o [Filezilla](https://filezilla-project.org/download.php) pode ser útil para obter e enviar arquivos. 
+- Para a transferência de arquivos entre o _host_ e a VM, pode ser interessante utilizar uma ferramenta com suporte a SFTP (Secure File Transfer Protocol), como o [Filezilla](https://filezilla-project.org/download.php).
 
 - **Nota**: Discutiremos e apresentaremos a configuração, vantagens e desvantagens de cada uma destas abordagens em sala de aula. 
 
