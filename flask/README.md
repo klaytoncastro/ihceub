@@ -4,7 +4,123 @@
 
 Como vimos em sala de aula, o Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
 
-## 2. Implantação do Ambiente
+## 2. Conceitos Iniciais
+
+Python é uma linguagem de programação de alto nível amplamente usada devido à sua simplicidade e versatilidade. Aqui estão alguns conceitos básicos sobre a linguagem: 
+
+### Variáveis e Tipos de Dados
+
+- Em Python, você pode declarar variáveis sem especificar seu tipo.
+- Exemplos de tipos de dados incluem inteiros (int), números de ponto flutuante (float), strings (str) e booleanos (bool): 
+
+```python
+idade = 25
+altura = 1.75
+nome = "João"
+e_estudante = True
+```
+
+- Além dos tipos mencionados anteriormente, Python oferece tipos compostos, como listas, tuplas e conjuntos:
+
+```python
+minha_lista = [1, 2, 3, 4]
+minha_tupla = (10, 20, 30)
+meu_conjunto = {1, 2, 3}
+```
+
+### Operadores e Estruturas de Controle
+
+- Python usa indentação para estruturar o código (espaços em branco no início de linhas). A identação não é apenas estética. Ela define a estrutura do código e determina quais instruções pertencem a qual bloco. Se duas instruções estiverem identadas no mesmo nível, elas pertencem ao mesmo bloco. 
+- Estruturas de controle incluem condicionais (if, elif, else) e loops (for, while): 
+
+```python
+if idade >= 18:
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+
+for i in range(5):
+    print(i)
+```
+
+- A estrutura "if" pode incluir várias condições usando "elif".
+- Loops "for" são usados para iterar sobre sequências, como listas.
+- O loop "while" é usado quando você quer que um bloco de código seja repetido enquanto uma condição for verdadeira.
+
+```python
+if idade >= 18:
+    print("Você é maior de idade.")
+elif idade == 18:
+    print("Você tem exatamente 18 anos.")
+else:
+    print("Você é menor de idade.")
+
+for item in minha_lista:
+    print(item)
+
+while contador < 5:
+    print(contador)
+    contador += 1
+```
+
+### Listas e Dicionários
+
+- Listas são coleções ordenadas de elementos, enquanto dicionários são coleções de pares chave-valor: 
+
+```python
+numeros = [1, 2, 3, 4, 5]
+pessoa = {"nome": "Maria", "idade": 30}
+```
+
+### Funções
+
+- Funções são blocos de código reutilizáveis que realizam tarefas específicas: 
+
+```python
+def saudacao(nome):
+    print(f"Olá, {nome}!")
+
+saudacao("Laura")
+```
+
+- Funções podem receber argumentos e retornar valores.
+- Você pode definir funções sem retorno usando "return None".
+
+```python
+def soma(a, b):
+    return a + b
+
+def saudacao(nome="visitante"):
+    print(f"Olá, {nome}!")
+
+resultado = soma(3, 4)
+saudacao()
+```
+
+### Módulos e Bibliotecas:
+
+- Python possui uma vasta biblioteca padrão e milhares de bibliotecas externas para realizar tarefas específicas.
+- Você pode importar módulos usando "import": 
+
+```python
+import math
+raiz_quadrada = math.sqrt(25)
+```
+
+### Tratamento de Exceções
+
+- Python oferece estruturas para lidar com erros, como "try" e "except".
+
+```python
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Não é possível dividir por zero.")
+```
+
+Python é uma linguagem flexível e poderosa que pode ser usada em uma variedade de aplicações, desde desenvolvimento web até ciência de dados e automação. À medida que avançarmos, poderemos explorar tópicos mais avançados, como programação orientada a objetos, manipulação de arquivos e muito mais. 
+
+## 3. Implantação do Ambiente
 
 ### Pré-Requisitos
 
@@ -44,7 +160,7 @@ docker-compose logs
 ```
 Agora, acesse `http://127.0.0.1:8500/` em seu navegador e você verá "Olá, mundo!".
 
-## 3. Roteamento e visualizações
+## 4. Roteamento e visualizações
 
 Roteamento refere-se ao mapeamento de URLs específicas para funções em um aplicativo web. Em outras palavras, quando você acessa um determinado endereço em um navegador web (ou através de uma chamada API), o aplicativo precisa saber qual função deve ser executada e o que deve ser retornado para o usuário. No Flask, isso é feito através do uso de decoradores, como `@app.route()`, para associar funções específicas a URLs. Por exemplo:
 
@@ -100,7 +216,7 @@ else:
 print("5 não é maior que 3")
 ```
 
-Já o código acima produzirá um erro de sintaxe porque Python espera que o bloco sob o if esteja identado. A identação não é apenas estética. Ela define a estrutura do código e determina quais instruções pertencem a qual bloco. Se duas instruções estiverem identadas no mesmo nível, elas pertencem ao mesmo bloco.
+Já o código acima produzirá um erro de sintaxe porque Python espera que o bloco sob o if esteja identado. 
 
 **Nota 2:** Lembre-se que o trecho de código indicado abaixo deve ser mantido por último, pois é a parte do programa responsável por executar o Flask quando o Python invocar o script `app.py` por meio do Docker. 
 
@@ -109,7 +225,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
 
-## 4. Rotas Dinâmicas
+## 5. Rotas Dinâmicas
 
 Vamos permitir que os usuários interajam com o aplicativo por meio de rotas dinâmicas. Adicione o seguinte trecho ao seu código:
 
@@ -134,7 +250,7 @@ docker-compose logs
 
 Pronto, se você acessar `http://127.0.0.1:8500/usuario/Jose`, verá "Olá, Jose!" em seu navegador. 
 
-## 5. Depurando seu aplicativo
+## 6. Depurando seu aplicativo
 
 O Flask possui um depurador embutido. No nosso ambiente, quando você executa o comando `docker-compose logs`, poderá verificar quais são os eventuais erros e assim corrigir o código de seu aplicativo. Vamos imaginar que você tenha o seguinte erro de sintaxe em seu código Python: 
 
@@ -159,7 +275,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=true)
 ``` 
 
-## 6. Análise do Código
+## 7. Análise do Código
 
 Vamos entender o código parte por parte: 
 
