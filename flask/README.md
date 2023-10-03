@@ -2,7 +2,13 @@
 
 ## 1. Introdução
 
-Como vimos em sala de aula, o Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
+Como vimos em sala de aula, o Flask é um microframework Python para desenvolvimento ágil de aplicativos web, adequado tanto para iniciantes quanto para desenvolvedores mais experientes. Ele é bastante leve e extensível, permitindo expandir facilmente seu aplicativo para operar com bibliotecas mais avançadas, aproveitando todo o poder da linguagem Python e a flexibilidade da web. 
+
+Imagine que você está montando um quebra-cabeça. O Flask é como um conjunto de peças de quebra-cabeça soltas que você pode escolher e encaixar conforme sua necessidade. Você começa com uma base simples e, à medida que avança, seleciona as peças específicas que deseja adicionar para criar a imagem completa. Isso significa que você não carrega todas as peças de uma só vez, economizando tempo e esforço.
+
+Por outro lado, frameworks mais pesados, como o Django, são como quebra-cabeças enormes que já vêm com todas as peças juntas. Embora sejam poderosos e adequados para projetos complexos, eles podem ser excessivos para projetos menores ou iniciantes. Você precisa lidar com todas as peças, mesmo aquelas que não se encaixam no seu quebra-cabeça específico, o que pode ser confuso e demorado.
+
+Ambos, Flask e Django, são soluções profissionais. A principal diferença está na abordagem: Flask permite que você comece pequeno, escolhendo apenas as peças necessárias, e cresça à medida que seu projeto se desenvolve. Neste tutorial, você criará um aplicativo que exibe texto HTML, aprenderá sobre roteamento de aplicativos web, interação através de rotas de conteúdo estático e dinâmico, além de utilizar o depurador para corrigir eventuais erros.
 
 ## 2. Conceitos Iniciais
 
