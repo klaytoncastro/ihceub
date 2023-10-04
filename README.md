@@ -308,12 +308,11 @@ chmod +x docker-cleanup.sh
 
 ### Desligamento Seguro do Ambiente 
 
-- **Protocolo de Desligamento:** Ao finalizar suas atividades, é funamental adotar um protocolo de desligamento para assegurar a integridade, confiabilidade e consistência do ambiente de laboratório. Para isso, utilize o comando `shutdown -h now` no terminal, garantindo o encerramento apropriado da VM e de todos os processos associados, incluindo os contêineres Docker.
+- **Protocolo de Desligamento:** Ao finalizar suas atividades, é fundamental utilizar o comando `shutdown -h now` no terminal para desligar seu ambiente corretamente, assegurando a integridade, confiabilidade e consistência da VM e de todos os processos associados, incluindo os contêineres Docker.
 
 - **Preservação de Configurações:** Desligar sistemas e serviços corretamente é uma boa prática de administração, pois minimiza riscos à integridade dos dados e assegura a estabilidade do ambiente de laboratório. Com o desligamento adequado, todas as modificações nos contêineres e na VM são mantidas, permitindo que, ao reiniciar, o sistema esteja conforme foi deixado, sem necessidade de novas configurações.
 
 - **Consistência de Dados:** Um desligamento adequado é vital para a proteção e consistência dos dados armazenados. Desligamentos abruptos, seja por interrupção forçada ou pelo encerramento inapropriado do VirtualBox, podem comprometer a capacidade dos contêineres de salvar informações cruciais em volumes persistentes.
-
 
 ### Pronto! 
 
