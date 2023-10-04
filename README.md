@@ -199,9 +199,9 @@ Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, 
 
 ### Dicas 
 
-- O Vim é uma ferramenta robusta, repleta de comandos e atalhos que podem otimizar sua produtividade ao editar arquivos em sistemas operacionais baseados em terminal. À medida que se familiariza com os comandos básicos, você descobrirá as potencialidades desta ferramenta. Se não estiver familiarizado com ambientes de terminal, lembre-se de que pode sair do Vim pressionando `Esc` e digitando `:q!`. Esse comando retornará ao terminal, ignorando quaisquer mudanças não salvas.
+- O Vim é uma ferramenta robusta para editar arquivos em sistemas operacionais baseados em terminal, com inúmeros comandos e atalhos para otimizar sua produtividade. À medida que se familiariza, você descobrirá seu potencial. Se não estiver acostumado com ambientes de terminal, lembre-se que pode sair do Vim pressionando `Esc` e digitando `:q!` para retornar ao terminal sem salvar as mudanças. 
 
-- Se você está **fora do laboratório**, em casa ou no escritório, pode preferir uma interface gráfica mais amigável. Neste caso, considere o uso do [Visual Studio Code (VS Code)](https://code.visualstudio.com/) com a extensão [SSH Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh), que permite estabelecer uma sessão [SSH](https://code.visualstudio.com/docs/remote/ssh) diretamente na IDE (Integrated Development Environment). Esta alternativa pode ser mais intuitiva para edição de arquivos, unificando sua experiência de desenvolvimento e administração.
+- Se você está **fora do laboratório**, em casa ou no escritório, pode preferir uma interface gráfica mais amigável. Neste caso, considere o uso do [Visual Studio Code (VS Code)](https://code.visualstudio.com/) com a extensão [SSH Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh), que permite estabelecer uma sessão [SSH](https://code.visualstudio.com/docs/remote/ssh) diretamente na IDE (Integrated Development Environment), tornando a edição de arquivos mais intuitiva e unificando sua experiência de desenvolvimento.
 
 - Considere o uso de plataformas de controle de versão, como o [GitHub](https://github.com), para gerenciar e rastrear as mudanças no seu código e colaborar com outros desenvolvedores. Isso facilita o fluxo de trabalho e a integração contínua.
 
@@ -308,9 +308,12 @@ chmod +x docker-cleanup.sh
 
 ### Desligamento Seguro do Ambiente 
 
-- **Preservação de Configurações:** É uma boa prática de administração encerrar sistemas e serviços adequadamente para evitar possíveis problemas de integridade de dados e garantir um ambiente de laboratório confiável. Quando você desliga a VM corretamente, as configurações e alterações feitas nos contêineres e na própria VM são preservadas. Isso significa que, ao reiniciar a VM, ela estará no mesmo estado em que você a deixou, evitando a necessidade de reconfigurar tudo novamente.
+- **Protocolo de Desligamento:** Ao finalizar suas atividades, é funamental adotar um protocolo de desligamento para assegurar a integridade, confiabilidade e consistência do ambiente de laboratório. Para isso, utilize o comando `shutdown -h now` no terminal, garantindo o encerramento apropriado da VM e de todos os processos associados, incluindo os contêineres Docker.
 
-- **Consistência de Dados:** Ao desligar a VM de forma adequada (usando o comando ```shutdown -h now``` no terminal), você garante que todos os processos em execução, incluindo os contêineres Docker, tenham a oportunidade de encerrar suas operações normalmente. Isso ajuda a manter a consistência dos dados armazenados. Se a VM for desligada abruptamente, seja por meio de um encerramento forçado ou pelo fechamento do VirtualBox sem desligar a VM, os contêineres podem não ter a chance de liberar recursos e gravar dados importantes nos volumes persistentes. 
+- **Preservação de Configurações:** Desligar sistemas e serviços corretamente é uma boa prática de administração, pois minimiza riscos à integridade dos dados e assegura a estabilidade do ambiente de laboratório. Com o desligamento adequado, todas as modificações nos contêineres e na VM são mantidas, permitindo que, ao reiniciar, o sistema esteja conforme foi deixado, sem necessidade de novas configurações.
+
+- **Consistência de Dados:** Um desligamento adequado é vital para a proteção e consistência dos dados armazenados. Desligamentos abruptos, seja por interrupção forçada ou pelo encerramento inapropriado do VirtualBox, podem comprometer a capacidade dos contêineres de salvar informações cruciais em volumes persistentes.
+
 
 ### Pronto! 
 
