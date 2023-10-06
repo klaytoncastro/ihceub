@@ -308,7 +308,7 @@ chmod +x docker-cleanup.sh
 
 ### Desligamento Seguro do Ambiente 
 
-Desligamentos abruptos, provocados por interrupções forçads do sistema operacional ou encerramento inadequado do VirtualBox, podem comprometer a integridade dos discos virtuais, resultando em perda, corrupção de dados ou instabilidade do ambiente. Por isso, ao finalizar suas atividades na VM, é imprescindível executar o comando `shutdown -h now` a partir no terminal. Esse procedimento simples efetua um desligamento seguro e ordenado do ambiente, preservando a integridade do sistema de arquivos e dos serviços ativos na VM, incluindo os contêineres Docker. Assim, você assegura que todas as alterações permaneçam intactas e que, ao reiniciar a VM, o sistema continue exatamente do ponto em que foi interrompido, minimizando possíveis transtornos ou ajustes futuros.
+Desligamentos abruptos, provocados por interrupções forçadas do sistema operacional hospedeiro ou encerramento inadequado do VirtualBox, podem comprometer a integridade dos discos virtuais, resultando em perda, corrupção de dados ou instabilidade do ambiente. Por isso, ao finalizar suas atividades na VM, é imprescindível executar o comando `shutdown -h now` a partir do terminal. Esse procedimento simples efetua um desligamento seguro e ordenado do ambiente, preservando a integridade do sistema de arquivos e dos serviços ativos, incluindo os contêineres. Assim, você assegura que, ao reiniciar a VM, o sistema continue exatamente a operar exatamente como foi interrompido, minimizando eventuais transtornos e retrabalhos. 
 
 ### Pronto! 
 
