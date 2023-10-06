@@ -199,7 +199,7 @@ Neste guia, focaremos apenas em algumas operações básicas, tais como: abrir, 
 
 ### Dicas 
 
-- O Vim é uma ferramenta robusta para editar arquivos em sistemas operacionais baseados em terminal, com inúmeros comandos e atalhos para otimizar sua produtividade. À medida que se familiariza, você descobrirá seu potencial. Se não estiver acostumado com ambientes de terminal, lembre-se que pode sair do Vim pressionando `Esc` e digitando `:q!` para retornar ao terminal sem salvar as mudanças. 
+- O Vim é uma ferramenta baseada em terminal para editar arquivos em sistemas operacionais como Linux e MacOS, que possui inúmeros comandos e atalhos para otimizar sua produtividade. Se não estiver acostumado a administrar sistemas baseados em terminal e perceber que algo deu errado na edição, lembre-se que pode sair do Vim pressionando `Esc` e digitando `:q!` para retornar à CLI (*Command-Line Interface*) sem salvar as mudanças. À medida que se familiariza, você descobrirá o potencial da ferramenta e sentirá mais segurança na sua operação. 
 
 - Se estiver **fora do laboratório**, você pode preferir uma interface gráfica mais amigável. Neste caso, considere o uso de uma IDE (Integrated Development Environment). O [Visual Studio Code (VS Code)](https://code.visualstudio.com/) com a extensão [SSH Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) é uma opção popular e confiável, que permite estabelecer uma sessão [SSH](https://code.visualstudio.com/docs/remote/ssh) diretamente, tornando a edição de arquivos mais intuitiva e unificando sua experiência de desenvolvimento.
 
