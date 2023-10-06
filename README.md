@@ -315,9 +315,9 @@ chmod +x docker-cleanup.sh
 
 ### Desligamento Seguro do Ambiente 
 
-Desligamentos abruptos, provocados por interrupções forçadas do sistema operacional hospedeiro ou encerramento inadequado do VirtualBox, podem comprometer a integridade dos discos virtuais, resultando em perda, corrupção de dados ou instabilidade do ambiente. Por isso, ao finalizar suas atividades na VM, é fundamental executar o comando `shutdown -h now` a partir do terminal (via SSH ou mesmo a console física). Esse procedimento simples efetua um desligamento seguro e ordenado, preservando a integridade do sistema de arquivos e dos serviços ativos no ambiente, incluindo os contêineres. Assim, você assegura que, ao reiniciar a VM, o sistema continue a operar exatamente do ponto onde foi interrompido, minimizando eventuais transtornos e retrabalho. 
+Desligamentos abruptos, provocados por interrupções forçadas do sistema operacional hospedeiro ou encerramento inadequado do VirtualBox, podem comprometer a integridade dos discos virtuais, resultando em perda, corrupção de dados ou instabilidade do ambiente. Por isso, ao finalizar suas atividades na VM, é fundamental executar o comando `shutdown -h now` a partir do terminal (via SSH ou mesmo a console física). 
 
-Se você estiver usando o VirtualBox diretamente, pode também escolher a opção "Desligar a máquina" (ou similar) disponível no menu do software, o que basicamente fará o mesmo procedimento.
+Esse procedimento simples efetua um desligamento seguro e ordenado, preservando a integridade do sistema de arquivos e dos serviços ativos no ambiente, incluindo os contêineres. Assim, você assegura que, ao reiniciar a VM, o sistema continue a operar exatamente do ponto onde foi interrompido, minimizando eventuais transtornos e retrabalho. Se você estiver usando o VirtualBox diretamente, pode também escolher a opção "Desligar a máquina" (ou similar) disponível no menu do software, o que basicamente fará o mesmo procedimento.
 
 **Nota:** Nunca selecione a opção "Forçar Desligamento" ou "Desligamento bruto" do VirtualBox, a menos que não tenha alternativas. Essa opção interrompe a alimentação da VM, similar a desligar a energia de um computador real sem realizar o desligamento adequado, e tem potencial de causar problemas.
 
