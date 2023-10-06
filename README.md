@@ -2,7 +2,7 @@
 
 Prezado(a) aluno(a), 
 
-Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ (Experiência do Usuário) e UI - _User Interface_ (Interface do Usuário). Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
+Seja bem-vindo(a) aos laboratórios da disciplina de IHC (Interação Humano-Computador). Neste curso exploraremos os fundamentos de _Design_ de Produto, UX - _User eXperience_ e UI - _User Interface_. Também discutiremos ferramentas e técnicas essenciais para promover um desenvolvimento ágil em IHC. 
 
 Com essa base estabelecida, daremos ênfase às tecnologias HTML (_HyperText Markup Language_), CSS (_Cascading Style Sheets_), JavaScript e Bootstrap. Introduziremos o protocolo HTTP (_Hypertext Transfer Protocol_), a arquitetura de microsserviços e o _microframework_ Python Flask. Também abordaremos o uso de bancos de dados, relacionais ou não relacionais, demonstrando a construção de interfaces web apoiadas por serviços dinâmicos. 
 
@@ -12,17 +12,25 @@ Este documento foi preparado para auxiliar a configuração e gerenciamento dess
 
 Para as atividades práticas, é fundamental ter um ambiente de desenvolvimento adequadamente configurado. Visando padronizar essa experiência, disponibilizamos uma máquina virtual (_Virtual Machine_ - VM) pré-configurada, que contém todas as ferramentas e dependências necessárias. Embora o Docker seja compatível para rodar diretamente em diversos sistemas operacionais, essa abordagem simplifica o suporte e agiliza a solução de eventuais desafios técnicos, assegurando que todos os estudantes tenham acesso a um ambiente consistente e minimizando complicações decorrentes de diferenças de hardware e versões de software. 
 
-## 1. Sobre o Oracle VirtualBox e a Imagem OVA
+## 1. Ambiente de Virtualização
+
+### O que é OVA? 
 
 OVA (_Open Virtual Appliance_) é um formato de arquivo para máquinas virtuais (VMs), contendo toda a configuração de sistema operacional e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, viabilizando uma importação fácil de imagens padronizadas em softwares de virtualização como o Oracle VirtualBox, dentre outros. 
-
-O VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas operacionais, tais como Windows, Linux e MacOS.
 
 Ao utilizar um arquivo OVA, é possível preparar e distribuir imagens pré-configuradas de software, assegurando que os laboratórios possam ser reproduzidos em um ambiente consistente, independentemente da localidade de execução. A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando o tempo de configuração do laboratório.
 
 Além disso, a imagem OVA padronizada facilita a integração, potencializando a infraestrutura do laboratório para uso distribuído dos recursos e configuração de serviços mais robustos. Por exemplo, enquanto uma estação pode ficar responsável pela hospedagem do banco de dados, outra pode disponibilizar o _front-end_ e outra pode executar o _back-end_, atuando de maneira colaborativa e autônoma. 
 
-- **Nota**: O uso de uma VM busca uniformizar o funcionamento dos ambientes e facilitar o suporte. No entanto, valorizamos a autonomia de cada estudante, especialmente para a prática em seu computador pessoal. Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários(as) de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64. Para quem utiliza Windows e prefere evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. No entanto, lembre-se de que o WSL, apesar de eficiente, não oferece todas as vantagens de um sistema Linux completo e apresenta nuances entre suas versões (WSL e WSL 2). 
+### Sobre o Oracle VirtualBox
+
+O VirtualBox é um software de virtualização de código aberto, que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas operacionais, tais como Windows, Linux e MacOS.
+
+O uso de uma VM no VirtualBox busca uniformizar o funcionamento dos ambientes e facilitar o suporte, pois é a ferramenta disponível em nosso laboratório. No entanto, valorizamos a autonomia de cada estudante, especialmente na prática em seu computador pessoal. 
+
+Neste caso, para aqueles que utilizam Windows e preferem evitar VMs em função de limitação de recursos, especialmente quando seu dispositivo possui menos que 6GB de RAM, o _Windows Subsystem for Linux_ (WSL) é uma opção interessante. Lembre-se de que o WSL, apesar de eficiente, não oferece todas as vantagens de um sistema Linux completo e apresenta nuances entre suas versões (WSL e WSL 2). 
+
+- **Nota**: Se você já está familiarizado com Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para isso. Usuários(as) de hardwares recentes da Apple, como o M2, devem considerar esta opção, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64.
 
 ### Como Usar:
 1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
@@ -31,9 +39,8 @@ Além disso, a imagem OVA padronizada facilita a integração, potencializando a
 4. Execute o VirtualBox e clique em **Arquivo** > **Importar Appliance**.
 5. Selecione o arquivo OVA baixado e siga as instruções na tela.
 6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de RAM, o que é inicialmente suficiente para prosseguir com nossos laboratórios. 
-7. Em configurações da VM, pode ser necessário alterar a porta USB para suporte à versão 1.1 ao invés da 2.0.
-8. Configure a placa de rede em modo NAT. 
-9. Inicie a máquina virtual (VM). 
+7. Configure a placa de rede em modo NAT. 
+8. Inicie a máquina virtual (VM). 
 
 ### Credenciais para acesso à VM:
 
@@ -310,6 +317,10 @@ chmod +x docker-cleanup.sh
 
 Desligamentos abruptos, provocados por interrupções forçadas do sistema operacional hospedeiro ou encerramento inadequado do VirtualBox, podem comprometer a integridade dos discos virtuais, resultando em perda, corrupção de dados ou instabilidade do ambiente. Por isso, ao finalizar suas atividades na VM, é fundamental executar o comando `shutdown -h now` a partir do terminal (via SSH ou mesmo a console física). Esse procedimento simples efetua um desligamento seguro e ordenado, preservando a integridade do sistema de arquivos e dos serviços ativos no ambiente, incluindo os contêineres. Assim, você assegura que, ao reiniciar a VM, o sistema continue a operar exatamente do ponto onde foi interrompido, minimizando eventuais transtornos e retrabalho. 
 
+Se você estiver usando o VirtualBox diretamente, pode também escolher a opção "Desligar a máquina" (ou similar) disponível no menu do software, o que basicamente fará o mesmo procedimento.
+
+**Nota:** Nunca selecione a opção "Forçar Desligamento" ou "Desligamento bruto" do VirtualBox, a menos que não tenha alternativas. Essa opção interrompe a alimentação da VM, similar a desligar a energia de um computador real sem realizar o desligamento adequado, e tem potencial de causar problemas.
+
 ### Pronto! 
 
-Agora que você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br). 
+Agora que você está com o ambiente preparado e pronto para começar os laboratórios. Desejamos a você um ótimo aprendizado ao longo da disciplina! Se tiver dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br). 
