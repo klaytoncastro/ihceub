@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app.py:/app/app.py  # Mapeia o arquivo app.py externo
+      - ./templates:/app/templates  # Mapeia o diretório de templates
+      - ./static:/app/static  # Mapeia o diretório de arquivos estáticos
