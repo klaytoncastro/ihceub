@@ -18,7 +18,7 @@ Um dos principais recursos é o AJAX, que significa "Asynchronous JavaScript and
 
 - **Assíncrono**: Em operações assíncronas, uma ação é iniciada, mas o programa não espera que ela seja concluída antes de prosseguir com outras ações. Isso permite que o programa continue funcionando e responda a eventos enquanto aguarda a conclusão da ação assíncrona. No contexto do AJAX, as solicitações ao servidor são tratadas de forma assíncrona, o que significa que a página web pode continuar funcionando e respondendo a ações do usuário, mesmo enquanto os dados estão sendo recuperados do servidor em segundo plano.
 
-### Como utilizar
+### 2.1 Como utilizar
 
 A decisão de onde colocar seu código JavaScript depende das suas necessidades. Aqui estão as opções comuns:
 
@@ -59,7 +59,7 @@ function mostrarAlerta() {
 </body>
 </html>
 ```
-### Principais Benefícios
+### 2.2 Principais Benefícios
 
 - **Responsividade**:  Como as solicitações AJAX são assíncronas, a página web não fica bloqueada durante a recuperação de dados do servidor. Isso torna a página mais responsiva e melhora a experiência do usuário.
 
