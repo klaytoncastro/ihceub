@@ -8,7 +8,7 @@ O JavaScript foi inicialmente desenvolvido por Brendan Eich da NetScape e anunci
 
 Assim, o navegador Netscape 2.0 foi lançado com suporte oficial ao JavaScript e em 1997, JavaScript se tornou um padrão ECMA (European Computer Manufacturers Association). ECMAScript passou a ser o nome oficial da linguagem e suas versões incluem ES1, ES2, ES3, ES5 e ES6. JavaScript pode ser executado no navegador incluindo o arquivo de script externo usando a tag de script, escrevendo-o dentro da página HTML usando a tag de script novamente ou executando-o no console do navegador.
  
-## 2. Importância e Aplicação
+## 2. Importância, Aplicação e Benefícios
 
 JavaScript desempenha um papel fundamental no desenvolvimento de produtos modernos para web, permitindo a criação de experiências interativas e dinâmicas para os usuários. Sem ele, muitos dos recursos que vemos em sites hoje em dia não seriam possíveis. 
 
@@ -17,6 +17,48 @@ Um dos principais recursos é o AJAX, que significa "Asynchronous JavaScript and
 - **Síncrono**: Em operações síncronas, uma ação é realizada e espera-se que seja concluída antes que a próxima ação seja executada. Isso significa que o programa ou aplicativo aguarda o término de uma tarefa antes de prosseguir com a próxima. Em contextos da web, operações síncronas podem fazer com que uma página fique bloqueada ou congelada até que uma ação seja concluída, o que pode prejudicar a experiência do usuário.
 
 - **Assíncrono**: Em operações assíncronas, uma ação é iniciada, mas o programa não espera que ela seja concluída antes de prosseguir com outras ações. Isso permite que o programa continue funcionando e responda a eventos enquanto aguarda a conclusão da ação assíncrona. No contexto do AJAX, as solicitações ao servidor são tratadas de forma assíncrona, o que significa que a página web pode continuar funcionando e respondendo a ações do usuário, mesmo enquanto os dados estão sendo recuperados do servidor em segundo plano.
+
+### Como utilizar
+
+A decisão de onde colocar seu código JavaScript depende das suas necessidades. Aqui estão as opções comuns:
+
+a) Você pode incluir seu código JavaScript diretamente dentro das tags `<head>` do seu documento HTML, entre as tags `<script>`. Isso é útil para código JavaScript menor e simples. No entanto, se você tiver um código JavaScript mais extenso ou desejar separar a lógica JavaScript do HTML, pode ser mais apropriado usar um arquivo JavaScript externo: 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // Seu código JavaScript aqui
+    </script>
+</head>
+<body>
+    <!-- Conteúdo HTML -->
+</body>
+</html>
+```
+
+b) Para código JavaScript mais extenso ou para manter seu código mais organizado e separado do HTML, é uma boa prática criar um arquivo JavaScript externo com a extensão .js e, em seguida, incluir esse arquivo no seu documento HTML usando a tag `<script>`. Isso torna o código mais modular e facilita a manutenção: 
+
+```javascript
+// Conteúdo do seu arquivo JavaScript
+function mostrarAlerta() {
+    alert('O botão foi clicado!');
+}
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="seucodigo.js"></script>
+</head>
+<body>
+    <!-- Conteúdo HTML -->
+    <button id="meuBotao" onclick="mostrarAlerta()">Clique em mim</button>
+</body>
+</html>
+```
 
 ### Principais Benefícios
 
@@ -100,3 +142,4 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'dadosPrevisaoTempo.json', true);
 xhr.send();
 ```
+
