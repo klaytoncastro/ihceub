@@ -59,7 +59,6 @@ function mostrarAlerta() {
 </body>
 </html>
 ```
-
 ### Principais Benefícios
 
 - **Responsividade**:  Como as solicitações AJAX são assíncronas, a página web não fica bloqueada durante a recuperação de dados do servidor. Isso torna a página mais responsiva e melhora a experiência do usuário.
@@ -87,6 +86,22 @@ document.getElementById('meuParagrafo').innerHTML = 'Novo texto para o parágraf
 ```
 
 ### 3.2 Atualização de Conteúdo de Página Sem Recarregar
+
+O `XMLHttpRequest` é um objeto nativo do navegador que permite fazer solicitações HTTP assíncronas para recuperar dados de um servidor web sem a necessidade de recarregar a página inteira. Ele é amplamente usado para implementar a técnica AJAX (Asynchronous JavaScript and XML) em páginas da web. Ou seja, o código JavaScript pode continuar sendo executado enquanto a solicitação está sendo processada em segundo plano e evita que a página fique bloqueada ou congelada enquanto aguarda uma resposta do servidor. 
+
+Você pode usar o `XMLHttpRequest` para fazer requisições HTTP, utilizandos os métodos `GET`, `POST`, `PUT`, `DELETE` e outros, dependendo da ação que você deseja realizar no servidor. O objeto `XMLHttpRequest` permite que você manipule a resposta do servidor quando ela estiver pronta. Você pode acessar os dados retornados,geralmente formato de texto (padrão XML ou JSON), e utilizar estes dados para atualizar partes específicas da página sem recarregá-la. Seguem exemplos simples de como usar o `XMLHttpRequest` para fazer requisições `HTTP`: 
+
+```javascript
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var resposta = xhr.responseText;
+        // Faça algo com a resposta aqui
+    }
+};
+xhr.open('GET', 'https://exemplo.com/api/dados', true);
+xhr.send();
+```
 
 ```javascript
 // Exemplo de uso do AJAX para carregar mais itens em uma lista
@@ -142,4 +157,30 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'dadosPrevisaoTempo.json', true);
 xhr.send();
 ```
+### 3.5 Utilizando Fetch API
 
+A Fetch API é uma API moderna para fazer solicitações HTTP em JavaScript que oferece uma interface mais limpa e promissora em comparação com o XMLHttpRequest. Ela é baseada em uma funcionalidade denominada "promessa" e fornece uma sintaxe mais fácil de usar. Aqui estão algumas características e vantagens da Fetch API:
+
+- **Promessas**: A Fetch API usa promessas JavaScript, o que torna o código mais legível e evita o aninhamento excessivo de funções de retorno de chamada.
+
+- **Sintaxe Simples**: A sintaxe da Fetch API é mais simples e intuitiva, o que torna mais fácil criar e ler o código.
+
+- **Suporte a JSON**: A Fetch API facilita a obtenção de dados JSON e sua manipulação.
+
+Tanto `XMLHttpRequest` quanto Fetch API permitem fazer solicitações assíncronas em JavaScript para interagir com servidores web e obter dados de forma eficiente. A escolha entre eles depende das suas preferências e da compatibilidade do navegador com a tecnologia que você deseja usar. A Fetch API é considerada uma opção mais moderna e fácil de usar, mas o `XMLHttpRequest` ainda é amplamente utilizado e oferece suporte a navegadores mais antigos. Segue exemplo de como usar a Fetch API para fazer uma solicitação GET:
+
+```javascript
+fetch('https://exemplo.com/api/dados')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Não foi possível obter os dados.');
+        }
+        return response.json(); // Converte a resposta para JSON
+    })
+    .then(data => {
+        // Faça algo com os dados aqui
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+```
