@@ -1,0 +1,110 @@
+h1 {
+    font-family: Arial, sans-serif;   
+    color: red;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* Estilos para o Exercício 1 */
+.paragrafo-estilizado {
+    color: blue;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+}
+
+/* Estilos para o Exercício 2 */
+.botao-estilizado {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.botao-estilizado:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para o Exercício 3 */
+.layout {
+    display: flex;
+}
+
+.coluna-principal {
+    flex: 70%;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.coluna-lateral {
+    flex: 30%;
+    background-color: darkgray;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+}
+/* Estilos para o Exercício 4 */
+.menu-navegacao {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-navegacao li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu-navegacao a:hover {
+/*  color: #007bff;
+    text-decoration: underline; */
+    background-color: #007bff; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+    /*text-decoration: underline; /* Sublinhado ao passar o mouse */
+    /*border: 2px solid blue; /* Caixa azul ao passar o mouse */
+    /*border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilos para o Exercício 5 */
+form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
