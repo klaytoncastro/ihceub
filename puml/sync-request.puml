@@ -1,0 +1,11 @@
+@startuml
+
+[*] --> Inicio: Início da Requisição Síncrona
+Inicio --> Solicitacao: Solicitação ao Servidor
+Solicitacao --> Resposta: Espera Resposta do Servidor
+Resposta --> Atualizacao: Atualização da Página
+Atualizacao --> Conclusao: Conclusão da Requisição Síncrona
+
+Conclusao --> [*]: Fim da Requisição Síncrona
+
+@enduml

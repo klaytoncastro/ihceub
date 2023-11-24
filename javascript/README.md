@@ -85,6 +85,32 @@ document.getElementById('meuBotao').addEventListener('click', function() {
 document.getElementById('meuParagrafo').innerHTML = 'Novo texto para o parágrafo.';
 ```
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <!-- Adicione um botão com o ID 'meuBotao' -->
+    <button id="meuBotao">Clique-me</button>
+
+    <!-- Adicione um parágrafo com o ID 'meuParagrafo' -->
+    <p id="meuParagrafo">Texto do parágrafo.</p>
+
+    <script>
+        // Exemplo de alerta ao clicar em um botão
+        document.getElementById('meuBotao').addEventListener('click', function() {
+            alert('O botão foi clicado!');
+        });
+
+        // Exemplo de alteração do conteúdo de um elemento HTML
+        document.getElementById('meuParagrafo').innerHTML = 'Novo texto para o parágrafo.';
+    </script>
+</body>
+</html>
+```
+
+
 ### 3.2 Atualização de Conteúdo de Página Sem Recarregar
 
 O `XMLHttpRequest` é um objeto nativo do navegador que permite fazer solicitações HTTP assíncronas para recuperar dados de um servidor web sem a necessidade de recarregar a página inteira. Ele é amplamente usado para implementar a técnica AJAX (Asynchronous JavaScript and XML) em páginas da web. Ou seja, o código JavaScript pode continuar sendo executado enquanto a solicitação está sendo processada em segundo plano e evita que a página fique bloqueada ou congelada enquanto aguarda uma resposta do servidor. 
