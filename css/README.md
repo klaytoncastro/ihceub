@@ -40,12 +40,54 @@ O tamanho total de um elemento é a soma do seu conteúdo (width e height), padd
 
 ### Sistemas de Layout e Animações
 
-- **Flexbox**: Modelo de layout unidimensional que oferece um método eficiente para alinhar e distribuir espaço entre itens dentro de um contêiner. Ideal para layouts de componentes e situações onde o eixo principal é dinâmico ou desconhecido. 
+- **Flexbox**: Modelo de layout unidimensional que oferece um método eficiente para alinhar e distribuir espaço entre itens dentro de um contêiner. Ideal para layouts de componentes e situações onde o eixo principal é dinâmico ou desconhecido. As propriedades destacadas abaixo permitem um controle detalhado sobre o posicionamento e alinhamento de itens dentro de um contêiner Flexbox, tornando-o ideal para layouts responsivos. 
+
+`flex-direction`: Controla a direção em que os itens flexíveis são colocados no contêiner flexível. Valores comuns incluem `row` (padrão) para uma disposição horizontal, e `column` para uma disposição vertical. 
+
+`justify-content`: Alinha os itens flexíveis ao longo do eixo principal do contêiner (horizontalmente em `row`, verticalmente em `column`). Valores comuns são `flex-start`(alinha itens ao início), `flex-end` (ao fim), `center` (ao centro), `space-between` (espaço igual entre os itens) e `space-around` (espaço igual em torno dos itens).
+
+`align-items`: Alinha itens flexíveis ao longo do eixo cruzado (perpendicular ao eixo principal). Valores comuns incluem `flex-start`, `flex-end`, `center`, `baseline`(alinhados pela linha de base dos itens) e `stretch` (estica os itens para preencher o contêiner). 
 
 - **Grid**: Sistema bidimensional para CSS que facilita a criação de layouts complexos.
-Uso: Permite a definição de áreas ou regiões principais em uma página, organizando o conteúdo de forma mais estruturada e alinhada.
+Uso: Permite a definição de áreas ou regiões principais em uma página, organizando o conteúdo de forma mais estruturada e alinhada. É bastante útil para criar layouts mais complexos e multidimensionais, de forma intuitiva e eficiente, por meio das propriedades abaixo: 
 
-- **Animações**: Funcionalidade que permite a transição entre estilos de um elemento ao longo do tempo. Cria efeitos visuais dinâmicos, como mudanças graduais de cor, movimentos e transformações de elementos na interface do usuário.
+`grid-template-columns` e `grid-template-rows`: Definem o tamanho das colunas e linhas em um grid. Os valores podem ser fixos em pixels (`100px`), flexíveis (`1fr` para uma fração do espaço disponível) ou uma combinação de ambos. Por exemplo: 
+
+```css
+/* Cria três colunas, onde a coluna do meio é duas vezes mais larga que as outras */
+grid-template-columns: 1fr 2fr 1fr;
+```
+
+`grid-gap`: Define o espaço entre as linhas e colunas em um grid. Por Exemplo: 
+
+```css
+/* Cria um espaço de 10px entre todas as linhas e colunas. */
+grid-gap: 10px; 
+```
+`grid-column` e `grid-row`: Propriedades usadas dentro dos itens do grid para especificar sua localização e extensão nas colunas e linhas do grid. Por exemplo: 
+
+```css
+/* Faz com que um item abranja da primeira à terceira coluna. */
+grid-column: 1 / 3; 
+```
+- **Animações**: Funcionalidade que permite a transição entre estilos de um elemento ao longo do tempo. Cria efeitos visuais dinâmicos, como mudanças graduais de cor, movimentos e transformações de elementos na interface do usuário. Para criar animações em CSS, você utiliza a regra `@keyframes` e estabelece suas propriedades, como os estados da animação, especificando o estilo do elemento em vários estágios. Por exemplo, você pode definir como um elemento deve aparecer no início, no meio e no final da animação. A estrutura básica envolve nomear a animação e definir porcentagens, onde 0% representa o início da animação e 100% o fim. Os principais atributos são: 
+
+`animation-name`: Este atributo é usado para referenciar o nome dado à animação definida em `@keyframes`. Ele conecta o conjunto de regras ao elemento que você deseja animar.
+
+`animation-duration`: Define quanto tempo a animação deve levar para completar um ciclo. Por exemplo, `animation-duration: 3s`; significa que a animação durará três segundos.
+
+`animation-timing-function`: Especifica a velocidade da animação em diferentes pontos do ciclo de animação. Exemplos comuns incluem `linear`, `ease`, `ease-in`, `ease-out` e `ease-in-out`.
+
+`animation-delay`: Define um atraso antes do início da animação. Por exemplo, `animation-delay: 2s`; fará a animação começar dois segundos após a página ser carregada. 
+
+`animation-iteration-count`: Indica quantas vezes a animação deve ser repetida.
+Valores comuns incluem números ou a palavra-chave `infinite` para uma animação contínua.
+
+`animation-direction`: Define se a animação deve ser executada para frente, para trás ou alternar entre ambas as direções. Exemplos incluem `normal`, `reverse`, `alternate` e `alternate-reverse`.
+
+`animation-fill-mode`: Determina o estilo do elemento antes e depois da execução da animação.Opções incluem `none`, `forwards`, `backwards` e `both`.
+
+Esses atributos podem ser combinados em uma propriedade abreviada `animation` facilitando a especificação de múltiplos valores de uma só vez. Por exemplo: `animation: myAnimation 3s ease-in 1s infinite reverse;` combina nome, duração, função de tempo, atraso, contagem de iteração e direção. Ao utilizar esses atributos, os desenvolvedores podem criar uma variedade de efeitos animados, desde simples transições até animações complexas e interativas, enriquecendo a experiência do usuário. 
 
 ## 4. Exercícios
 
@@ -73,6 +115,10 @@ Uso: Permite a definição de áreas ou regiões principais em uma página, orga
 - Crie um formulário simples com campos de entrada de texto, caixas de seleção e botões.
 - Use CSS para estilizar o formulário. Personalize as bordas dos campos de entrada, adicione margens, altere a fonte e a cor do texto.
 - Adicione um estilo de foco para os campos de entrada, alterando a cor da borda quando o usuário os selecionar.
+
+### Exercício 06: Utilizando uma Animação
+
+- Criar uma animação simples que altera a cor de fundo de um elemento HTML de vermelho para amarelo. 
 
 ## 5. Implementação 
 
@@ -107,6 +153,10 @@ def exercicio4():
 @app.route('/exercicio05')
 def exercicio5():
     return render_template('exercicio05.html')
+
+@app.route('/exercicio06')
+def exercicio6():
+    return render_template('exercicio06.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
@@ -217,7 +267,22 @@ f) Edite o arquivo `...templates/exercicio05.html` conforme abaixo:
 
 ```
 
-g) Prepare a folha de estilo `.../static/style.css`: 
+g) Edite o arquivo `...templates/exercicio06.html` conforme abaixo: 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 6</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="box-animacao"></div>
+</body>
+</html>
+```
+
+h) Prepare a folha de estilo `.../static/style.css`: 
 
 ```css
 /* Estilos para o Exercício 1 */
@@ -317,8 +382,25 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
-```
 
+/* Estilos para o Exercício 6 */
+
+.box-animacao {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes mudanca-cor {
+    from { background-color: red; }
+    to { background-color: yellow; }
+}
+
+.box-animação {
+    animation-name: mudanca-cor;
+    animation-duration: 2s;
+}
+```
 ## 6. Conclusão
 
 A compreensão do Box Model, Flexbox, Grid Layout e das animações em CSS é fundamental para desenvolvedores envolvidos na criação de designs interativos, responsivos e estruturas de layout modernas, permitindo a elaboração de interfaces de usuário que não apenas se ajustam a diferentes tamanhos de tela, mas também proporcionam uma experiência agradável e dinâmica. A prática contínua e a exploração desses elementos serão cruciais para aprimorar suas habilidades em CSS. Para um estudo prático mais aprofundado em CSS, os seguintes recursos são recomendados: 
