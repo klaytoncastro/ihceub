@@ -110,7 +110,6 @@ document.getElementById('meuParagrafo').innerHTML = 'Novo texto para o parágraf
 </html>
 ```
 
-
 ### 3.2 Atualização de Conteúdo de Página Sem Recarregar
 
 O `XMLHttpRequest` é um objeto nativo do navegador que permite fazer solicitações HTTP assíncronas para recuperar dados de um servidor web sem a necessidade de recarregar a página inteira. Ele é amplamente usado para implementar a técnica AJAX (Asynchronous JavaScript and XML) em páginas da web. Ou seja, o código JavaScript pode continuar sendo executado enquanto a solicitação está sendo processada em segundo plano e evita que a página fique bloqueada ou congelada enquanto aguarda uma resposta do servidor. 
@@ -187,7 +186,7 @@ xhr.send();
 
 A Fetch API é uma API moderna para fazer solicitações HTTP em JavaScript que oferece uma interface mais limpa e promissora em comparação com o XMLHttpRequest. Ela é baseada em uma funcionalidade denominada "promessa" e fornece uma sintaxe mais fácil de usar. Aqui estão algumas características e vantagens da Fetch API:
 
-- **Promessas**: A Fetch API usa promessas JavaScript, o que torna o código mais legível e evita o aninhamento excessivo de funções de retorno de chamada.
+- **Promessas**: A Fetch API usa promessas JavaScript, o que torna o código mais legível e evita o aninhamento excessivo de funções de retorno de chamada. Uma promessa em JavaScript é um objeto que representa a eventual conclusão ou falha de uma operação assíncrona. Ela pode estar em um de três estados: `Pending`, ou seja, nem cumprida nem rejeitada (estágio inicial); `Fulfilled`, ou seja, operação concluída com sucesso; ou `Rejected`, que significa que a operação falhou.  Promessas permitem encadear várias operações assíncronas. 
 
 - **Sintaxe Simples**: A sintaxe da Fetch API é mais simples e intuitiva, o que torna mais fácil criar e ler o código.
 
@@ -210,3 +209,13 @@ fetch('https://exemplo.com/api/dados')
         console.error('Erro:', error);
     });
 ```
+
+## Conclusão
+
+A prática é essencial para fixar o aprendizado. Seguem abaixo alguns links para recursos adicionais acerca da prática com JavaScript: 
+
+**W3Schools**: O [W3Schools - JavaScript Tutorial](https://www.w3schools.com/js/) oferece tutoriais e exemplos práticos que são ótimos para iniciantes. 
+
+**MDN Web Docs - JavaScript**: A Mozilla Developer Network ([MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)) é uma das melhores fontes para aprender JavaScript. Eles oferecem guias desde o nível básico até avançado, além de documentação detalhada sobre a linguagem.
+
+**JavaScript.info**: Este [site](https://javascript.info/) oferece uma visão moderna do JavaScript, abordando desde o básico até tópicos mais avançados.
