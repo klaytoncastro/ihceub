@@ -20,7 +20,34 @@ O CSS é criado e mantido através de um grupo de pessoas dentro do W3C chamado 
 
 - **Compatibilidade e Responsividade:**: CSS permite que o conteúdo seja otimizado para mais de um tipo de dispositivo. Assim, usando o mesmo documento HTML, diferentes versões de um site podem ser apresentadas para dispositivos portáteis, como tablets e smartphones. 
 
-## 3. Exercícios
+## 3. Estruturas de Layout
+
+Para avançar mais na prática em CSS, é importante compreender sua estrutura e trazer alguns conceitos-chave que fundamentam a base para layouts mais sofisticados e dinâmicos, como Box Model, Sistemas de Layout (Flexbox / Grid) e Animações, cruciais para criar designs que se adaptam a diferentes tamanhos de tela e dispositivos, garantindo uma experiência de usuário consistente. 
+
+### Box Model
+
+O modelo de caixa do CSS (Box Model) é um conceito fundamental no design de páginas web, pois define como os elementos HTML são dispostos e estilizados na tela. Ele tem um papel crucial no cálculo do tamanho total de um elemento, o que é extremamente relevante no design de layouts responsivos. É composto por quatro componentes principais: content, padding, borda e margem:
+
+- **Content**: O conteúdo (content) é a parte central do Box Model, onde o texto e as imagens de um elemento HTML são exibidos. O tamanho do conteúdo pode ser ajustado usando propriedades como `width` e `height`. É o núcleo sobre o qual são aplicados os atributos `padding`, `border` e `margin`. 
+
+- **Padding**: É o espaço entre o conteúdo de um elemento e sua borda. Utilizado para criar espaço ao redor do conteúdo dentro de um elemento, sem alterar o tamanho da borda.
+
+- **Border:** É a borda que circunda cada elemento HTML, que pode ser visível ou não. Usada para adicionar estilo, como largura, cor e design, ao redor de um elemento. 
+
+- **Margin:** É o espaço ao redor de um elemento, fora de qualquer borda definida. Utilizado para criar espaço entre elementos, afetando o layout externo.
+
+O tamanho total de um elemento é a soma do seu conteúdo (width e height), padding, border e margin. Cada um desses componentes contribui para as dimensões finais do elemento na página. Quando você define width e height para um elemento, essas propriedades controlam apenas o tamanho do conteúdo. O espaço ocupado pelo padding e border é adicionado ao tamanho final do elemento. Por exemplo, se um elemento tem uma largura (width) de 100px, um padding de 10px e uma border de 5px, a largura total será de 130px (100 + 10 + 10 + 5 + 5). 
+
+### Sistemas de Layout e Animações
+
+- **Flexbox**: Modelo de layout unidimensional que oferece um método eficiente para alinhar e distribuir espaço entre itens dentro de um contêiner. Ideal para layouts de componentes e situações onde o eixo principal é dinâmico ou desconhecido. 
+
+- **Grid**: Sistema bidimensional para CSS que facilita a criação de layouts complexos.
+Uso: Permite a definição de áreas ou regiões principais em uma página, organizando o conteúdo de forma mais estruturada e alinhada.
+
+- **Animações**: Funcionalidade que permite a transição entre estilos de um elemento ao longo do tempo. Cria efeitos visuais dinâmicos, como mudanças graduais de cor, movimentos e transformações de elementos na interface do usuário.
+
+## 4. Exercícios
 
 ### Exercício 01: Alterando Cores e Fontes
 
@@ -47,7 +74,7 @@ O CSS é criado e mantido através de um grupo de pessoas dentro do W3C chamado 
 - Use CSS para estilizar o formulário. Personalize as bordas dos campos de entrada, adicione margens, altere a fonte e a cor do texto.
 - Adicione um estilo de foco para os campos de entrada, alterando a cor da borda quando o usuário os selecionar.
 
-## 4. Implementação 
+## 5. Implementação 
 
 a) Edite o arquivo `app.py` e prepare as rotas conforme abaixo: 
 
@@ -190,8 +217,9 @@ f) Edite o arquivo `...templates/exercicio05.html` conforme abaixo:
 
 ```
 
-g) Prepare a folha de estilo: 
+g) Prepare a folha de estilo `.../static/style.css`: 
 
+```css
 /* Estilos para o Exercício 1 */
 .paragrafo-estilizado {
     color: blue;
@@ -289,3 +317,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+```
+
+## 6. Conclusão
+
+A compreensão do Box Model, Flexbox, Grid Layout e das animações em CSS é fundamental para desenvolvedores envolvidos na criação de designs interativos, responsivos e estruturas de layout modernas, permitindo a elaboração de interfaces de usuário que não apenas se ajustam a diferentes tamanhos de tela, mas também proporcionam uma experiência agradável e dinâmica. A prática contínua e a exploração desses elementos serão cruciais para aprimorar suas habilidades em CSS. Para um estudo prático mais aprofundado em CSS, os seguintes recursos são recomendados: 
+
+- **W3Schools - CSS Tutorial**: Uma fonte abrangente para aprender todos os aspectos do CSS, incluindo Flexbox e Grid Layout. Acesse [aqui](https://www.w3schools.com/css/). 
+
+- **MDN Web Docs - CSS**: Documentação detalhada e tutoriais sobre CSS, oferecidos pela Mozilla, incluindo guias sobre Box Model, Flexbox e Grid Layout. Acesse [aqui](https://developer.mozilla.org/en-US/docs/Web/CSS).
+
+- **CSS Tricks - A Complete Guide to Flexbox**: Um guia visual e detalhado para entender e usar o Flexbox. Acesse [aqui](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+- **CSS Tricks - A Complete Guide to Grid**: Guia abrangente e visual para aprender o Grid Layout. Acesse [aqui](https://css-tricks.com/snippets/css/complete-guide-grid/).
+
+Esses recursos oferecem instruções passo a passo, exemplos práticos e dicas para aprimorar suas habilidades em CSS, apoiando a prática no desenvolvimento de layouts modernos e responsivos. 
