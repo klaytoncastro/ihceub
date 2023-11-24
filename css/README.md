@@ -401,7 +401,20 @@ input[type="submit"]:hover {
     animation-duration: 2s;
 }
 ```
-## 6. Conclusão
+
+## 6. Avaliando a Compatibilidade entre Navegadores
+
+Ao trabalhar com recursos CSS mais sofisticados, incluindo animações, Flexbox e Grid Layout, avaliar a compatibilidade entre navegadores é um aspecto fundamental. A natureza diversificada dos navegadores e suas diferentes versões implica que um site pode se comportar ou aparecer de forma diferente de um navegador para outro. Este é um desafio significativo no desenvolvimento web, pois precisamos levar em consideração o amplo acesso ao mesmo recurso a partir de dispositivos diferentes (Ex: Tablets e Celulares com Android, IoS. Desktops com navegadores diversos, como Edge, Chrome, Firefox, Safari...). Dessa forma, precisamos garantir que as aplicações e websites funcionem de maneira consistente e confiável em todos os navegadores populares, visando garantir: 
+
+- **Acessibilidade**: Garantir que um site seja acessível ao maior número possível de usuários, independentemente do navegador que utilizam.
+
+- **Experiência Uniforme**: Uma experiência de usuário inconsistente pode afetar negativamente a percepção do seu website, levando a uma taxa de rejeição mais alta.
+
+- **Manutenção**: Ao considerar a compatibilidade entre navegadores desde o início do desenvolvimento, você pode economizar tempo e recursos, além de proporcionar uma experiência mais robusta e acessível para os usuários.
+
+- **Ferramentas de Teste**: Serviços como o [Can I Use](https://caniuse.com/), [Browserstack](https://www.browserstack.com/), oferecem dados atualizados sobre a compatibilidade de recursos de front-end em navegadores web (Cross-Browser Testing Tools). Utilizar ferramentas como essas é indispensável para verificar se um recurso específico do CSS é suportado no navegador alvo. 
+
+## 7. Conclusão
 
 A compreensão do Box Model, Flexbox, Grid Layout e das animações em CSS é fundamental para desenvolvedores envolvidos na criação de designs interativos, responsivos e estruturas de layout modernas, permitindo a elaboração de interfaces de usuário que não apenas se ajustam a diferentes tamanhos de tela, mas também proporcionam uma experiência agradável e dinâmica. A prática contínua e a exploração desses elementos serão cruciais para aprimorar suas habilidades em CSS. Para um estudo prático mais aprofundado em CSS, os seguintes recursos são recomendados: 
 
